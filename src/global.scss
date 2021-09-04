@@ -1,0 +1,76 @@
+body, html {
+	font-size: 10px;
+}
+
+.hidden {
+	display: none;
+}
+.invisible {
+	visibility: hidden;
+	opacity: 0;
+}
+
+// app dark theme
+.app[data-app-theme="Dark"] {
+	& .sidebar, .navigation__select--toggle {
+		background: rgb(53, 60, 63);
+	}
+	& .navigation__select--toggle, .navigation__select--option {
+		color: rgb(217, 219, 219);
+	}
+	& .navigation__select--option {
+		background: rgb(42, 49, 53);
+		&:hover {
+			background: rgb(53, 60, 63);
+		}
+	}
+	& .app__body {
+		background: rgb(42, 49, 53);
+	}
+}
+// app light theme
+.app[data-app-theme="Light"] {
+	& .sidebar, .navigation__select--toggle {
+		background: rgb(242, 244, 245);
+	}
+	& .navigation__select--toggle, .navigation__select--option {
+		color: rgb(53, 60, 63);
+	}
+	& .navigation__select--option {
+		background: rgb(255, 255, 255);
+		&:hover {
+			background: rgb(242, 244, 245);
+		}
+	}
+	& .sidebar {
+		box-shadow:inset -4px 0 10px -4px rgb(171, 171, 171);
+	}
+	& .app__body {
+		background: rgb(255, 255, 255);
+	}
+}
+// app kevin theme
+.app[data-app-theme="Kevin"] {
+	& .sidebar, .navigation__select--toggle {
+		background: rgb(5, 43, 74);
+	}
+	& .navigation__select--toggle, .navigation__select--option {
+		color: rgb(53, 60, 63);
+	}
+	& .navigation__select--option {
+		background: rgb(36, 15, 4);
+		&:hover {
+			background: rgb(5, 43, 74);
+		}
+	}
+	& .app__body {
+		background: rgb(36, 15, 4);
+	}
+}
+
+@mixin displayFlex($justify-content, $align-items, $flex-direction: row) {
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	flex-direction: $flex-direction;
+}

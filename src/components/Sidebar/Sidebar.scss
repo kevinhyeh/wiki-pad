@@ -1,0 +1,29 @@
+@import '../../global.scss';
+
+.sidebar {
+	height: 100vh;
+	transition: 0.3s all;
+
+	&[data-panel-toggle="open"] {
+		flex: 0.8;
+	}
+	&[data-panel-toggle="close"] {
+		flex: none;
+		.sidebar__collapse {
+			transform: scaleX(1.2) rotate(180deg);
+			transform-origin: center;
+		}
+	}
+	&__collapse {
+		background: transparent;
+		border: none;
+		font-size: 2.4rem;
+		transform: scaleX(1.2);
+		color: rgb(140, 140, 140);
+		margin-left: auto;
+    display: block;
+		padding: .5rem 1.2rem;
+		cursor: pointer;
+		transition: 0.3s all;
+	}
+}
