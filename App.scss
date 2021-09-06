@@ -5,8 +5,15 @@
 	height: 100vh;
 	@include displayFlex(flex-start, center);
 
+	&[data-sidebar-toggle="open"] .app__body {
+		margin-left: 30rem;
+	}
+	&[data-sidebar-toggle="close"] .app__body {
+		margin-left: 4rem;
+	}
 	&__body {
-		flex: 3;
+		transition: 0.3s all;
+		width: 100%;
 		height: 100vh;
 	}
 }

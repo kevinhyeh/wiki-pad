@@ -3,15 +3,23 @@
 .sidebar {
 	height: 100vh;
 	transition: 0.3s all;
+	position: fixed;
+	top: 0;
+	left: 0;
 
-	&[data-panel-toggle="open"] {
-		flex: 0.8;
+	&[data-sidebar-toggle="open"] {
+		width: 30rem;
 	}
-	&[data-panel-toggle="close"] {
-		flex: none;
+	&[data-sidebar-toggle="close"] {
+		width: 4rem;
+		overflow: hidden;
 		.sidebar__collapse {
 			transform: scaleX(1.2) rotate(180deg);
 			transform-origin: center;
+		}
+		.sidebar__list {
+			visibility: hidden;
+			opacity: 0;
 		}
 	}
 	&__collapse {
@@ -25,5 +33,45 @@
 		padding: .5rem 1.2rem;
 		cursor: pointer;
 		transition: 0.3s all;
+	}
+	&__list {
+		@include displayFlex(center, center, column);
+		padding: 0;
+		transition: 0.3s all;
+		list-style: none;
+		color: rgb(158, 161, 162);
+		font-size: 1.6rem;
+		line-height: 2;
+		cursor: pointer;
+		& li {
+			position: relative;
+			width: 65%;
+			& a {
+				transition: 0.3s all;
+				&:hover {
+					color: rgb(217, 219, 219);
+					text-decoration: underline;
+				}
+			}
+		}
+		&--dropdown  {
+			content: '';
+			position: absolute;
+			top: 1.5rem;
+			left: -2rem;
+			width: 0;
+			height: 0;
+			border-top: 0.4rem solid transparent;
+			border-bottom: 0.4rem solid transparent;
+			border-left: 0.8rem solid rgb(158, 161, 162);
+			transform: translateY(-50%);
+		}
+	}
+	&__sublist {
+		list-style: none;
+		padding-left: 2rem;
+		line-height: 2;
+		max-height: 0;
+		overflow: hidden;
 	}
 }
