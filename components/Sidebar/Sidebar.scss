@@ -53,8 +53,16 @@
 					text-decoration: underline;
 				}
 			}
+			&[data-sublist-toggle="open"] {
+				& .sidebar__sublist {
+					max-height: 100rem;
+				}
+				& .sidebar__list--arrow {
+					transform: translate(-50%) rotate(90deg);
+				}
+			}
 		}
-		&--dropdown  {
+		&--arrow  {
 			content: '';
 			position: absolute;
 			top: 1.5rem;
@@ -73,5 +81,6 @@
 		line-height: 2;
 		max-height: 0;
 		overflow: hidden;
+		transition: 0.3s all;
 	}
 }
