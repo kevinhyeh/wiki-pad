@@ -1,0 +1,40 @@
+[
+	{
+		"title": "About",
+		"data": [
+			{
+				"title": "Summary",
+				"info": "I am an innovative Front End Developer who uses his Graphic Design knowledge as an advantage. Proficient in React, HTML, CSS, and Javascript with the hunger to learn more; plus modern libraries and frameworks. Able to grasp new skills quickly and efficiently. Even more so, passionate about learning the process. Having the patience and interests in puzzles, developing applications can be tackled on with the same mindset."
+			},
+			{
+				"title": "Languages",
+				"info": "English (Fluent), Cantonese (Proficient)."
+			},
+			{
+				"title": "Technologies",
+				"info": "React / React Native, HTML / Bootstrap, CSS / LESS / SASS, Javascript / jQuery, NodeJs / Express, MYSQL / MongoDB."
+			},
+			{
+				"title": "Programs",
+				"info": "Adobe Photoshop, Adobe, Illustrator, Adobe InDesign, Adobe Bridge, Adobe Lightroom, Sketch."
+			}
+		]
+	},
+	{
+		"title": "Education",
+		"data": [
+			{
+				"title": "Bootcamp",
+				"info": "UC Berkeley Extension Bootcamp. Full stack course where I learned everything I know today. Projects were worked on in groups besides our final project. Received no lower than an A- as a grade for homework assignments and projects. Presented with certificate for completion at the end of course. (May 2018 - Nov 2018)"
+			},
+			{
+				"title": "College",
+				"info": "Notre Dame de Namur University. Graduated with bachelors in Graphic Design and received Cum Laude honors. (Aug 2012 - May 2016)"
+			},
+			{
+				"title": "High School",
+				"info": "San Mateo High School. (Aug 2008 - May 2012)"
+			}
+		]
+	}
+]
