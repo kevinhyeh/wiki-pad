@@ -11,27 +11,35 @@
 			max-height: 100rem;
 		}
 		&[data-select-toggle="open"] 
-		.navigation__select--toggle::after {
-			transform: translateY(-50%) scaleX(0.8) rotate(90deg);
-			transform-origin: center;
+		.navigation__select--toggle svg {
+			transform: rotate(-90deg);
 		}
 		&--toggle {
 			position: relative;
-			width: 8rem;
-			padding: 0.8rem 3rem 0.8rem 1.2rem;
+			width: 7rem;
+			padding: 0.8rem 1.2rem;
 			border-radius: 0.3rem;
-			border: 1px solid rgb(217, 219, 219);
+			border: 1px solid $secondary-grey;
 			cursor: pointer;
-			&::after {
+			@include displayFlex(space-between, center);
+			// &::after {
+			// 	transition: 0.3s all;
+			// 	content: '\2039';
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	right: 1rem;
+			// 	color: $primary-grey;
+			// 	transform: translateY(-50%) scaleX(0.8) rotate(-90deg);
+			// 	line-height: 1;
+			// 	font-size: 2.4rem;
+			// }
+			& svg {
+				width: 5px;
+				transform-origin: center;
 				transition: 0.3s all;
-				content: '\2039';
-				position: absolute;
-				top: 50%;
-				right: 1rem;
-				color: rgb(140, 140, 140);
-				transform: translateY(-50%) scaleX(0.8) rotate(-90deg);
-				line-height: 1;
-				font-size: 2.4rem;
+				& g {
+					fill: $secondary-grey;
+				}
 			}
 		}
 		&--list {
@@ -47,7 +55,7 @@
 		&--option {
 			font-size: 1.4rem;
 			padding: 0.8rem 0 0.8rem 0.8rem;
-			border: 1px solid rgb(217, 219, 219);
+			border: 1px solid $secondary-grey;
 			border-bottom: none;
 			width: 7rem;
 			transition: 0.3s all;
@@ -57,7 +65,7 @@
 				border-top-right-radius: 0.3rem;
 			}
 			&.last {
-				border: 1px solid rgb(217, 219, 219);
+				border: 1px solid $secondary-grey;
 				border-bottom-left-radius: 0.3rem;
 				border-bottom-right-radius: 0.3rem;
 			}

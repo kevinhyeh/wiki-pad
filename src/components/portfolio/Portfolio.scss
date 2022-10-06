@@ -1,0 +1,33 @@
+@import '../../global.scss';
+
+.portfolio {
+	padding: 0 2rem;
+	&__submenu {
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.3s all;
+		padding: 0 2rem;
+		&.active {
+			max-height: 100rem;
+		}
+	}
+	&__header {
+		@include displayFlex(flex-start, center);
+		cursor: pointer;
+		margin-bottom: 1.5rem;
+		& svg {
+			width: 0.5rem;
+			margin-right: 1rem;
+			& g {
+				fill: $secondary-grey;
+			}
+		}
+	}
+	&__info {
+		padding: 0 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+	& h2, h3, p {
+		margin: 0;
+	}
+}
