@@ -48,6 +48,19 @@
 				{
 					"data": [
 						{
+							"title": "Test",
+							"data": [
+								{
+									"title": "Name",
+									"info": "Kevin Yeh"
+								},
+								{
+									"title": "Role",
+									"info": "Front End / Full Stack Developer"
+								}
+							]
+						},
+						{
 							"title": "Name",
 							"info": "Kevin Yeh"
 						},
@@ -69,6 +82,53 @@
 						}
 					],
 					"title": "About"
+				},
+				{
+					"data": [
+						{
+							"info": "English (Fluent), Cantonese (Proficient).",
+							"title": "Languages"
+						},
+						{
+							"info": "React / React Native, HTML / Bootstrap, CSS / LESS / SASS, Javascript / jQuery, NodeJs / Express, MYSQL / MongoDB.",
+							"title": "Technologies"
+						},
+						{
+							"info": "Adobe Photoshop, Adobe, Illustrator, Adobe InDesign, Adobe Bridge, Adobe Lightroom, Sketch.",
+							"title": "Programs"
+						}
+					],
+					"title": "Skills"
+				},
+				{
+					"data": [
+						{
+							"info": "UC Berkeley Extension Bootcamp. Full stack course where I learned everything I know today. Projects were worked on in groups besides our final project. Received no lower than an A- as a grade for homework assignments and projects. Presented with certificate for completion at the end of course. (May 2018 - Nov 2018)",
+							"title": "Bootcamp"
+						},
+						{
+							"info": "Notre Dame de Namur University. Graduated with bachelors in Graphic Design and received Cum Laude honors. (Aug 2012 - May 2016)",
+							"title": "College"
+						},
+						{
+							"info": "San Mateo High School. (Aug 2008 - May 2012)",
+							"title": "High School"
+						}
+					],
+					"title": "Education"
+				}
+			]
+		},
+		{
+			"title": "Projects",
+			"data": [
+				{
+					"data": [
+						{
+							"image": ""
+						}
+					],
+					"title": "VIDA"
 				},
 				{
 					"data": [
