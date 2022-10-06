@@ -4,6 +4,7 @@ import Breadcrumb from '../breadcrumb';
 import './Portfolio.scss';
 
 const Portfolio = (props) => {
+	const [ogData, setOgData] = useState()
 	const [fadeInAnim, setFadeInAnim] = useState(true)
 	const [portfolio, setPortfolio] = useState([])
 	const [activeSec, setActiveSec] = useState([''])
@@ -15,12 +16,23 @@ const Portfolio = (props) => {
 			return response.json()
 		}).then((data) => {
 			console.log('portfolio data', data)
-			setPortfolio(data)
-			console.log('portfolio', portfolio)
+			console.log('object', data.flat())
+			setOgData(data)
+			const pathName = window.location.pathname.replace('/', '')
+			if (pathName.length > 0) {
+				let pathPortfolio = findPortfolioData(data, pathName)
+				console.log('pathPortfolio', pathPortfolio)
+				setPortfolio(pathPortfolio)
+				handleBreadcrumb(pathPortfolio.title)
+				setActiveSec([pathPortfolio.title])
+			} else {
+				setPortfolio(data)
+			}
 		})
 		setTimeout(() => {
 			setFadeInAnim(false)
 		}, 1000)
+		console.log('window', window.location.pathname)
 	}, [])
 
 	const toggleSection = (title) => {
@@ -30,25 +42,36 @@ const Portfolio = (props) => {
 		} else {
 			setActiveSec([title, ...activeSec])
 		}
-		handleBreadcrumb(title)
 	}
 
-	const setNewPortfolio = (portfolio) => {
-		setPortfolio([portfolio])
-		setActiveSec([portfolio.title])
-		handleBreadcrumb(portfolio.title)
+	const setNewPortfolio = (arr, isHome) => {
+		console.log('arr', arr)
+		let portfolio = arr[0]
+		console.log('portfolio', portfolio)
+		setPortfolio(arr)
+		setActiveSec(isHome ? [''] : [portfolio.title])
+		handleBreadcrumb(isHome ? 'Home' : portfolio.title)
 		setFadeInAnim(true)
 		setTimeout(() => {
 			setFadeInAnim(false)
-		}, 1000)
+		}, 400)
+		window.history.pushState({},"", isHome ? '/' : portfolio.title.toLowerCase());
+
+		findPortfolioData(arr, portfolio.title)
 	}
 
 	const handleBreadcrumb = (title) => {
-		if (breadcrumb.indexOf(title) === -1) {
+		// console.log('crumb title', title)
+		let titleIndex = breadcrumb.indexOf(title)
+		// console.log('titleIndex', titleIndex)
+		if (titleIndex === -1) {
 			setBreadcrumb([...breadcrumb, title])
-		} else {
-			let filteredSet = breadcrumb.filter(item => item !== title)
-			setBreadcrumb(filteredSet)
+		} else if (titleIndex + 1 < breadcrumb.length) {
+			breadcrumb.splice(titleIndex + 1, breadcrumb.length - (titleIndex + 1))
+			// console.log('breadcrumbe', breadcrumb)
+			setBreadcrumb(breadcrumb)
+			// let filteredSet = breadcrumb.filter(item => item !== title)
+			// setBreadcrumb(filteredSet)
 		}
 	}
 
@@ -59,7 +82,7 @@ const Portfolio = (props) => {
 				{obj.data ? 	
 					<>
 						<div className="portfolio__header">
-							<div className={`portfolio__circle ${isActive ? 'active' : ''}`} onClick={isActive ? false : () => setNewPortfolio(obj)}>
+							<div className={`portfolio__circle`} onClick={() => setNewPortfolio([obj])}>
 								<span></span>
 							</div>
 							<div onClick={() => toggleSection(obj.title)} className={`portfolio__header--title ${isActive ? 'active' : ''}`}>
@@ -86,7 +109,6 @@ const Portfolio = (props) => {
 	const renderAge = (dateString) => {
     let today = new Date();
     let birthDate = new Date(dateString);
-		console.log('birthDate', birthDate)
     let age = today.getFullYear() - birthDate.getFullYear();
     let m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
@@ -95,9 +117,43 @@ const Portfolio = (props) => {
     return <p className="text-base">{age}</p>;
 	}
 
+	const handleBreadcrumbSet = (title) => {
+		console.log('title i', title)
+		console.log('ogData i', ogData)
+		if (title === 'Home') {
+			setNewPortfolio(ogData, true)
+		} else {
+			let itemPortfolio = findPortfolioData(ogData, title)
+			// console.log('itemPortfolio', itemPortfolio)
+			setNewPortfolio(itemPortfolio)
+		}
+	}
+
+	const findPortfolioData = (arr, title) => {
+		let titleLowerCase = title.toLowerCase()
+		// console.log('title', title)
+		// console.log('arr', arr)
+		for (let obj of arr) {
+			console.log('obj', obj)
+			let filteredObj
+			if (obj.title.toLowerCase() === titleLowerCase) {
+				filteredObj = [obj]
+			} else {
+				filteredObj = obj.data.filter(item => item.title.toLowerCase() === titleLowerCase)
+			}
+			if (filteredObj && filteredObj.length > 0) {
+				console.log('obj a', obj.title)
+				return filteredObj
+			} else {
+				console.log('obj b', obj.title)
+				return findPortfolioData(obj, title)
+			}
+		}
+	}
+
 	return (
 		<>
-			<Breadcrumb breadcrumb={breadcrumb} />
+			<Breadcrumb breadcrumb={breadcrumb} handleBreadcrumbSet={handleBreadcrumbSet} />
 			<section className={`portfolio ${fadeInAnim ? 'fade-in' : ''}`}>
 				{portfolio ? portfolio.map((obj, index) => (
 						renderSection(obj, index)
