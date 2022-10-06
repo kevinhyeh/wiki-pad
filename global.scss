@@ -1,5 +1,6 @@
 body, html {
 	font-size: 10px;
+	// font-family: 'Lucida Console, Regular';
 }
 
 .hidden {
@@ -9,14 +10,45 @@ body, html {
 	visibility: hidden;
 	opacity: 0;
 }
+.rotate-180 {
+	transform: rotate(180deg);
+}
+.rotate-90 {
+	transform: rotate(90deg);
+}
+.-rotate-90 {
+	transform: rotate(-90deg);
+}
+
+// font sizes
+.text-xs {
+	font-size: 12px;
+}
+.text-sm {
+	font-size: 14px;
+}
+.text-base {
+	font-size: 16px;
+}
+.text-lg {
+	font-size: 18px;
+}
+.text-xl {
+	font-size: 20px;
+}
+
+// variables
+$primary-grey: rgb(140, 140, 140);
+$secondary-grey: rgb(217, 219, 219);
 
 // app dark theme
 .app[data-app-theme="Dark"] {
 	& .sidebar, .navigation__select--toggle {
 		background: rgb(53, 60, 63);
 	}
-	& .navigation__select--toggle, .navigation__select--option {
-		color: rgb(217, 219, 219);
+	& .navigation__select--toggle, .navigation__select--option,
+	.portfolio {
+		color: $secondary-grey;
 	}
 	& .navigation__select--option {
 		background: rgb(42, 49, 53);
@@ -33,7 +65,8 @@ body, html {
 	& .sidebar, .navigation__select--toggle {
 		background: rgb(242, 244, 245);
 	}
-	& .navigation__select--toggle, .navigation__select--option {
+	& .navigation__select--toggle, .navigation__select--option,
+	.portfolio {
 		color: rgb(53, 60, 63);
 	}
 	& .navigation__select--option {
@@ -54,7 +87,8 @@ body, html {
 	& .sidebar, .navigation__select--toggle {
 		background: rgb(5, 43, 74);
 	}
-	& .navigation__select--toggle, .navigation__select--option {
+	& .navigation__select--toggle, .navigation__select--option,
+	.portfolio {
 		color: rgb(53, 60, 63);
 	}
 	& .navigation__select--option {

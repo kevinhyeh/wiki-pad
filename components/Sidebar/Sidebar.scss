@@ -15,24 +15,39 @@
 		overflow: hidden;
 		.sidebar__collapse {
 			transform: scaleX(1.2) rotate(180deg);
-			transform-origin: center;
 		}
 		.sidebar__list {
 			visibility: hidden;
 			opacity: 0;
 		}
 	}
+	&__container {
+		position: relative;
+		padding: 2rem 0;
+	}
 	&__collapse {
+		padding: 0;
+    height: 30px;
+    width: 4rem;
+    @include displayFlex(center, center);
 		background: transparent;
 		border: none;
 		font-size: 2.4rem;
 		transform: scaleX(1.2);
-		color: rgb(140, 140, 140);
+		color: $primary-grey;
 		margin-left: auto;
-    display: block;
-		padding: .5rem 1.2rem;
 		cursor: pointer;
 		transition: 0.3s all;
+		transform-origin: center;
+		position: absolute;
+		top: 1rem;
+		right: 0;
+		& svg {
+			height: 1.2rem;
+			&	g {
+				fill: $primary-grey;
+			}
+		}
 	}
 	&__list {
 		@include displayFlex(center, center, column);
@@ -42,14 +57,27 @@
 		color: rgb(158, 161, 162);
 		font-size: 1.6rem;
 		line-height: 2;
+		margin: 0;
 		cursor: pointer;
+		padding: 0 4rem;
 		& li {
 			position: relative;
-			width: 65%;
+			width: 100%;
+			&--header {
+				@include displayFlex(flex-start, center);
+			}
+			& svg {
+				height: 10px;
+				margin-right: 1.5rem;
+				transition: 0.3s all;
+				& g {
+					fill: $primary-grey;
+				}
+			}
 			& a {
 				transition: 0.3s all;
 				&:hover {
-					color: rgb(217, 219, 219);
+					color: $secondary-grey;
 					text-decoration: underline;
 				}
 			}
@@ -57,8 +85,8 @@
 				& .sidebar__sublist {
 					max-height: 100rem;
 				}
-				& .sidebar__list--arrow {
-					transform: translate(-50%) rotate(90deg);
+				& svg {
+					transform: rotate(90deg);
 				}
 			}
 		}
@@ -82,5 +110,11 @@
 		max-height: 0;
 		overflow: hidden;
 		transition: 0.3s all;
+		& li {
+			transition: 0.3s all;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }

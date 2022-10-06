@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { IconArrowLine } from '../elements/Icons' 
 import './Sidebar.scss'
 
 const Sidebar = (props) => {
@@ -10,7 +11,6 @@ const Sidebar = (props) => {
 		).then((response) => {
 			return response.json()
 		}).then((data) => {
-			console.log('data', data)
 			setNavList(data)
 			storeSublistToggleStateHandler(data)
 		})
@@ -44,16 +44,21 @@ const Sidebar = (props) => {
 		for (let i = 0; i < listArr.length; i++) {
 			listHtml.push(
 				<li key={i} data-sublist-toggle={subLinksDropdownObj[listArr[i].title.toLowerCase() + 'Sublinks']}>
+					<div className="sidebar__list--header" onClick={() => openSubLinksHandler(listArr[i].title)}>
+						{parent ? 
+							<span>
+								<IconArrowLine direction="right" />
+							</span>
+						: ''}
+						{listArr[i].title}
+					</div>
 					{/* <a href="">{listArr[i].title}</a> */}
-					{listArr[i].title}
 					{listArr[i].sublinks && listArr[i].sublinks.length > 0 ?
 						<ul className="sidebar__sublist">
 							{displaySidebarList(listArr[i].sublinks, false)}
 						</ul> : 
 						''
 					}
-					{parent ? 
-						<span className="sidebar__list--arrow" onClick={() => openSubLinksHandler(listArr[i].title)}></span> : ''}
 				</li>
 			)
 		}
@@ -62,8 +67,12 @@ const Sidebar = (props) => {
 
 	return (
 		<section className="sidebar" data-sidebar-toggle={props.sidebarState}>
-			<button className="sidebar__collapse" onClick={() => props.toggleSidebar(props.sidebarState)}>&#x2039;</button>
-			<ul className="sidebar__list">{displaySidebarList(navList, true)}</ul>
+			<div className="sidebar__container">
+				<button className="sidebar__collapse" onClick={() => props.toggleSidebar(props.sidebarState)}><IconArrowLine direction="left" /></button>
+				<ul className="sidebar__list">
+					{displaySidebarList(navList, true)}
+				</ul>
+			</div>
 		</section>
 	)
 }
