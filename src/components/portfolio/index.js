@@ -23,8 +23,8 @@ const Portfolio = (props) => {
 				let pathPortfolio = findPortfolioData(data, pathName)
 				console.log('pathPortfolio', pathPortfolio)
 				setPortfolio(pathPortfolio)
-				handleBreadcrumb(pathPortfolio.title)
-				setActiveSec([pathPortfolio.title])
+				handleBreadcrumb(pathPortfolio[0].title)
+				setActiveSec([pathPortfolio[0].title])
 			} else {
 				setPortfolio(data)
 			}
@@ -76,21 +76,22 @@ const Portfolio = (props) => {
 	}
 
 	const renderSection = (obj, index) => {
-		let isActive = activeSec.indexOf(obj.title) > -1
+		let isActiveSec = activeSec.indexOf(obj.title) > -1
+		let isActivePortfolio = portfolio.length === 1 && portfolio[0].title === obj.title
 		return (
 			<div key={index}>
 				{obj.data ? 	
 					<>
 						<div className="portfolio__header">
-							<div className={`portfolio__circle`} onClick={() => setNewPortfolio([obj])}>
+							<div className={`portfolio__circle ${isActivePortfolio ? 'active' : ''}`} onClick={() => setNewPortfolio([obj])}>
 								<span></span>
 							</div>
-							<div onClick={() => toggleSection(obj.title)} className={`portfolio__header--title ${isActive ? 'active' : ''}`}>
+							<div onClick={() => toggleSection(obj.title)} className={`portfolio__header--title ${isActiveSec ? 'active' : ''}`}>
 								<IconArrowLine direction="right" />
 								<h2 className="text-xl">{obj.title}</h2>
 							</div>
 						</div>
-						<div className={`portfolio__submenu ${isActive ? 'active' : ''}`}>
+						<div className={`portfolio__submenu ${isActiveSec ? 'active' : ''}`}>
 							{obj.data.map((childObj, index) => (
 								renderSection(childObj, index)
 							))}
@@ -132,7 +133,7 @@ const Portfolio = (props) => {
 	const findPortfolioData = (arr, title) => {
 		let titleLowerCase = title.toLowerCase()
 		// console.log('title', title)
-		// console.log('arr', arr)
+		console.log('arr', arr)
 		for (let obj of arr) {
 			console.log('obj', obj)
 			let filteredObj
@@ -143,10 +144,12 @@ const Portfolio = (props) => {
 			}
 			if (filteredObj && filteredObj.length > 0) {
 				console.log('obj a', obj.title)
+				// handleBreadcrumb(obj.title)
 				return filteredObj
 			} else {
 				console.log('obj b', obj.title)
-				return findPortfolioData(obj, title)
+				// handleBreadcrumb(obj.title)
+				return findPortfolioData(obj.data, title)
 			}
 		}
 	}
