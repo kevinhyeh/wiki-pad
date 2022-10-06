@@ -40,6 +40,7 @@ body, html {
 // variables
 $primary-grey: rgb(140, 140, 140);
 $secondary-grey: rgb(217, 219, 219);
+$light-grey: rgb(241, 241, 241);
 
 // app dark theme
 .app[data-app-theme="Dark"] {
@@ -102,9 +103,27 @@ $secondary-grey: rgb(217, 219, 219);
 	}
 }
 
+// mixins
 @mixin displayFlex($justify-content, $align-items, $flex-direction: row) {
 	display: flex;
 	justify-content: $justify-content;
 	align-items: $align-items;
 	flex-direction: $flex-direction;
+}
+
+// animations
+.fade-in {
+	animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+	from {
+		visibility: hidden;
+		opacity: 0;
+		transform: scale(0.9);
+	} 
+	to {
+		visibility: visible;
+		opacity: 1;
+		transform: scale(1);
+	}
 }

@@ -2,12 +2,20 @@
 	font-family: 'Type Machine';
 	src: url('./fonts/type-machine.ttf');
 }
+@font-face {
+	font-family: 'Lucida';
+	src: url('./fonts/lucida.ttf');
+}
+@font-face {
+	font-family: 'Consolas';
+	src: url('./fonts/consolas.ttf');
+}
 
 body, html {
 	height: 100vh;
 	width: 100vw;
   margin: 0;
-  font-family: 'Type Machine';
+  font-family: 'Arial';
 }
 
 code {
