@@ -13,21 +13,62 @@
 	}
 	&__header {
 		@include displayFlex(flex-start, center);
-		cursor: pointer;
 		margin-bottom: 1.5rem;
 		& svg {
 			width: 0.5rem;
 			margin-right: 1rem;
+			transition: 0.3s all;
 			& g {
 				fill: $secondary-grey;
 			}
 		}
+		&--title {
+			cursor: pointer;
+			@include displayFlex(flex-start, center);
+			&.active {
+				& svg {
+					transform: rotate(90deg);
+				}
+			}
+		}
 	}
 	&__info {
-		padding: 0 1.5rem;
+		padding: 0 2rem;
 		margin-bottom: 1.5rem;
+	}
+	&__circle {
+		padding: 0.4rem;
+		margin-right: 1rem;
+		cursor: pointer;
+		& span {
+			width: 0.6rem;
+			height: 0.6rem;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 1px solid $secondary-grey;
+			transition: 0.3s all;
+			display: block;
+		}
+		&.active {
+			& span {
+				background-color: $secondary-grey;
+			}
+		}
+		&:hover {
+			& span {
+				background-color: $secondary-grey;
+			}
+		}
 	}
 	& h2, h3, p {
 		margin: 0;
+		line-height: 1.3;
+		letter-spacing: 1.5px;
 	}
+	& h2, h3 {
+		font-weight: bold;
+	}
+	// & h3 {
+	// 	margin-bottom: 0.8rem;
+	// }
 }
