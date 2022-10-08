@@ -33,9 +33,6 @@
         },
         {
           "title": "Deck Challenge"
-        },
-        {
-          "title": "UCBE Forum"
         }
       ],
 			"title": "Projects"
@@ -125,7 +122,16 @@
 				{
 					"data": [
 						{
-							"image": ""
+							"image": "shopvida-hp.png"
+						},
+						{
+							"title": "Links",
+							"info": "View Website",
+							"link": "https://shopvida.com/"
+						},
+						{
+							"title": "Summary",
+							"info": "The Graphic Jar is a graphic design freelance that a college friend, Christina Sayegh, and I started in January 2017. We specialize in designs that involve branding a business, such as logos, business cards, and websites. Christina would handle all of the illustration aspects of the freelance where I would take care of any development needed."
 						}
 					],
 					"title": "VIDA"
@@ -133,36 +139,65 @@
 				{
 					"data": [
 						{
-							"info": "English (Fluent), Cantonese (Proficient).",
-							"title": "Languages"
-						},
-						{
-							"info": "React / React Native, HTML / Bootstrap, CSS / LESS / SASS, Javascript / jQuery, NodeJs / Express, MYSQL / MongoDB.",
-							"title": "Technologies"
-						},
-						{
-							"info": "Adobe Photoshop, Adobe, Illustrator, Adobe InDesign, Adobe Bridge, Adobe Lightroom, Sketch.",
-							"title": "Programs"
+							"image": "tgj_pic.png"
 						}
 					],
-					"title": "Skills"
+					"title": "VIDA Health"
 				},
 				{
 					"data": [
 						{
-							"info": "UC Berkeley Extension Bootcamp. Full stack course where I learned everything I know today. Projects were worked on in groups besides our final project. Received no lower than an A- as a grade for homework assignments and projects. Presented with certificate for completion at the end of course. (May 2018 - Nov 2018)",
-							"title": "Bootcamp"
-						},
-						{
-							"info": "Notre Dame de Namur University. Graduated with bachelors in Graphic Design and received Cum Laude honors. (Aug 2012 - May 2016)",
-							"title": "College"
-						},
-						{
-							"info": "San Mateo High School. (Aug 2008 - May 2012)",
-							"title": "High School"
+							"image": "tgj_pic.png"
 						}
 					],
-					"title": "Education"
+					"title": "One League"
+				},
+				{
+					"data": [
+						{
+							"image": "tgj_pic.png"
+						},
+						{
+							"title": "Links",
+							"info": "Website",
+							"link": "https://kevinhyeh.github.io/tgj_website/"
+						},
+						{
+							"info": "Project Builder App",
+							"link": "https://tgj-project-builder-q98mnwxq6.now.sh/"
+						},
+						{
+							"info": "Github",
+							"link": "https://github.com/kevinhyeh/tgj_website"
+						},
+						{
+							"title": "Summary",
+							"info": "The Graphic Jar is a graphic design freelance that a college friend, Christina Sayegh, and I started in January 2017. We specialize in designs that involve branding a business, such as logos, business cards, and websites. Christina would handle all of the illustration aspects of the freelance where I would take care of any development needed."
+						},
+						{
+							"info": "Technologies used for the website includes HTML, CSS / SASS, Javascript and a bit of Bootstrap. The website is mobile friendly where the use of media queries and javascript were needed to change the layout of the website and navigation bar."
+						},
+						{
+							"info": "Another aspect of the website includes a project builder application that I have developed using ReactJS, NodeJs, and Express; also Now for deployment (link above). This application allows users to create a simple starting point for their desired project with a bit of customization. Their project is then sent to us via email where we can start the project from there."
+						}
+					],
+					"title": "The Graphic Jar"
+				},
+				{
+					"data": [
+						{
+							"image": "tgj_pic.png"
+						}
+					],
+					"title": "Deck Challenge"
+				},
+				{
+					"data": [
+						{
+							"image": "tgj_pic.png"
+						}
+					],
+					"title": "Portfolio"
 				}
 			]
 		}

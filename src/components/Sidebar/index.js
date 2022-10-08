@@ -50,7 +50,7 @@ const Sidebar = (props) => {
 								<IconArrowLine direction="right" />
 							</span>
 						: ''}
-						{listArr[i].title}
+						<a href={`/${listArr[i].title.toLowerCase()}`}>{listArr[i].title}</a>
 					</div>
 					{/* <a href="">{listArr[i].title}</a> */}
 					{listArr[i].sublinks && listArr[i].sublinks.length > 0 ?

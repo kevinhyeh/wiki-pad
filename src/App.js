@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from './components/sidebar'
 import Portfolio from './components/portfolio'
-import Breadcrumb from './components/breadcrumb'
-import Navigation from './components/navigation'
+import Settings from './components/settings'
 import './App.scss'
 import './global.scss'
 
@@ -26,8 +25,7 @@ const App = () => {
     <main className="app" data-app-theme={appTheme} data-sidebar-toggle={sidebarState}>
 			<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} />
 			<div className="app__body">
-				<Navigation appTheme={appTheme} changeTheme={(theme) => changeThemeHandler(theme)} />
-				<Breadcrumb />
+				<Settings appTheme={appTheme} changeTheme={(theme) => changeThemeHandler(theme)} />
 				<Portfolio />
 			</div>
     </main>
