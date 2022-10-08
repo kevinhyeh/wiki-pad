@@ -44,14 +44,14 @@ $light-grey: rgb(241, 241, 241);
 
 // app dark theme
 .app[data-app-theme="Dark"] {
-	& .sidebar, .navigation__select--toggle {
+	& .sidebar, .settings__select--toggle {
 		background: rgb(53, 60, 63);
 	}
-	& .navigation__select--toggle, .navigation__select--option,
+	& .settings__select--toggle, .settings__select--option,
 	.portfolio {
 		color: $secondary-grey;
 	}
-	& .navigation__select--option {
+	& .settings__select--option {
 		background: rgb(42, 49, 53);
 		&:hover {
 			background: rgb(53, 60, 63);
@@ -63,14 +63,14 @@ $light-grey: rgb(241, 241, 241);
 }
 // app light theme
 .app[data-app-theme="Light"] {
-	& .sidebar, .navigation__select--toggle {
+	& .sidebar, .settings__select--toggle {
 		background: rgb(242, 244, 245);
 	}
-	& .navigation__select--toggle, .navigation__select--option,
+	& .settings__select--toggle, .settings__select--option,
 	.portfolio {
 		color: rgb(53, 60, 63);
 	}
-	& .navigation__select--option {
+	& .settings__select--option {
 		background: rgb(255, 255, 255);
 		&:hover {
 			background: rgb(242, 244, 245);
@@ -85,14 +85,14 @@ $light-grey: rgb(241, 241, 241);
 }
 // app kevin theme
 .app[data-app-theme="Kevin"] {
-	& .sidebar, .navigation__select--toggle {
+	& .sidebar, .settings__select--toggle {
 		background: rgb(5, 43, 74);
 	}
-	& .navigation__select--toggle, .navigation__select--option,
+	& .settings__select--toggle, .settings__select--option,
 	.portfolio {
 		color: rgb(53, 60, 63);
 	}
-	& .navigation__select--option {
+	& .settings__select--option {
 		background: rgb(36, 15, 4);
 		&:hover {
 			background: rgb(5, 43, 74);
