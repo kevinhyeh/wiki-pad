@@ -45,19 +45,6 @@
 				{
 					"data": [
 						{
-							"title": "Test",
-							"data": [
-								{
-									"title": "Name",
-									"info": "Kevin Yeh"
-								},
-								{
-									"title": "Role",
-									"info": "Front End / Full Stack Developer"
-								}
-							]
-						},
-						{
 							"title": "Name",
 							"info": "Kevin Yeh"
 						},
@@ -87,12 +74,12 @@
 							"title": "Languages"
 						},
 						{
-							"info": "React / React Native, HTML / Bootstrap, CSS / LESS / SASS, Javascript / jQuery, NodeJs / Express, MYSQL / MongoDB.",
+							"info": "React, HTML, CSS / SASS, Javascript / Typescript / jQuery, NodeJs, MongoDB.",
 							"title": "Technologies"
 						},
 						{
-							"info": "Adobe Photoshop, Adobe, Illustrator, Adobe InDesign, Adobe Bridge, Adobe Lightroom, Sketch.",
-							"title": "Programs"
+							"info": "Shopify, Strapi, Google Optimize, Google Cloud",
+							"title": "Services"
 						}
 					],
 					"title": "Skills"
@@ -122,16 +109,70 @@
 				{
 					"data": [
 						{
-							"image": "shopvida-hp.png"
+							"image": "shopvida-hp.png",
+							"link": "https://shopvida.com/"
 						},
 						{
 							"title": "Links",
-							"info": "View Website",
+							"info": "Website",
 							"link": "https://shopvida.com/"
 						},
 						{
 							"title": "Summary",
-							"info": "The Graphic Jar is a graphic design freelance that a college friend, Christina Sayegh, and I started in January 2017. We specialize in designs that involve branding a business, such as logos, business cards, and websites. Christina would handle all of the illustration aspects of the freelance where I would take care of any development needed."
+							"info": "VIDA, when I started, was an artist based product startup that allowed artists to created unique and creative products through their <wiki data-link='vida-studio'>VIDA Studio</wiki> App. In March 2020, VIDA quickly switched to support the rise of COVID 19 and started incorporating masks into their line of products. Since then, VIDA has brought in more and diverse products to help battle the global epidemic; and thus <wiki data-link='vida-health'>VIDA Health</wiki> was born."
+						},
+						{
+							"title": "Duration",
+							"info": "May 2019 - June 2022"
+						},
+						{
+							"title": "Stack",
+							"info": "Languages: HTML, CSS, JS/jQuery, NodeJs, MongoDB"
+						},
+						{
+							"info": "Services: <a href='https://www.shopify.com/'>Shopify</a>, <a href='https://strapi.io/'>Strapi</a>, <a href='https://optimize.google.com/'>Google Optimize</a>, <a href='https://cloud.google.com/'>Google Cloud</a>"
+						},
+						{
+							"title": "Responsibilities",
+							"info": "- Implemented React like dynamic web views using Shopify's ES5 stack to create modern day style pages."
+						},
+						{
+							"info": "- Utilized CMS services, such as Strapi, with RESTful API's to create full stack features and architected JSON's for both site users and team members."
+						},
+						{
+							"info": "- Created Node.js scripts to automate time-consuming tasks which allowed for faster and more reliable projects."
+						},
+						{
+							"info": "- Introduced and mentored Front End team members on best practices such as BEM and SCSS that helped unify our code base."
+						},
+						{
+							"info": "- Researched and maintained third party services such as Google Optimize, PageSpeed Insights, and Shopify Apps to bring better experiences to our users."
+						},
+						{
+							"info": "- Collaborated with multiple teams effectively to efficiently and accurately develop new features."
+						},
+						{
+							"info": "- Dedicated off hours to complete time sensitive features that would increase company revenue during holiday season."
+						},
+						{
+							"info": "- Suggested key UX behaviors during design phase that greatly impacted customer site experience."
+						},
+						{
+							"title": "Key Highlights",
+							"subtitle": "Combo PDP",
+							"info": "Combo PDP (product display page) is a pdp that was able to house more than one product on a given pdp. It was created due to the limitations of Shopify's product variant total size being capped as well as for marketing reasons. This feature involved JSON architecture, network calls, and front end structuring."
+						},
+						{
+							"link": "https://shopvida.com/products/high-protection-recyclable-masks",
+							"info": "View Example"
+						},
+						{
+							"subtitle": "Parallax Scroll",
+							"info": "This custom parallax scroll allowed users to have a vertically stacked image view on the left of the page and a scrollable info panel on the left that stayed with the page. This allowed for a larger view of product images while still having an X amount of product info to show that stays with you throughout the image gallery experience."
+						},
+						{
+							"link": "https://shopvida.com/products/high-protection-recyclable-masks",
+							"info": "View Example"
 						}
 					],
 					"title": "VIDA"
@@ -150,12 +191,28 @@
 							"image": "tgj_pic.png"
 						}
 					],
+					"title": "VIDA Studio"
+				},
+				{
+					"data": [
+						{
+							"image": "tgj_pic.png"
+						}
+					],
 					"title": "One League"
 				},
 				{
 					"data": [
 						{
 							"image": "tgj_pic.png"
+						},
+						{
+							"title": "Company",
+							"info": "VIDA"
+						},
+						{
+							"title": "Duration",
+							"info": "May 2019 - June 2022"
 						},
 						{
 							"title": "Links",

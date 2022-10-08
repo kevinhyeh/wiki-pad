@@ -1,7 +1,7 @@
 @import '../../global.scss';
 
 .portfolio {
-	padding: 0 2rem;
+	padding: 0 2rem 2rem;
 	&__submenu {
 		max-height: 0;
 		overflow: hidden;
@@ -35,30 +35,17 @@
 		}
 	}
 	&__info {
-		// padding: 0 2rem;
 		margin-bottom: 1.5rem;
-		// position: relative;
-		// &:before {
-		// 	content: '';
-		// 	position: absolute;
-		// 	top: 0.75rem;
-		// 	left: -1.6rem;
-		// 	background: $secondary-grey;
-		// 	width: 0.5rem;
-		// 	height: 0.5rem;
-		// 	border-radius: 5px;
-		// 	// transform: translateY(-50%);
-		// }
 		& a {
-			text-decoration: none;
 			color: $secondary-grey;
 		}
 		&--link p {
 			transition: 0.3s all;
 			position: relative;
 			display: inline-block;
+			text-decoration: underline;
 			&:before {
-				content: '';
+				// content: '';
 				position: absolute;
 				bottom: -3px;
 				left: 0;
@@ -92,7 +79,7 @@
 		}
 	}
 	&__image {
-		width: 80%;
+		width: 50%;
 		border-radius: 0.5rem;
 	}
 	&__circle {
@@ -108,7 +95,7 @@
 			transition: 0.3s all;
 			display: block;
 			position: relative;
-			&:before {
+			&.pulsing:before {
 				content: '';
 				border: 1px solid $secondary-grey;
 				border-radius: 30px;
@@ -123,6 +110,7 @@
 			}
 		}
 		&.active {
+			cursor: default;
 			& span {
 				background-color: $secondary-grey;
 			}
@@ -133,7 +121,7 @@
 			}
 		}
 	}
-	& h2, h3, p {
+	& h2, h3, h4, p {
 		margin: 0;
 		line-height: 1.3;
 		letter-spacing: 1.5px;
@@ -155,6 +143,9 @@
 			border-radius: 5px;
 			transform: translateY(-50%);
 		}
+	}
+	& h4 {
+		margin: 1rem 0 0.5rem;
 	}
 	// & h2 {
 	// 	transition: 0.3s all;

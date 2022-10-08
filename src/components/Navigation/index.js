@@ -4,7 +4,7 @@ import './Navigation.scss';
 
 const Navigation = (props) => {
 	const handleNavigationClick = (title) => {
-		let pathName = title === 'Home' ? '' : title.toLowerCase()
+		let pathName = title === 'Home' ? '' : title.toLowerCase().replaceAll(' ', '-')
 		window.history.pushState({},"", pathName);
 		props.handlePortfolioClick(title, 'breadcrumb')
 	}

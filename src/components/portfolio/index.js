@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import ReactHtmlParser from 'react-html-parser';
+import reactStringReplace from 'react-string-replace';
 import { IconArrowLine } from '../elements/Icons';
 import Navigation from '../navigation';
 import './Portfolio.scss';
@@ -17,7 +19,7 @@ const Portfolio = (props) => {
 		}).then(async (data) => {
 			console.log('portfolio data', data)
 			setOgData(data)
-			const pathName = window.location.pathname.replace('/', '')
+			const pathName = window.location.pathname.replace('/', '').replaceAll('-', ' ')
 			if (pathName.length > 0) {
 				let pathPortfolio = await findPortfolioData(data, pathName)
 				console.log('pathPortfolio', pathPortfolio)
@@ -52,8 +54,19 @@ const Portfolio = (props) => {
 			setTimeout(() => {
 				setFadeInAnim(false)
 			}, 400)
-			window.history.pushState({},"", isHome ? '/' : portfolio.title.toLowerCase());
+			setNewUrl(isHome ? '/' : portfolio.title)
 		}, 10)
+	}
+	
+	const setNewUrl = (title) => {
+		let currentUrl = window.location.href
+		console.log('currentUrl', currentUrl)
+		window.history.pushState({},"", convertTitleToUrl(title) + window.location.search)
+	}
+
+	const convertTitleToUrl = (string) => {
+		string = string.toLowerCase().replaceAll(' ', '-')
+		return string
 	}
 
 	const formatBreadcrumb = (title) => {
@@ -77,8 +90,8 @@ const Portfolio = (props) => {
 				{obj.data ? 	
 					<>
 						<div className="portfolio__header">
-							<div className={`portfolio__circle ${isActivePortfolio ? 'active' : ''}`} onClick={() => handlePortfolioClick(obj.title)}>
-								<span></span>
+							<div className={`portfolio__circle ${isActivePortfolio ? 'active' : ''}`} onClick={isActivePortfolio ? undefined : () => handlePortfolioClick(obj.title)}>
+								<span className={`${isActivePortfolio ? '' : 'pulsing'}`}></span>
 							</div>
 							<div onClick={() => toggleSection(obj.title)} className={`portfolio__header--title ${isActiveSec ? 'active' : ''}`}>
 								<IconArrowLine direction="right" />
@@ -96,9 +109,9 @@ const Portfolio = (props) => {
 						{obj.title ? <h3 className="text-lg">{obj.title}:</h3> : ''}
 						{obj.link ? 
 							<a href={obj.link} target="_blank" rel="noreferrer" className="portfolio__info--link">
-								{renderInfo(obj)}
+								{renderContent(obj)}
 							</a> :
-							renderInfo(obj)
+							renderContent(obj)
 						}
 					</div>
 				}
@@ -106,13 +119,51 @@ const Portfolio = (props) => {
 		)
 	}
 
-	const renderInfo = (obj) => {
+	const renderContent = (obj) => {
 		return (
 			<>
-				{obj.info ? <p className="text-base">{obj.info}</p> : obj.title === 'Age' ? renderAge('May 15, 1994') : ''}
+				{obj.subtitle ? <h4 className="text-base">{obj.subtitle}:</h4> : ''}
+				{obj.info ? renderInfo(obj.info) : obj.title === 'Age' ? renderAge('May 15, 1994') : ''}
 				{obj.image ? <img className="portfolio__image" src={window.location.origin + '/images/' + obj.image} alt={obj.title} /> : ''}
 			</>
 		)
+	}
+
+	const renderInfo = (info) => {
+		info = info.replaceAll("<a", '<a target="_blank"')
+		if (info.indexOf('<wiki') > -1) {
+			// while (info.indexOf('<wiki') > -1) {
+			// }
+			// let wikiTitle = info.substring(
+			// 	info.indexOf("<wiki>") + 6, 
+			// 	info.indexOf("</wiki>")
+			// )
+			// let spanToReplace = <span onClick={() => findPortfolioData(ogData, wikiTitle)}>{wikiTitle}</span>
+			// info = flatMap(info.split('<wiki>' + wikiTitle + '</wiki>'), (part) => {
+			// 	return [part, spanToReplace];
+			// })
+			// console.log('wikiTitle', wikiTitle)
+			// info = info.replace("<wiki>", '')
+			// reactStringReplace(info, wikiTitle, (match, i) => (<span>{match}</span>))
+			// info = info.replace('<wiki>' + wikiTitle + '</wiki>', spanToReplace)
+			// info = info.join('')
+			// console.log('info', info)
+			info = info.replaceAll("<wiki data-link='", "<a href='")
+			info = info.replaceAll("'>", window.location.search + "'>")
+			info = info.replaceAll("</wiki>", '</a>')
+		}
+		return (
+			<p className="text-base">{ReactHtmlParser(info)}</p>
+		)
+
+		function flatMap(array, fn) {
+			var result = [];
+			for (var i = 0; i < array.length; i++) {
+				var mapping = fn(array[i]);
+				result = result.concat(mapping);
+			}
+			return result;
+		}
 	}
 
 	const renderAge = (dateString) => {

@@ -47,8 +47,7 @@ $light-grey: rgb(241, 241, 241);
 	& .sidebar, .settings__select--toggle {
 		background: rgb(53, 60, 63);
 	}
-	& .settings__select--toggle, .settings__select--option,
-	.portfolio {
+	& .settings button, .portfolio, a, .navigation span {
 		color: $secondary-grey;
 	}
 	& .settings__select--option {
@@ -66,8 +65,7 @@ $light-grey: rgb(241, 241, 241);
 	& .sidebar, .settings__select--toggle {
 		background: rgb(242, 244, 245);
 	}
-	& .settings__select--toggle, .settings__select--option,
-	.portfolio {
+	& .settings button, .portfolio, a, .navigation span  {
 		color: rgb(53, 60, 63);
 	}
 	& .settings__select--option {
@@ -82,24 +80,52 @@ $light-grey: rgb(241, 241, 241);
 	& .app__body {
 		background: rgb(255, 255, 255);
 	}
+	& .portfolio__circle span,
+	.portfolio__circle span:before, .settings button {
+		border-color: #000;
+	}
+	& svg g {
+		fill: #000;
+	}
+	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span {
+		background: #000;
+	}
 }
 // app kevin theme
 .app[data-app-theme="Kevin"] {
-	& .sidebar, .settings__select--toggle {
-		background: rgb(5, 43, 74);
+	& .settings__select--toggle {
+		background: #c7a97f;
 	}
-	& .settings__select--toggle, .settings__select--option,
-	.portfolio {
-		color: rgb(53, 60, 63);
-	}
-	& .settings__select--option {
-		background: rgb(36, 15, 4);
-		&:hover {
-			background: rgb(5, 43, 74);
+	& .sidebar {
+		background: #154d84;
+		& a {
+			color: #fff;
+		}
+		& svg g {
+			fill: #fff;
 		}
 	}
-	& .app__body {
-		background: rgb(36, 15, 4);
+	& .settings button, .portfolio, .portfolio a, .navigation span {
+		color: #000;
+	}
+	& .settings__select--option {
+		&:hover {
+			background: #c7a97f;
+		}
+	}
+	& .app__body, .settings__select--option {
+		// background: rgb(36, 15, 4);
+		background: #b69b75;
+	}
+	& .portfolio__circle span,
+	.portfolio__circle span:before, .settings button {
+		border-color: #000;
+	}
+	& svg g {
+		fill: #000;
+	}
+	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span {
+		background: #000;
 	}
 }
 
