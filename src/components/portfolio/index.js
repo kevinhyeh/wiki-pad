@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import reactStringReplace from 'react-string-replace';
 import { IconArrowLine } from '../elements/Icons';
 import Navigation from '../navigation';
 import './Portfolio.scss';
@@ -132,22 +131,6 @@ const Portfolio = (props) => {
 	const renderInfo = (info) => {
 		info = info.replaceAll("<a", '<a target="_blank"')
 		if (info.indexOf('<wiki') > -1) {
-			// while (info.indexOf('<wiki') > -1) {
-			// }
-			// let wikiTitle = info.substring(
-			// 	info.indexOf("<wiki>") + 6, 
-			// 	info.indexOf("</wiki>")
-			// )
-			// let spanToReplace = <span onClick={() => findPortfolioData(ogData, wikiTitle)}>{wikiTitle}</span>
-			// info = flatMap(info.split('<wiki>' + wikiTitle + '</wiki>'), (part) => {
-			// 	return [part, spanToReplace];
-			// })
-			// console.log('wikiTitle', wikiTitle)
-			// info = info.replace("<wiki>", '')
-			// reactStringReplace(info, wikiTitle, (match, i) => (<span>{match}</span>))
-			// info = info.replace('<wiki>' + wikiTitle + '</wiki>', spanToReplace)
-			// info = info.join('')
-			// console.log('info', info)
 			info = info.replaceAll("<wiki data-link='", "<a href='")
 			info = info.replaceAll("'>", window.location.search + "'>")
 			info = info.replaceAll("</wiki>", '</a>')
@@ -155,15 +138,6 @@ const Portfolio = (props) => {
 		return (
 			<p className="text-base">{ReactHtmlParser(info)}</p>
 		)
-
-		function flatMap(array, fn) {
-			var result = [];
-			for (var i = 0; i < array.length; i++) {
-				var mapping = fn(array[i]);
-				result = result.concat(mapping);
-			}
-			return result;
-		}
 	}
 
 	const renderAge = (dateString) => {

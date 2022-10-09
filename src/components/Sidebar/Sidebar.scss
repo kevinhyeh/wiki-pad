@@ -1,17 +1,20 @@
 @import '../../global.scss';
 
+$sidebarWidth: 30rem;
+
 .sidebar {
 	height: 100vh;
+	width: $sidebarWidth;
 	transition: 0.3s all;
 	position: fixed;
 	top: 0;
 	left: 0;
 
 	&[data-sidebar-toggle="open"] {
-		width: 30rem;
+		transform: translateX(0);
 	}
 	&[data-sidebar-toggle="close"] {
-		width: 4rem;
+		transform: translateX(-26rem);
 		overflow: hidden;
 		.sidebar__collapse {
 			transform: scaleX(1.2) rotate(180deg);
@@ -20,6 +23,11 @@
 			visibility: hidden;
 			opacity: 0;
 		}
+	}
+	&__header {
+		color: $secondary-grey;
+		margin: 0 0 1.5rem 2rem;
+		letter-spacing: 1.2px;
 	}
 	&__container {
 		position: relative;
@@ -40,7 +48,7 @@
 		transition: 0.3s all;
 		transform-origin: center;
 		position: absolute;
-		top: 1rem;
+		top: 1.5rem;
 		right: 0;
 		& svg {
 			height: 1.2rem;
