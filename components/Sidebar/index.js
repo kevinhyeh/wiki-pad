@@ -69,6 +69,7 @@ const Sidebar = (props) => {
 		<section className="sidebar" data-sidebar-toggle={props.sidebarState}>
 			<div className="sidebar__container">
 				<button className="sidebar__collapse" onClick={() => props.toggleSidebar(props.sidebarState)}><IconArrowLine direction="left" /></button>
+				<h1 className="sidebar__header text-xl">Kevin's Wiki Pad</h1>
 				<ul className="sidebar__list">
 					{displaySidebarList(navList, true)}
 				</ul>
