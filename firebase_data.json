@@ -70,16 +70,72 @@
 				{
 					"data": [
 						{
-							"info": "English (Fluent), Cantonese (Proficient).",
-							"title": "Languages"
-						},
-						{
-							"info": "React, HTML, CSS / SASS, Javascript / Typescript / jQuery, NodeJs, MongoDB.",
+							"content": [
+								{
+									"info": "React",
+									"years": 5
+								},
+								{
+									"info": "HTML",
+									"years": 8
+								},
+								{
+									"info": "CSS",
+									"years": 8
+								},
+								{
+									"info": "SCSS / SASS",
+									"years": 5
+								},
+								{
+									"info": "Javascript",
+									"years": 7
+								},
+								{
+									"info": "Typescript",
+									"years": 1
+								},
+								{
+									"info": "jQuery",
+									"years": 6
+								},
+								{
+									"info": "NodeJs",
+									"years": 5
+								},
+								{
+									"info": "MongoDB",
+									"years": 2
+								}
+							],
+							"component": "Experience",
 							"title": "Technologies"
 						},
 						{
-							"info": "Shopify, Strapi, Google Optimize, Google Cloud",
-							"title": "Services"
+							"content": [
+								{
+									"info": "Shopify",
+									"years": 3
+								},
+								{
+									"info": "Strapi",
+									"years": 2
+								},
+								{
+									"info": "Google Optimize",
+									"years": 2
+								},
+								{
+									"info": "Google Cloud",
+									"years": 2
+								},
+								{
+									"info": "NextJs",
+									"years": 2
+								}
+							],
+							"component": "Experience",
+							"title": "Services & Frameworks"
 						}
 					],
 					"title": "Skills"
@@ -107,72 +163,61 @@
 			"title": "Projects",
 			"data": [
 				{
-					"data": [
-						{
-							"image": "shopvida-hp.png",
-							"link": "https://shopvida.com/"
-						},
-						{
-							"title": "Links",
-							"info": "Website",
-							"link": "https://shopvida.com/"
-						},
+					"duration": "May 2019 to June 2022",
+					"tabs": [
 						{
 							"title": "Summary",
-							"info": "VIDA, when I started, was an artist based product startup that allowed artists to created unique and creative products through their <wiki data-link='vida-studio'>VIDA Studio</wiki> App. In March 2020, VIDA quickly switched to support the rise of COVID 19 and started incorporating masks into their line of products. Since then, VIDA has brought in more and diverse products to help battle the global epidemic; and thus <wiki data-link='vida-health'>VIDA Health</wiki> was born."
-						},
-						{
-							"title": "Duration",
-							"info": "May 2019 - June 2022"
+							"content": [
+								{
+									"info": "Single-handedly led the front end team for <bold>2.5 years</bold> after 1 year starting as a web developer, applying best practices like BEM, SCSS, and SEO.",
+									"icon": "ClockRotate"
+								},
+								{
+									"info": "Architected new structures that allowed for quick and complex feature/product launches resulting in <bold>3-4 per month</bold>.",
+									"icon": "FolderExpand"
+								},
+								{
+									"info": "Developed <bold>new</bold> school, React style, web pages and animations while using <bold>old</bold> school technologies, including ES5 and jQuery.",
+									"icon": "OldNewBanner"
+								},
+								{
+									"info": "With over <bold>1 million</bold> products, NodeJs scripts were created to edit hundreds of thousands of products at a time while utilizing Shopify's API.",
+									"icon": "GearsRotate"
+								},
+								{
+									"info": "Integrating with services such as <bold>Google Optimize</bold> and <bold>Google Analytics</bold>, where key data was gathered help decide on specific needs.",
+									"icon": "BellWiggle"
+								},
+								{
+									"info": "Within one weekend, created a custom parallax scroll page template making it easy to <bold>plug and play</bold> which is still used to this day.",
+									"icon": "PlugAndPlay"
+								}
+							]
 						},
 						{
 							"title": "Stack",
-							"info": "Languages: HTML, CSS, JS/jQuery, NodeJs, MongoDB"
+							"content": [
+								{
+									"title": "Language",
+									"icons": ["html", "css", "javascript", "jquery", "nodejs", "mongodb"]
+								},
+								{
+									"title": "Services",
+									"icons": ["shopify", "strapi", "google-optimize", "google-cloud"]
+								}
+							]
 						},
 						{
-							"info": "Services: <a href='https://www.shopify.com/'>Shopify</a>, <a href='https://strapi.io/'>Strapi</a>, <a href='https://optimize.google.com/'>Google Optimize</a>, <a href='https://cloud.google.com/'>Google Cloud</a>"
-						},
-						{
-							"title": "Responsibilities",
-							"info": "- Implemented React like dynamic web views using Shopify's ES5 stack to create modern day style pages."
-						},
-						{
-							"info": "- Utilized CMS services, such as Strapi, with RESTful API's to create full stack features and architected JSON's for both site users and team members."
-						},
-						{
-							"info": "- Created Node.js scripts to automate time-consuming tasks which allowed for faster and more reliable projects."
-						},
-						{
-							"info": "- Introduced and mentored Front End team members on best practices such as BEM and SCSS that helped unify our code base."
-						},
-						{
-							"info": "- Researched and maintained third party services such as Google Optimize, PageSpeed Insights, and Shopify Apps to bring better experiences to our users."
-						},
-						{
-							"info": "- Collaborated with multiple teams effectively to efficiently and accurately develop new features."
-						},
-						{
-							"info": "- Dedicated off hours to complete time sensitive features that would increase company revenue during holiday season."
-						},
-						{
-							"info": "- Suggested key UX behaviors during design phase that greatly impacted customer site experience."
-						},
-						{
-							"title": "Key Highlights",
-							"subtitle": "Combo PDP",
-							"info": "Combo PDP (product display page) is a pdp that was able to house more than one product on a given pdp. It was created due to the limitations of Shopify's product variant total size being capped as well as for marketing reasons. This feature involved JSON architecture, network calls, and front end structuring."
-						},
-						{
-							"link": "https://shopvida.com/products/high-protection-recyclable-masks",
-							"info": "View Example"
-						},
-						{
-							"subtitle": "Parallax Scroll",
-							"info": "This custom parallax scroll allowed users to have a vertically stacked image view on the left of the page and a scrollable info panel on the left that stayed with the page. This allowed for a larger view of product images while still having an X amount of product info to show that stays with you throughout the image gallery experience."
-						},
-						{
-							"link": "https://shopvida.com/products/high-protection-recyclable-masks",
-							"info": "View Example"
+							"title": "About",
+							"content": [
+								{
+									"info": "Shop clothing, accessories, protective wear and home decor designed by independent artists and manufactured responsibly. Every purchase helps communities in need."
+								},
+								{
+									"title": "Visit Site",
+									"link": "https://shopvida.com/"
+								}
+							]
 						}
 					],
 					"title": "VIDA"
@@ -204,45 +249,6 @@
 						}
 					],
 					"title": "VIDA Health"
-				},
-				{
-					"data": [
-						{
-							"image": "vida-studio.png",
-							"link": "https://studio.shopvida.com/"
-						},
-						{
-							"title": "Links",
-							"info": "Website",
-							"link": "https://studio.shopvida.com/"
-						},
-						{
-							"title": "Summary",
-							"info": "VIDA, when I started, was an artist based product startup that allowed artists to created unique and creative products through their <wiki data-link='vida-studio'>VIDA Studio</wiki> App. In March 2020, VIDA quickly switched to support the rise of COVID 19 and started incorporating masks into their line of products. Since then, VIDA has brought in more and diverse products to help battle the global epidemic; and thus <wiki data-link='vida-health'>VIDA Health</wiki> was born."
-						},
-						{
-							"title": "Duration",
-							"info": "May 2019 - March 2020"
-						},
-						{
-							"title": "Stack",
-							"info": "Languages: React, SCSS, JS, NodeJs, MongoDB"
-						},
-						{
-							"info": "Services: <a href='https://strapi.io/'>Strapi</a>, <a href='https://optimize.google.com/'>Google Optimize</a>, <a href='https://cloud.google.com/'>Google Cloud</a>"
-						},
-						{
-							"title": "Responsibilities",
-							"info": "- Implemented React like dynamic web views using Shopify's ES5 stack to create modern day style pages."
-						},
-						{
-							"info": "- Utilized CMS services, such as Strapi, with RESTful API's to create full stack features and architected JSON's for both site users and team members."
-						},
-						{
-							"info": "- Created Node.js scripts to automate time-consuming tasks which allowed for faster and more reliable projects."
-						}
-					],
-					"title": "VIDA Studio"
 				},
 				{
 					"data": [
@@ -322,34 +328,7 @@
 				{
 					"data": [
 						{
-							"image": "tgj_pic.png"
-						},
-						{
 							"title": "Links",
-							"info": "Github",
-							"link": "https://github.com/kevinhyeh/tgj_website"
-						},
-						{
-							"title": "Summary",
-							"info": "The Deck Challenge is a mobile application that was developed for the final project during my bootcamp. It is a workout base application using a deck of playing cards as your instructor. Shown in the demo video, the workouts that you select to incorporate in your workout is randomly assigned to either red or black cards (if 2 workouts are chosen) or each of the different suits (if 4 workouts are chosen)."
-						},
-						{
-							"info": "Technologies used are React Native, NodeJS, and MYSQL."
-						},
-						{
-							"info": "AThis was my first time using React Native and I absolutely enjoyed it. There are parts where I can improve, which I plan on doing as time goes by. Also plan on deploying the app onto Apple's App Store in the near future. It is quite a simple app but there are features that can be incorporated to make it excel."
-						}
-					],
-					"title": "Deck Challenge"
-				},
-				{
-					"data": [
-						{
-							"title": "Links",
-							"info": "Github",
-							"link": "https://github.com/kevinhyeh/tgj_website"
-						},
-						{
 							"info": "Portfolio V2 (You're already on it! :D)"
 						},
 						{

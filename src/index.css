@@ -10,15 +10,19 @@
 	font-family: 'Consolas';
 	src: url('./fonts/consolas.ttf');
 }
+@font-face {
+	font-family: 'Monsterrat';
+	src: url('./fonts/monsterrat/Montserrat-Regular.ttf');
+}
+@font-face {
+	font-family: 'Monsterrat';
+	src: url('./fonts/monsterrat/Montserrat-Bold.ttf');
+	font-weight: bold;
+}
 
 body, html {
 	height: 100vh;
 	width: 100vw;
   margin: 0;
-  font-family: 'Arial';
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Monsterrat';
 }

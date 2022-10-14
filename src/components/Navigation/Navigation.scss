@@ -1,8 +1,7 @@
 @import '../../global.scss';
 
 .navigation {
-	padding: 0 2rem;
-	margin: 1rem 0;
+	margin: 0 0 1rem;
 	@include displayFlex(flex-start, center);
 	margin-left: -0.5rem;
 	&__link {

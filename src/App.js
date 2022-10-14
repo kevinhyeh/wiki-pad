@@ -6,6 +6,7 @@ import './App.scss'
 import './global.scss'
 
 const App = () => {
+	const [animationState, setAnimationState] = useState(true)
 	const [appTheme, setAppTheme] = useState('Dark')
 	const [sidebarState, setSidebarState] = useState('open')
 
@@ -36,9 +37,6 @@ const App = () => {
 	}
 
 	const changeThemeHandler = theme => {
-		// const urlParams = new URLSearchParams(window.location.search)
-		// urlParams.set('theme', theme.toLowerCase())
-		// window.location.search = urlParams
 		let currentParams = window.location.search
 		let paramsArr = []
 		let newParams = ''
@@ -59,13 +57,18 @@ const App = () => {
 		setAppTheme(theme)
 		window.history.pushState({},"", window.location.pathname + newParams)
 	}
+
+	const toggleAnimations = () => {
+		setAnimationState(!animationState)
+		// console.log('animationState', animationState)
+	}
 	
   return (
     <main className="app" data-app-theme={appTheme} data-sidebar-toggle={sidebarState}>
 			<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} />
 			<div className="app__body">
-				<Settings appTheme={appTheme} changeTheme={(theme) => changeThemeHandler(theme)} />
-				<Portfolio />
+				<Settings appTheme={appTheme} changeTheme={changeThemeHandler} animationState={animationState} toggleAnimations={(state) => toggleAnimations(state)} />
+				<Portfolio animationState={animationState} />
 			</div>
     </main>
   );
