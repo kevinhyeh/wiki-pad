@@ -2,7 +2,8 @@
 
 .settings {
 	@include displayFlex(flex-start, center);
-	padding: 2rem 1.8rem 1rem;
+	padding: 2rem 1.8rem;
+	grid-gap: 1rem;
 
 	&__select {
 		position: relative;
@@ -22,17 +23,6 @@
 			border: 1px solid $secondary-grey;
 			cursor: pointer;
 			@include displayFlex(space-between, center);
-			// &::after {
-			// 	transition: 0.3s all;
-			// 	content: '\2039';
-			// 	position: absolute;
-			// 	top: 50%;
-			// 	right: 1rem;
-			// 	color: $primary-grey;
-			// 	transform: translateY(-50%) scaleX(0.8) rotate(-90deg);
-			// 	line-height: 1;
-			// 	font-size: 2.4rem;
-			// }
 			& svg {
 				width: 5px;
 				transform-origin: center;
@@ -74,6 +64,35 @@
 			}
 			&:hover {
 				background: rgb(53, 60, 63);
+			}
+		}
+	}
+
+	&__toggle {
+		@include displayFlex(center, center);
+		cursor: pointer;
+		&--slider {
+			width: 3.5rem;
+			height: 2rem;
+			border-radius: 50px;
+			display: block;
+			background: $secondary-grey;
+			position: relative;
+			cursor: pointer;
+			&:after {
+				content: '';
+				position: absolute;
+				border-radius: 5rem;
+				width: 1.7rem;
+				height: 1.7rem;
+				background: $primary-dark-grey;
+				top: 50%;
+				right: 0.2rem;
+				transform: translateY(-50%);
+				transition: 0.3s all;
+			}
+			&.clicked:after {
+				right: calc(50% - 0.2rem);
 			}
 		}
 	}

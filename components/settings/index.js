@@ -31,6 +31,9 @@ const Settings = (props) => {
 					}
 				</ul>
 			</div>
+			<div className="settings__toggle" onClick={() => props.toggleAnimations()}>
+				<span className={`settings__toggle--slider${props.animationState ? ' clicked' : ''}`}></span>
+			</div>
 		</section>
 	)
 }

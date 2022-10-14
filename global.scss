@@ -34,13 +34,29 @@ body, html {
 	font-size: 18px;
 }
 .text-xl {
-	font-size: 20px;
+	font-size: 24px;
+}
+.text-2xl {
+	font-size: 32px;
+}
+
+// layout
+.w-full {
+	width: 100%;
+}
+
+.relative {
+	position: relative;
+}
+.bold {
+	font-weight: bold;
 }
 
 // variables
 $primary-grey: rgb(140, 140, 140);
 $secondary-grey: rgb(217, 219, 219);
 $light-grey: rgb(241, 241, 241);
+$primary-dark-grey: rgb(42, 49, 53);
 
 // app dark theme
 .app[data-app-theme="Dark"] {
@@ -51,13 +67,13 @@ $light-grey: rgb(241, 241, 241);
 		color: $secondary-grey;
 	}
 	& .settings__select--option {
-		background: rgb(42, 49, 53);
+		background: $primary-dark-grey;
 		&:hover {
 			background: rgb(53, 60, 63);
 		}
 	}
 	& .app__body {
-		background: rgb(42, 49, 53);
+		background: $primary-dark-grey;
 	}
 }
 // app light theme
@@ -136,6 +152,24 @@ $light-grey: rgb(241, 241, 241);
 	align-items: $align-items;
 	flex-direction: $flex-direction;
 }
+@mixin horizontalLine($y, $y-pos, $x, $x-pos, $width, $height, $color, $y-center: 'false', $x-center: 'false') {
+	&:after {
+		content: '';
+		position: absolute;
+		#{$y}: $y-pos;
+		#{$x}: $x-pos;
+		width: $width;
+		height: 0.1px;
+		border-bottom: $height solid $color;
+		transition: 0.3s all;
+		@if $y-center != 'false' {
+			transform: translateY(-50%);
+		}
+		@if $x-center != 'false' {
+			transform: translateX(-50%);
+		}
+	}
+}
 
 // animations
 .fade-in {
@@ -151,5 +185,28 @@ $light-grey: rgb(241, 241, 241);
 		visibility: visible;
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+.portfolio__submenu.active .portfolio__header {
+	visibility: hidden;
+		opacity: 0;
+}
+@for $i from 1 through 20 {
+	.slide-in:nth-of-type(#{$i}),
+	.portfolio__submenu.active .portfolio__header:nth-of-type(#{$i}) {
+		animation: slideIn 0.4s forwards;
+		animation-delay: $i * 0.1s
+	}
+}
+@keyframes slideIn {
+	from {
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(5rem);
+	} 
+	to {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
