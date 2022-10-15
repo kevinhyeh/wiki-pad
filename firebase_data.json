@@ -137,9 +137,9 @@
 						{
 							"content": [
 								{
-									"info": "UC Berkeley Extension Bootcamp. Full stack course where I learned everything I know today. Projects were worked on in groups besides our final project. Received no lower than an A- as a grade for homework assignments and projects. Presented with certificate for completion at the end of course.",
-									"title": "Bootcamp",
-									"duration": "May 2018 - Nov 2018"
+									"info": "San Mateo High School.",
+									"title": "High School",
+									"duration": "Aug 2008 - May 2012"
 								},
 								{
 									"info": "Notre Dame de Namur University. Graduated with bachelors in Graphic Design and received Cum Laude honors.",
@@ -147,9 +147,9 @@
 									"duration": "Aug 2012 - May 2016"
 								},
 								{
-									"info": "San Mateo High School.",
-									"title": "High School",
-									"duration": "Aug 2008 - May 2012"
+									"info": "UC Berkeley Extension Bootcamp. Full stack course where I learned everything I know today. Projects were worked on in groups besides our final project. Received no lower than an A- as a grade for homework assignments and projects. Presented with certificate for completion at the end of course.",
+									"title": "Bootcamp",
+									"duration": "May 2018 - Nov 2018"
 								}
 							],
 							"component": "Timeline"
