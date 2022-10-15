@@ -58,6 +58,7 @@
 	height: 20rem;
 	position: relative;
 	text-align: center;
+	cursor: pointer;
 	
 	&__card {
 		position: absolute;
@@ -67,7 +68,6 @@
 		height: inherit;
 		backface-visibility: hidden;
 		transition: 1s all;
-		cursor: pointer;
 		border-radius: 50%;
 		@include displayFlex(center, center);
 		border: 0.8rem solid transparent;
