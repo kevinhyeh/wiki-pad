@@ -2,6 +2,7 @@ import React from 'react';
 import './Experience.scss';
 
 const Experience = (props) => {
+	const isActiveSec = props.activeSec.includes('Experience')
 
 	return (
 		<div className="experience">
@@ -14,13 +15,13 @@ const Experience = (props) => {
 						<img src={window.location.origin + '/icons/' + obj.info.replace(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={obj.info} className="experience__icon" />
 						<div className="w-full">
 							<p className="text-base bold">{obj.info}</p>
-							<div className={`experience__bar${props.animate ? '' : ' still'}`} style={{width: barWidth}}>
+							<div className={`experience__bar${isActiveSec ? '' : ' still'}`} style={{width: barWidth}}>
 								<p className="text-base bold">
 									{obj.years} {obj.years === 1 ? 'Year' : 'Years'}
 								</p>
 							</div>
 							{obj.years <= 2 ? 
-								<p className={`text-base bold overlay${props.animate ? '' : ' invisible'}`}>
+								<p className={`text-base bold overlay${isActiveSec ? '' : ' invisible'}`}>
 									{obj.years} {obj.years === 1 ? 'Year' : 'Years'}
 								</p> : ''
 							}
