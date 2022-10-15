@@ -19,6 +19,12 @@ body, html {
 .-rotate-90 {
 	transform: rotate(-90deg);
 }
+.m0 {
+	margin: 0;
+}
+.mb0 {
+	margin-bottom: 0;
+}
 
 // font sizes
 .text-xs {
@@ -44,6 +50,36 @@ body, html {
 .w-full {
 	width: 100%;
 }
+.flex {
+	display: flex;
+}
+.flex-column {
+	flex-direction: column;
+}
+.justify-start {
+	justify-content: flex-start;
+}
+.justify-end {
+	justify-content: flex-end;
+}
+.justify-center {
+	justify-content: center;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.justify-around {
+	justify-content: space-around;
+}
+.items-start {
+	align-items: flex-start;
+}
+.items-end {
+	align-items: flex-end;
+}
+.items-center {
+	align-items: center;
+}
 
 .relative {
 	position: relative;
@@ -51,6 +87,11 @@ body, html {
 .bold {
 	font-weight: bold;
 }
+.text-center {
+	text-align: center;
+}
+
+
 
 // variables
 $primary-grey: rgb(140, 140, 140);

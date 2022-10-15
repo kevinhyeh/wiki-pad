@@ -1,0 +1,122 @@
+@import '../../global.scss';
+
+.about {
+	padding: 3rem 0;
+	&__container {
+		@include displayFlex(center, flex-start);
+		grid-gap: 5rem;
+		margin-bottom: 5rem;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		grid-gap: 0.3rem;
+	}
+	&__bio {
+		width: 80%;
+		margin: 0 auto;
+	}
+	&__header,
+	&__header--placeholder {
+		margin: 0;
+		text-transform: uppercase;
+		font-size: 40px;
+		line-height: 1;
+		letter-spacing: 1.3px;
+	}
+	&__title {
+		margin: 0;
+	}
+	&__banner {
+		position: relative;
+		height: 4rem;
+		background: $primary-dark-grey;
+		overflow: hidden;
+		&.animate .about__header {
+			animation: rotateWord 15s linear infinite 0s;
+		}
+		&.animate .about__header--placeholder {
+			transition: 0.8s all linear;
+			transition-delay: 0.7s;
+			transform: translateY(5rem);
+		}
+		& .about__header {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translateY(-5rem);
+			@for $i from 1 through 5 {
+				&:nth-child(#{$i + 1}) {
+					animation-delay: $i * 3s;
+				}
+			}
+		}
+	}
+}
+.profile {
+	width: 20rem;
+	height: 20rem;
+	position: relative;
+	text-align: center;
+	
+	&__card {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: inherit;
+		height: inherit;
+		backface-visibility: hidden;
+		transition: 1s all;
+		cursor: pointer;
+		border-radius: 50%;
+		@include displayFlex(center, center);
+		border: 0.8rem solid transparent;
+		overflow: hidden;
+		border-color: #fff;
+		&--front {
+			box-shadow: 0 0 1rem 3px $secondary-grey;
+			// animation: shadowPulse 4s infinite ease;
+			& img {
+				height: 80%;
+				filter: invert(100%);
+			}
+			// background: radial-gradient(#eee, $secondary-grey, $secondary-grey, $primary-dark-grey 90%);
+			// background: $secondary-grey;
+		}
+		&--back {
+			& img {
+				height: 125%;
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			transform: rotateY(180deg);
+		}
+	}
+	&:hover &__card--front {
+		transform: rotateY(-180deg);
+	}
+	&:hover &__card--back {
+		transform: rotateY(0deg);
+	}
+}
+@keyframes shadowPulse {
+	0% {
+		box-shadow: 0 0 1rem 3px $secondary-grey;
+	}
+	10% {
+		box-shadow: 0 0 2rem 3px $secondary-grey;
+	}
+	20% {
+		box-shadow: 0 0 1rem 3px $secondary-grey;
+	}
+}
+@keyframes rotateWord {
+	0% { opacity: 0; }
+	5% { opacity: 0; transform: translateY(-5rem); }
+	10% { opacity: 1; transform: translateY(0px); }
+	25% { opacity: 1; transform: translateY(0px); }
+	30% { opacity: 0; transform: translateY(5rem); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
