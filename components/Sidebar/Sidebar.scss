@@ -71,15 +71,23 @@ $sidebarWidth: 30rem;
 		& li {
 			position: relative;
 			width: 100%;
+			& span:hover {
+				text-decoration: underline;
+			}
 			&--header {
 				@include displayFlex(flex-start, center);
 			}
+			&.active path {
+				fill: $primary-grey;
+			}
 			& svg {
-				height: 10px;
-				margin-right: 1.5rem;
+				width: 2rem;
+				margin-right: 1rem;
 				transition: 0.3s all;
-				& g {
-					fill: $primary-grey;
+				transform: translateY(3px);
+				& path {
+					transition: 0.3s all;
+					stroke: $primary-grey;
 				}
 			}
 			& a {
@@ -115,15 +123,37 @@ $sidebarWidth: 30rem;
 	}
 	&__sublist {
 		list-style: none;
-		padding-left: 2rem;
-		line-height: 2;
-		max-height: 0;
-		overflow: hidden;
+		// max-height: 0;
+		// overflow: hidden;
+		padding: 0;
 		transition: 0.3s all;
+		// border-left: 1px solid;
+		position: relative;
+		&:before {
+			@include verticalLine(top, 0, left, 10px, 1px, calc(100% - 25px), $primary-grey);
+		}
 		& li {
+			padding-left: 3rem;
+			position: relative;
+			line-height: 2;
 			transition: 0.3s all;
-			&:hover {
-				text-decoration: underline;
+			&.active path {
+				fill: $primary-grey !important;
+			}
+			& path {
+				fill: transparent !important;
+			}
+			&:before {
+				position: absolute;
+				content: '';
+				top: -0.8rem;
+				left: 1rem;
+				clip-path: polygon(0 50%, 0% 100%, 50% 100%);
+				border: 1px solid $primary-grey;
+				border-radius: 5px;
+				width: 2.5rem;
+				height: 2rem;
+				// @include horizontalLine(top, 45%, left, 1rem, 1rem, 1px, $primary-grey);
 			}
 		}
 	}

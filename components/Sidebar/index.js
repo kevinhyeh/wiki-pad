@@ -1,68 +1,66 @@
 import React, { useState, useEffect } from 'react'
-import { IconArrowLine } from '../elements/Icons' 
+import { IconArrowLine, Folder } from '../elements/Icons' 
 import './Sidebar.scss'
 
 const Sidebar = (props) => {
 	const [navList, setNavList] = useState([])
-	const [subLinksDropdownObj, setSubLinksDropdownObj] = useState({})
+	// const [subLinksDropdownObj, setSubLinksDropdownObj] = useState({})
 
 	useEffect(() => {
-		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/navigation.json'
-		).then((response) => {
-			return response.json()
-		}).then((data) => {
-			setNavList(data)
-			storeSublistToggleStateHandler(data)
-		})
+		if (props.data) {
+			setNavList(props.data)
+		}
 	}, [])
 
-	const storeSublistToggleStateHandler = (data) => {
-		let object = {}
-		for (let i = 0; i < data.length; i++) {
-			object[data[i].title.toLowerCase() + 'Sublinks'] = 'close'
-		}
-		setSubLinksDropdownObj(object)
-	}
+	// const storeSublistToggleStateHandler = (data) => {
+	// 	let object = {}
+	// 	for (let i = 0; i < data.length; i++) {
+	// 		object[data[i].title.toLowerCase() + 'Sublinks'] = 'close'
+	// 	}
+	// 	setSubLinksDropdownObj(object)
+	// }
 
-	const openSubLinksHandler = (title) => {
-		console.log('subLinksDropdownObj', subLinksDropdownObj)
-		if (subLinksDropdownObj[title.toLowerCase() + 'Sublinks'] === 'open') {
-			setSubLinksDropdownObj(prevState => ({
-				...prevState,
-				[title.toLowerCase() + 'Sublinks']: 'close'
-			}))
-		} else {
-			setSubLinksDropdownObj(prevState => ({
-				...prevState,
-				[title.toLowerCase() + 'Sublinks']: 'open'
-			}))
-		}
-	}
+	// const openSubLinksHandler = (title) => {
+	// 	if (subLinksDropdownObj[title.toLowerCase() + 'Sublinks'] === 'open') {
+	// 		setSubLinksDropdownObj(prevState => ({
+	// 			...prevState,
+	// 			[title.toLowerCase() + 'Sublinks']: 'close'
+	// 		}))
+	// 	} else {
+	// 		setSubLinksDropdownObj(prevState => ({
+	// 			...prevState,
+	// 			[title.toLowerCase() + 'Sublinks']: 'open'
+	// 		}))
+	// 	}
+	// }
 
 	const displaySidebarList = (listArr, parent)=> {
-		let listHtml = []
-		for (let i = 0; i < listArr.length; i++) {
-			listHtml.push(
-				<li key={i} data-sublist-toggle={subLinksDropdownObj[listArr[i].title.toLowerCase() + 'Sublinks']}>
-					<div className="sidebar__list--header" onClick={() => openSubLinksHandler(listArr[i].title)}>
-						{parent ? 
-							<span>
-								<IconArrowLine direction="right" />
-							</span>
-						: ''}
-						<a href={`/${listArr[i].title.toLowerCase()}`}>{listArr[i].title}</a>
-					</div>
-					{/* <a href="">{listArr[i].title}</a> */}
-					{listArr[i].sublinks && listArr[i].sublinks.length > 0 ?
-						<ul className="sidebar__sublist">
-							{displaySidebarList(listArr[i].sublinks, false)}
-						</ul> : 
-						''
+		return (
+			<>
+				{listArr ? listArr.map((obj, index) => {
+					let active = ''
+					if (props.activeSec.includes(obj.title) || (props.activeSec[0] === '' && parent)) {
+						active = ' active'
 					}
-				</li>
-			)
-		}
-		return listHtml
+					return (
+						// <li key={index} data-sublist-toggle={subLinksDropdownObj[listArr[i].title.toLowerCase() + 'Sublinks']}>
+						<li key={index} className={`${active}`}>
+							<span onClick={() => props.handleSidebarClick(obj.title)}>
+								<Folder />
+								{obj.title ? obj.title : ''}
+							</span>
+							{/* <a href="">{obj.title}</a> */}
+							{obj.data && obj.data.length > 0 && obj.data[0].data ?
+								<ul className="sidebar__sublist">
+									{displaySidebarList(obj.data, false)}
+								</ul> : 
+								''
+							}
+						</li>
+					)
+				}) : ''}
+			</>
+		)
 	}
 
 	return (

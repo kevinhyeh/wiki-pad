@@ -9,17 +9,19 @@ const educationIcons = {
 }
 
 const Timeline = (props) => {
-	
+	let animate = props.activeSec.includes('Education')
 	return (
-		<div className="timeline animate">
+		<div className={`timeline${animate ? ' animate' : ''}`}>
 			{props.data ? props.data.map((obj, index) => {
-				let MyComponent = educationIcons[obj.title.replace(' ', '')]
+				let MyComponent = educationIcons[obj.icon]
 				return (
 					<React.Fragment key={index}>
 						<div className="timeline__icon" data-index={index + 1}>
 							<MyComponent />
+							<p className="text-base bold">{obj.duration}</p>
 						</div>
 						<div className="timeline__info" data-index={index + 1}>
+							<p className="text-base bold">{obj.title}</p>
 							<p className="text-base">{obj.info}</p>
 						</div>
 					</React.Fragment>

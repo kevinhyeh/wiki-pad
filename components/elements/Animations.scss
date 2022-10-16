@@ -236,14 +236,14 @@
 .bell {
 	width: 7rem;
 	&.animate {
-		animation: wiggle 2s linear infinite;
+		animation: fastWiggle 2s linear infinite;
 	}
 	& path {
 		fill: $secondary-grey;
 	}
 }
 
-@keyframes wiggle {
+@keyframes fastWiggle {
 	0%, 7% {
     transform: rotateZ(0);
   }

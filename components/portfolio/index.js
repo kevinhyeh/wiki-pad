@@ -26,24 +26,22 @@ const Portfolio = (props) => {
 	const [ogData, setOgData] = useState()
 	const [fadeInAnim, setFadeInAnim] = useState(false)
 	const [portfolio, setPortfolio] = useState([])
-	const [activeSec, setActiveSec] = useState(['Profile', 'About'])
 	const [breadcrumb, setBreadcrumb] = useState(['Home'])
 
+	const activeSec = props.activeSec
+
 	useEffect(() => {
-		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.json'
-		).then((response) => {
-			return response.json()
-		}).then(async (data) => {
-			console.log('portfolio data', data)
+		console.log('props', props.sidebarTitle)
+		async function fetchData() {
+			const data = props.data
 			setOgData(data)
 			const pathName = window.location.pathname.replace('/', '').replaceAll('-', ' ')
 			if (pathName.length > 0) {
 				let pathPortfolio = await findPortfolioData(data, pathName)
 				if (pathPortfolio) {
-					console.log('pathPortfolio', pathPortfolio)
 					setPortfolio(pathPortfolio)
 					// formatBreadcrumb(pathPortfolio[0].title)
-					setActiveSec([pathPortfolio[0].title])
+					props.handleActiveSec([pathPortfolio[0].title])
 				} else {
 					setAppStatus({ message: 'Page Not Found', status: 'error'})
 					setPortfolio(data)
@@ -52,19 +50,23 @@ const Portfolio = (props) => {
 			} else {
 				setPortfolio(data)
 			}
-		})
-		setTimeout(() => {
-			setFadeInAnim(false)
-		}, 5000)
-	}, [])
+			setTimeout(() => {
+				setFadeInAnim(false)
+			}, 5000)
+		}
+		fetchData()
+		if (props.sidebarTitle !== '') {
+			handlePortfolioClick(props.sidebarTitle)
+		}
+	}, [props.sidebarTitle])
 
 	const toggleSection = (title) => {
 		setPrevClick('toggle')
 		if (activeSec.indexOf(title) > -1) {
 			let filteredSec = activeSec.filter((item) => item !== title)
-			setActiveSec(filteredSec)
+			props.handleActiveSec(filteredSec)
 		} else {
-			setActiveSec([title, ...activeSec])
+			props.handleActiveSec([title, ...activeSec])
 		}
 	}
 
@@ -72,7 +74,7 @@ const Portfolio = (props) => {
 		let portfolio = arr[0]
 		setPortfolio([])
 		setTimeout(() => {
-			setActiveSec(isHome ? [''] : [portfolio.title])
+			props.handleActiveSec(isHome ? [''] : [portfolio.title])
 			setPortfolio(arr)
 			setFadeInAnim(true)
 			setTimeout(() => {
@@ -92,9 +94,7 @@ const Portfolio = (props) => {
 	}
 
 	const formatBreadcrumb = (title) => {
-		// console.log('crumb title', title)
 		let titleIndex = breadcrumb.indexOf(title)
-		// console.log('titleIndex', titleIndex)
 		if (titleIndex === -1) {
 			breadcrumb.push(title)
 			setBreadcrumb(breadcrumb)
@@ -129,7 +129,7 @@ const Portfolio = (props) => {
 					</>
 				:
 					<div key={index} className="portfolio__info">
-						{obj.title ? <h4 className="text-lg">{obj.title}:</h4> : ''}
+						{obj.title ? <h4 className="text-lg">{obj.title}</h4> : ''}
 						{obj.link ? 
 							<a href={obj.link} target="_blank" rel="noreferrer" className="portfolio__info--link">
 								{renderInfo(obj)}
@@ -195,7 +195,6 @@ const Portfolio = (props) => {
 			info = info.replaceAll("<bold>", "<span class='bold'>")
 			info = info.replaceAll("</bold>", "</span>")
 		}
-		// console.log('info', info)
 		return (
 			<p className="text-base">{ReactHtmlParser(info)}</p>
 		)
@@ -217,7 +216,6 @@ const Portfolio = (props) => {
 			handleNewPortfolio(ogData, isHome)
 		} else {
 			setPrevClick('')
-			console.log('prevClick', prevClick)
 			let itemPortfolio = await findPortfolioData(ogData, title)
 			handleNewPortfolio(itemPortfolio)
 		}
