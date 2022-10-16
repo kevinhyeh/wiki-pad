@@ -62,18 +62,24 @@ export const Play = () => {
 
 export const HighSchool = () => {
 	return (
-		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 47.3" xmlSpace="preserve"><title>Asset 5</title><g id="Layer_2_1_"><g id="Layer_2-2"><path class="cls-1" d="M2.1,24.1h29.8c0.6,0,1,0.4,1,1v3.5c0,0.6-0.4,1-1,1H2.1c-0.6,0-1-0.4-1-1v-3.5C1.1,24.5,1.6,24.1,2.1,24.1z" /><path class="cls-1" d="M3.3,29.6l3.4,15.8c0.1,0.5,0.5,0.8,1,0.8h18.6c0.5,0,0.9-0.3,1-0.8l3.4-15.8"/><line class="cls-1" x1="16.8" y1="12.6" x2="16.8" y2="23.6"/><path class="cls-1" d="M13.7,24c-1.8-2.8-2.8-6.1-2.9-9.4c0-6.3,4.2-11.7,5.7-13.3c0.2-0.3,0.7-0.3,0.9-0.1c0,0,0,0,0.1,0.1 c1.5,1.7,5.7,7,5.7,13.3c-0.1,3.4-1.2,6.7-3,9.5"/></g></g></svg>
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 47.3" xmlSpace="preserve"><title>Asset 5</title><g id="Layer_2_1_"><g id="Layer_2-2"><path className="cls-1" d="M2.1,24.1h29.8c0.6,0,1,0.4,1,1v3.5c0,0.6-0.4,1-1,1H2.1c-0.6,0-1-0.4-1-1v-3.5C1.1,24.5,1.6,24.1,2.1,24.1z" /><path className="cls-1" d="M3.3,29.6l3.4,15.8c0.1,0.5,0.5,0.8,1,0.8h18.6c0.5,0,0.9-0.3,1-0.8l3.4-15.8"/><line className="cls-1" x1="16.8" y1="12.6" x2="16.8" y2="23.6"/><path className="cls-1" d="M13.7,24c-1.8-2.8-2.8-6.1-2.9-9.4c0-6.3,4.2-11.7,5.7-13.3c0.2-0.3,0.7-0.3,0.9-0.1c0,0,0,0,0.1,0.1 c1.5,1.7,5.7,7,5.7,13.3c-0.1,3.4-1.2,6.7-3,9.5"/></g></g></svg>
 	)
 }
 
 export const College = () => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.6 47.18"><title>Asset 7</title><g id="Layer_2" dataName="Layer 2"><g id="Layer_2-2" dataName="Layer 2"><rect class="cls-1" x="1.07" y="24" width="31.75" height="5.52" rx="1"/><path class="cls-1" d="M3.26,29.52,6.65,45.36a1,1,0,0,0,1,.82H26.21a1,1,0,0,0,1-.82l3.39-15.84"/><path class="cls-1" d="M4.37,16.81A6.3,6.3,0,0,0,13.28,7.9C11.16,5.78,3.54,4.77,1.47,4.53A.43.43,0,0,0,1,5C1.24,7.07,2.25,14.69,4.37,16.81Z"/><line class="cls-1" x1="6.48" y1="10.15" x2="16.53" y2="20.2"/><path class="cls-1" d="M20.09,5.53a8.47,8.47,0,0,0,12,12c2.85-2.85,4.21-13.1,4.53-15.88A.57.57,0,0,0,36,1C33.19,1.32,22.94,2.68,20.09,5.53Z"/><line class="cls-1" x1="29.04" y1="8.37" x2="16.53" y2="20.2"/><line class="cls-1" x1="16.44" y1="22.55" x2="16.44" y2="19.55"/></g></g></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.6 47.18"><title>Asset 7</title><g id="Layer_2" dataname="Layer 2"><g id="Layer_2-2" dataname="Layer 2"><rect className="cls-1" x="1.07" y="24" width="31.75" height="5.52" rx="1"/><path className="cls-1" d="M3.26,29.52,6.65,45.36a1,1,0,0,0,1,.82H26.21a1,1,0,0,0,1-.82l3.39-15.84"/><path className="cls-1" d="M4.37,16.81A6.3,6.3,0,0,0,13.28,7.9C11.16,5.78,3.54,4.77,1.47,4.53A.43.43,0,0,0,1,5C1.24,7.07,2.25,14.69,4.37,16.81Z"/><line className="cls-1" x1="6.48" y1="10.15" x2="16.53" y2="20.2"/><path className="cls-1" d="M20.09,5.53a8.47,8.47,0,0,0,12,12c2.85-2.85,4.21-13.1,4.53-15.88A.57.57,0,0,0,36,1C33.19,1.32,22.94,2.68,20.09,5.53Z"/><line className="cls-1" x1="29.04" y1="8.37" x2="16.53" y2="20.2"/><line className="cls-1" x1="16.44" y1="22.55" x2="16.44" y2="19.55"/></g></g></svg>
 	)
 }
 
 export const Bootcamp = () => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.75 45.86"><title>Asset 8</title><g id="Layer_2" dataName="Layer 2"><g id="Layer_2-2" dataName="Layer 2"><rect class="cls-1" x="1" y="22.68" width="31.75" height="5.52" rx="1"/><path class="cls-1" d="M3.19,28.2,6.58,44a1,1,0,0,0,1,.82H26.15a1,1,0,0,0,1-.82L30.56,28.2"/><path class="cls-1" d="M6.93,22.56S.42,20.33,1.07,12.16c0,0,8.34.52,12.17,10.24,0,0-2.19-5.83,3.65-11.88"/><path class="cls-1" d="M26.84,22.56s6.51-2.23,5.87-10.4c0,0-8.34.52-12.18,10.24,0,0,2.19-5.83-3.64-11.88"/><path class="cls-1" d="M6.31,14S6.18,10.54,10,6.1c0,0,4.63,3.5,5.24,6.39"/><path class="cls-1" d="M27.47,14s.13-3.43-3.71-7.87c0,0-4.62,3.5-5.24,6.39"/><path class="cls-1" d="M12.1,7.92S14,3,16.87,1"/><path class="cls-1" d="M21.65,7.92S19.8,3,16.87,1"/></g></g></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.75 45.86"><title>Asset 8</title><g id="Layer_2" dataname="Layer 2"><g id="Layer_2-2" dataname="Layer 2"><rect className="cls-1" x="1" y="22.68" width="31.75" height="5.52" rx="1"/><path className="cls-1" d="M3.19,28.2,6.58,44a1,1,0,0,0,1,.82H26.15a1,1,0,0,0,1-.82L30.56,28.2"/><path className="cls-1" d="M6.93,22.56S.42,20.33,1.07,12.16c0,0,8.34.52,12.17,10.24,0,0-2.19-5.83,3.65-11.88"/><path className="cls-1" d="M26.84,22.56s6.51-2.23,5.87-10.4c0,0-8.34.52-12.18,10.24,0,0,2.19-5.83-3.64-11.88"/><path className="cls-1" d="M6.31,14S6.18,10.54,10,6.1c0,0,4.63,3.5,5.24,6.39"/><path className="cls-1" d="M27.47,14s.13-3.43-3.71-7.87c0,0-4.62,3.5-5.24,6.39"/><path className="cls-1" d="M12.1,7.92S14,3,16.87,1"/><path className="cls-1" d="M21.65,7.92S19.8,3,16.87,1"/></g></g></svg>
+	)
+}
+
+export const Folder = () => {
+	return (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="transparent" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 	)
 }

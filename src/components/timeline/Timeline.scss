@@ -4,11 +4,18 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, auto);
+	// text-align: center;
+	grid-gap: 0 5rem;
+	padding: 3rem 0;
 	&__icon {
 		margin: 0 auto;
 		grid-row: 1 / 2;
 		opacity: 0;
 		visibility: hidden;
+		width: 80%;
+		& p {
+			margin: 2rem 0 0;
+		}
 	}
 	&__info {
 		opacity: 0;
@@ -16,10 +23,11 @@
 		margin: 0 auto;
 		grid-row: 3 / 4;
 		position: relative;
+		width: 80%;
 		&:before {
 			content: '';
 			position: absolute;
-			left: 50%;
+			left: 5px;
 			top: -4rem;
 			transform: translateX(-50%);
 			width: 1.5rem;
@@ -28,7 +36,7 @@
 			border-radius: 50%;
 		}
 		& p {
-			margin: 0;
+			margin: 0 auto 2rem;
 		}
 	}
 	& svg {
@@ -46,12 +54,32 @@
 		background-color: $secondary-grey;
 		transition: 1s all;
 		border-radius: 5px;
+		position: relative;
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			border-radius: inherit;
+			background-color: inherit;
+			height: 2rem;
+			width: 0.6rem;
+		}
+		&:before {
+			left: 0;
+		}
+		&:after {
+			right: 0;
+		}
 	}
 	&.animate .timeline__line {
 		max-width: 100%;
 	}
-	@for $i from 1 through 3 {
-		&.animate div[data-index="#{$i}"] {
+	&.animate div[data-index="1"] {
+		animation: fadeIn 0.5s ease forwards;
+	}
+	@for $i from 1 through 2 {
+		&.animate div[data-index="#{$i + 1}"] {
 			animation: fadeIn 0.5s $i * 0.3s ease forwards;
 		}
 	}

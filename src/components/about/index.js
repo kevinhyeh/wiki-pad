@@ -4,7 +4,6 @@ import './About.scss';
 const About = (props) => {
 	const [animate, setAnimate] = useState(false)
 	const obj = props.data[0]
-	console.log('props', props)
 
 	setTimeout(() => {
 		setAnimate(props.animate && props.activeSec.includes('About'))

@@ -1,43 +1,4 @@
 {
-  "navigation": [
-		{
-			"sublinks": [
-        {
-          "title": "About"
-        },
-        {
-          "title": "Skills"
-        },
-        {
-          "title": "Education"
-        }
-      ],
-			"title": "Profile"
-		},
-		{
-			"sublinks": [
-        {
-          "title": "VIDA"
-        },
-        {
-          "title": "VIDA Health"
-        },
-        {
-          "title": "VIDA Studio"
-        },
-        {
-          "title": "One League"
-        },
-        {
-          "title": "The Graphic Jar"
-        },
-        {
-          "title": "Deck Challenge"
-        }
-      ],
-			"title": "Projects"
-		}
-  ],
   "portfolio": [
 		{
 			"title": "Profile",
@@ -51,7 +12,7 @@
 									"title": "Front End / Full Stack Developer",
 									"location": "San Mateo, CA",
 									"info": "Hello! I am a Front End / Full Stack Developer with a background in Graphic Design. Able to grasp new skills quickly and efficiently. Even more so, passionate about learning the process. Having the patience and interests in puzzles, developing applications can be tackled on with the same mindset.",
-									"banner": ["Detailed", "Logical", "Imaginative", "Quirky", "Innovative"]
+									"banner": ["Detailed", "Logical", "Creative", "Quirky", "Innovative"]
 								}
 							],
 							"component": "About"
@@ -137,19 +98,22 @@
 						{
 							"content": [
 								{
-									"info": "San Mateo High School.",
-									"title": "High School",
-									"duration": "Aug 2008 - May 2012"
+									"info": "Full stack course that was an extension of UC Berkeley. Presented with certificate for completion at the end of course.",
+									"title": "UC Berkeley Bootcamp",
+									"icon": "Bootcamp",
+									"duration": "May 2018 - Nov 2018"
 								},
 								{
-									"info": "Notre Dame de Namur University. Graduated with bachelors in Graphic Design and received Cum Laude honors.",
-									"title": "College",
+									"info": "Took Adobe Dreamweaver classes and self taught. Graduated with bachelors in Graphic Design and received Cum Laude honors.",
+									"title": "Notre Dame de Namur University",
+									"icon": "College",
 									"duration": "Aug 2012 - May 2016"
 								},
 								{
-									"info": "UC Berkeley Extension Bootcamp. Full stack course where I learned everything I know today. Projects were worked on in groups besides our final project. Received no lower than an A- as a grade for homework assignments and projects. Presented with certificate for completion at the end of course.",
-									"title": "Bootcamp",
-									"duration": "May 2018 - Nov 2018"
+									"info": "I did not like high school.",
+									"title": "San Mateo High School",
+									"icon": "HighSchool",
+									"duration": "Aug 2008 - May 2012"
 								}
 							],
 							"component": "Timeline"
@@ -198,11 +162,14 @@
 							"title": "Stack",
 							"content": [
 								{
-									"title": "Language",
 									"icons": ["HTML", "CSS", "Javascript", "jQuery", "NodeJs", "MongoDB"]
-								},
+								}
+							]
+						},
+						{
+							"title": "Services",
+							"content": [
 								{
-									"title": "Services",
 									"icons": ["Shopify", "Strapi", "Google Optimize", "Google Cloud"]
 								}
 							]

@@ -194,21 +194,35 @@ $primary-dark-grey: rgb(42, 49, 53);
 	flex-direction: $flex-direction;
 }
 @mixin horizontalLine($y, $y-pos, $x, $x-pos, $width, $height, $color, $y-center: 'false', $x-center: 'false') {
-	&:after {
-		content: '';
-		position: absolute;
-		#{$y}: $y-pos;
-		#{$x}: $x-pos;
-		width: $width;
-		height: 0.1px;
-		border-bottom: $height solid $color;
-		transition: 0.3s all;
-		@if $y-center != 'false' {
-			transform: translateY(-50%);
-		}
-		@if $x-center != 'false' {
-			transform: translateX(-50%);
-		}
+	content: '';
+	position: absolute;
+	#{$y}: $y-pos;
+	#{$x}: $x-pos;
+	width: $width;
+	height: 0.1px;
+	border-bottom: $height solid $color;
+	transition: 0.3s all;
+	@if $y-center != 'false' {
+		transform: translateY(-50%);
+	}
+	@if $x-center != 'false' {
+		transform: translateX(-50%);
+	}
+}
+@mixin verticalLine($y, $y-pos, $x, $x-pos, $width, $height, $color, $y-center: 'false', $x-center: 'false') {
+	content: '';
+	position: absolute;
+	#{$y}: $y-pos;
+	#{$x}: $x-pos;
+	height: $height;
+	width: 0.1px;
+	border-left: $width solid $color;
+	transition: 0.3s all;
+	@if $y-center != 'false' {
+		transform: translateY(-50%);
+	}
+	@if $x-center != 'false' {
+		transform: translateX(-50%);
 	}
 }
 

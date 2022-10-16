@@ -2,15 +2,29 @@ import React, { useState, useEffect } from 'react'
 import Sidebar from './components/sidebar'
 import Portfolio from './components/portfolio'
 import Settings from './components/settings'
+import fbDataJson from './firebase_data.json'
 import './App.scss'
 import './global.scss'
 
 const App = () => {
+	const [fbData, setFbData] = useState([])
+	const [sidebarTitle, setSidebarTitle] = useState('')
 	const [animationState, setAnimationState] = useState(true)
 	const [appTheme, setAppTheme] = useState('Dark')
 	const [sidebarState, setSidebarState] = useState('open')
+	const [activeSec, setActiveSec] = useState(['Profile', 'About'])
 
 	useEffect(() => {
+		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.jso'
+		).then((response) => {
+			return response.json()
+		}).then((data) => {
+			console.log('data', data)
+			setFbData(data)
+		}).catch((error) => {
+			console.log('error', error)
+			setFbData(fbDataJson.portfolio)
+		})
 		if (window.location.search) {
 			filterUrlParams()
 		}
@@ -49,7 +63,6 @@ const App = () => {
 					paramsArr[i] = themeParam
 				}
 			}
-			console.log('paramsArr', paramsArr)
 		} else {
 			paramsArr.push(themeParam)
 		}
@@ -62,14 +75,29 @@ const App = () => {
 		setAnimationState(!animationState)
 		// console.log('animationState', animationState)
 	}
+
+	const handleSidebarClick = (title) => {
+		console.log('title', title)
+		setSidebarTitle([])
+		setSidebarTitle(title)
+	}
+
+	const handleActiveSec = (arr) => {
+		setActiveSec(arr)
+		setSidebarTitle('')
+	}
 	
   return (
     <main className="app" data-app-theme={appTheme} data-sidebar-toggle={sidebarState}>
-			<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} />
-			<div className="app__body">
-				<Settings appTheme={appTheme} changeTheme={changeThemeHandler} animationState={animationState} toggleAnimations={(state) => toggleAnimations(state)} />
-				<Portfolio animationState={animationState} />
-			</div>
+			{fbData && fbData.length > 0 ?
+				<>
+					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} activeSec={activeSec} handleSidebarClick={handleSidebarClick} />
+					<div className="app__body">
+						<Settings appTheme={appTheme} changeTheme={changeThemeHandler} animationState={animationState} toggleAnimations={(state) => toggleAnimations(state)} />
+						<Portfolio animationState={animationState} data={fbData} activeSec={activeSec} handleActiveSec={handleActiveSec} sidebarTitle={sidebarTitle} />
+					</div>
+				</>
+			: ''}
     </main>
   );
 }
