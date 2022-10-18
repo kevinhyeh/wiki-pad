@@ -75,7 +75,7 @@
 		border-color: #fff;
 		&--front {
 			box-shadow: 0 0 1rem 3px $secondary-grey;
-			// animation: shadowPulse 4s infinite ease;
+			animation: shadowPulse 4s infinite ease;
 			& img {
 				height: 80%;
 				filter: invert(100%);

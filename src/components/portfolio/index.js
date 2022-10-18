@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { IconArrowLine } from '../elements/Icons';
 import { ClockRotate, FolderExpand, OldNewBanner, GearsRotate, BellWiggle, PlugAndPlay } from '../elements/Animations.js';
@@ -21,88 +21,13 @@ const components = {
 }
 
 const Portfolio = (props) => {
-	const [appStatus, setAppStatus] = useState('')
-	const [prevClick, setPrevClick] = useState('')
-	const [ogData, setOgData] = useState()
-	const [fadeInAnim, setFadeInAnim] = useState(false)
-	const [portfolio, setPortfolio] = useState([])
-	const [breadcrumb, setBreadcrumb] = useState(['Home'])
-
 	const activeSec = props.activeSec
-
-	useEffect(() => {
-		console.log('props', props.sidebarTitle)
-		async function fetchData() {
-			const data = props.data
-			setOgData(data)
-			const pathName = window.location.pathname.replace('/', '').replaceAll('-', ' ')
-			if (pathName.length > 0) {
-				let pathPortfolio = await findPortfolioData(data, pathName)
-				if (pathPortfolio) {
-					setPortfolio(pathPortfolio)
-					// formatBreadcrumb(pathPortfolio[0].title)
-					props.handleActiveSec([pathPortfolio[0].title])
-				} else {
-					setAppStatus({ message: 'Page Not Found', status: 'error'})
-					setPortfolio(data)
-					window.history.pushState({},"", convertTitleToUrl('/') + window.location.search)
-				}
-			} else {
-				setPortfolio(data)
-			}
-			setTimeout(() => {
-				setFadeInAnim(false)
-			}, 5000)
-		}
-		fetchData()
-		if (props.sidebarTitle !== '') {
-			handlePortfolioClick(props.sidebarTitle)
-		}
-	}, [props.sidebarTitle])
+	const portfolio = props.portfolio
 
 	const toggleSection = (title) => {
-		setPrevClick('toggle')
-		if (activeSec.indexOf(title) > -1) {
-			let filteredSec = activeSec.filter((item) => item !== title)
-			props.handleActiveSec(filteredSec)
-		} else {
-			props.handleActiveSec([title, ...activeSec])
-		}
+		props.handleActiveSec(title)
 	}
 
-	const handleNewPortfolio = (arr, isHome) => {
-		let portfolio = arr[0]
-		setPortfolio([])
-		setTimeout(() => {
-			props.handleActiveSec(isHome ? [''] : [portfolio.title])
-			setPortfolio(arr)
-			setFadeInAnim(true)
-			setTimeout(() => {
-				setFadeInAnim(false)
-			}, 5000)
-			handleNewUrl(isHome ? '/' : portfolio.title)
-		}, 10)
-	}
-	
-	const handleNewUrl = (title) => {
-		window.history.pushState({},"", convertTitleToUrl(title) + window.location.search)
-	}
-
-	const convertTitleToUrl = (string) => {
-		string = string.toLowerCase().replaceAll(' ', '-')
-		return string
-	}
-
-	const formatBreadcrumb = (title) => {
-		let titleIndex = breadcrumb.indexOf(title)
-		if (titleIndex === -1) {
-			breadcrumb.push(title)
-			setBreadcrumb(breadcrumb)
-		} else if (titleIndex + 1 < breadcrumb.length) {
-			breadcrumb.splice(titleIndex + 1, breadcrumb.length - (titleIndex + 1))
-			setBreadcrumb(breadcrumb)
-		}
-	}
 
 	const renderSection = (obj, index, isNotFirst) => {
 		let isActiveSec = activeSec.indexOf(obj.title) > -1
@@ -111,8 +36,8 @@ const Portfolio = (props) => {
 			<React.Fragment key={index}>
 				{obj.data ? 	
 					<>
-						<div className={`portfolio__header ${!isNotFirst && (activeSec[0] === '' && prevClick === 'breadcrumb') ? 'slide-in' : 'show'}`}>
-							<div className={`portfolio__circle ${isActivePortfolio ? 'active' : ''}`} onClick={isActivePortfolio ? undefined : () => handlePortfolioClick(obj.title)}>
+						<div className={`portfolio__header ${!isNotFirst && (activeSec[0] === '') ? 'slide-in' : 'show'}`}>
+							<div className={`portfolio__circle ${isActivePortfolio ? 'active' : ''}`} onClick={isActivePortfolio ? undefined : () => props.handlePortfolioClick(obj.title)}>
 								<span className={`${isActivePortfolio ? '' : 'pulsing'}`}></span>
 							</div>
 							<div onClick={() => toggleSection(obj.title)} className={`portfolio__header--title ${isActiveSec ? 'active' : ''}`}>
@@ -206,68 +131,21 @@ const Portfolio = (props) => {
 		)
 	}
 
-	const handlePortfolioClick = async (title, location) => {
-		let isHome = title === 'Home'
-		if (location === 'breadcrumb') {
-			formatBreadcrumb(isHome ? 'Home' : portfolio.title)
-			setPrevClick(location)
-		}
-		if (isHome) {
-			handleNewPortfolio(ogData, isHome)
-		} else {
-			setPrevClick('')
-			let itemPortfolio = await findPortfolioData(ogData, title)
-			handleNewPortfolio(itemPortfolio)
-		}
-	}
-
-	const findPortfolioData = async (arr, title) => {
-		let titleLowerCase = title.toLowerCase()
-		let index = 0
-		let filteredObj
-		let titles = ['Home']
-
-		await findObj(arr, 'obj' + index++)
-		setBreadcrumb(titles)
-
-		return filteredObj
-		
-		function findObj(arr, objVar) {
-			for (objVar of arr) {
-				if (objVar.title.toLowerCase() === titleLowerCase) {
-					filteredObj = [objVar]
-					console.log('found me', filteredObj)
-					titles.push(objVar.title)
-					return filteredObj
-				}
-				if (JSON.stringify(objVar).toLowerCase().indexOf('"title":"' + titleLowerCase) > -1) {
-					titles.push(objVar.title)
-				}
-				if ((objVar.data && objVar.data.length > 0) ) {
-					if (objVar.data[0].data || objVar.data[0].tabs) {
-						findObj(objVar.data, 'obj' + index++)
-					}
-				}
-			}
-		}
-	}
-
-	const removeStatus = () => {
-		setAppStatus('')
-	}
-
 	return (
 		<section className="portfolio">
-			<Navigation breadcrumb={breadcrumb} handlePortfolioClick={handlePortfolioClick} />
-			{appStatus.message ? 
-			<div className={`portfolio__status text-xs ${appStatus.status}`}><span onClick={removeStatus}>&#215;</span>{appStatus.message}</div> : ''
-			}
-			<div className={`${fadeInAnim ? 'fade-in' : ''}`}>
-				{portfolio ? portfolio.map((obj, index) => (
-						renderSection(obj, index, false)
-					)) : ''
-				}
-			</div>
+			<Navigation breadcrumb={props.breadcrumb} handlePortfolioClick={props.handlePortfolioClick} />
+			{props.portfolio ?		
+				<>
+					{props.appStatus.message ? 
+						<div className={`portfolio__status text-xs ${props.appStatus.status}`}><span onClick={() => props.removeStatus()}>&#215;</span>{props.appStatus.message}</div> : ''
+					}
+					<div className={`${props.fadeInAnim ? 'fade-in' : ''}`}>
+						{props.portfolio.map((obj, index) => (
+							renderSection(obj, index, false)
+						))}
+					</div> 
+				</>
+			: <></> }
 		</section>
 	)
 }
