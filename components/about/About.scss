@@ -15,6 +15,7 @@
 	&__bio {
 		width: 80%;
 		margin: 0 auto;
+		text-align: center;
 	}
 	&__header,
 	&__header--placeholder {
@@ -119,4 +120,22 @@
 	30% { opacity: 0; transform: translateY(5rem); }
 	80% { opacity: 0; }
 	100% { opacity: 0; }
+}
+@media screen and (max-width: 500px) {
+	.about {
+		padding: 1rem 0;
+		&__container {
+			flex-direction: column;
+			margin-bottom: 2rem;
+		}
+		&__bio {
+			text-align: left;
+			margin: 0;
+			width: 100%;
+		}
+	}
+	.profile {
+		width: 15rem;
+		height: 15rem;
+	}
 }

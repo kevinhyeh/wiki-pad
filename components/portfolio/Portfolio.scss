@@ -303,3 +303,21 @@
 		}
 	}
 }
+@media screen and (max-width: 500px) {
+	.portfolio {
+		padding: 0 0 1rem 1rem;
+		&__content[data-tab="Summary"] {
+			grid-template-columns: repeat(1, 1fr);
+			grid-gap: 2rem 2rem;
+		}
+		&__submenu {
+			padding: 0 1rem;
+		}
+		&__icons {
+			flex-wrap: wrap;
+		}
+		&__header {
+			margin: 0 0 1.5rem;
+		}
+	}
+}

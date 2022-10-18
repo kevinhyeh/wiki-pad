@@ -45,6 +45,26 @@ body, html {
 .text-2xl {
 	font-size: 32px;
 }
+@media screen and (max-width: 500px) {
+	.text-xs {
+		font-size: 10px;
+	}
+	.text-sm {
+		font-size: 12px;
+	}
+	.text-base {
+		font-size: 14px;
+	}
+	.text-lg {
+		font-size: 16px;
+	}
+	.text-xl {
+		font-size: 20px;
+	}
+	.text-2xl {
+		font-size: 24px;
+	}
+}
 
 // layout
 .w-full {
@@ -135,7 +155,7 @@ $primary-dark-grey: rgb(42, 49, 53);
 	& .sidebar {
 		box-shadow:inset -4px 0 10px -4px rgb(171, 171, 171);
 	}
-	& .app__body, .folder:after, .old-new, .about__banner {
+	& .app__body, .folder:after, .old-new, .about__banner, .settings__toggle--slider:after {
 		background: rgb(255, 255, 255);
 	}
 	& .portfolio__circle span,
@@ -151,7 +171,7 @@ $primary-dark-grey: rgb(42, 49, 53);
 	& .portfolio__header svg g, .settings__select--toggle svg g, .bell path, .plug-and-play path {
 		fill: $primary-dark-grey;
 	}
-	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span, .clock__hours, .clock__minutes, .folder {
+	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span, .clock__hours, .clock__minutes, .folder, .settings__toggle--slider {
 		background: $primary-dark-grey;
 	}
 	& .gears circle, .gears path, .sidebar__list li.active path, .timeline svg {
@@ -196,8 +216,7 @@ $primary-blue: #154d84;
 	}
 	& .portfolio__circle span,
 	.portfolio__circle span:before, 
-	.settings button,
-	.portfolio__header--title h2:before {
+	.settings button {
 		border-color: #000;
 	}
 	& .profile__card--front {
@@ -206,16 +225,16 @@ $primary-blue: #154d84;
 	& .portfolio__header svg g, .settings__select--toggle svg g, .navigation svg g {
 		fill: #000;
 	}
-	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span, .settings__toggle--slider {
+	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span {
 		background: #000;
 	}
-	& .profile__card, .clock {
+	& .profile__card, .clock, .portfolio__header--title h2:before {
 		border-color: $primary-blue;
 	}
-	& .experience__bar, .timeline__line, .timeline__info:before, .clock__hours, .clock__minutes, .folder {
+	& .experience__bar, .timeline__line, .timeline__info:before, .clock__hours, .clock__minutes, .folder, .settings__toggle--slider {
 		background: $primary-blue;
 	}
-	& .experience p.overlay, .old-new-container {
+	& .experience p.overlay, .old-new-container, h2 {
 		color: $primary-blue;
 	}
 	& .gears circle, .gears path, .timeline svg {

@@ -43,7 +43,7 @@ const Portfolio = (props) => {
 							<div onClick={() => toggleSection(obj.title)} className={`portfolio__header--title ${isActiveSec ? 'active' : ''}`}>
 								<IconArrowLine direction="right" />
 								{isNotFirst ? <h2 className="text-xl">{obj.title}</h2> : <h2 className="text-2xl">{obj.title}</h2>}
-								{obj.duration && isActiveSec  ? <span className={`fade-in${isNotFirst ? " text-lg" : " text-xl"}`}>({obj.duration})</span> : ''}
+								{/* {obj.duration && isActiveSec  ? <span className={`fade-in${isNotFirst ? " text-lg" : " text-xl"}`}>({obj.duration})</span> : ''} */}
 							</div>
 						</div>
 						<div className={`portfolio__submenu ${isActiveSec ? 'active' : ''}`}>
