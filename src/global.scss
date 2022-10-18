@@ -97,6 +97,7 @@ body, html {
 $primary-grey: rgb(140, 140, 140);
 $secondary-grey: rgb(217, 219, 219);
 $light-grey: rgb(241, 241, 241);
+$secondary-light-grey: rgb(173 173 173);
 $primary-dark-grey: rgb(42, 49, 53);
 
 // app dark theme
@@ -104,7 +105,7 @@ $primary-dark-grey: rgb(42, 49, 53);
 	& .sidebar, .settings__select--toggle {
 		background: rgb(53, 60, 63);
 	}
-	& .settings button, .portfolio, a, .navigation span {
+	& .settings button, .settings span, .portfolio, a, .navigation span {
 		color: $secondary-grey;
 	}
 	& .settings__select--option {
@@ -134,27 +135,49 @@ $primary-dark-grey: rgb(42, 49, 53);
 	& .sidebar {
 		box-shadow:inset -4px 0 10px -4px rgb(171, 171, 171);
 	}
-	& .app__body {
+	& .app__body, .folder:after, .old-new, .about__banner {
 		background: rgb(255, 255, 255);
 	}
 	& .portfolio__circle span,
-	.portfolio__circle span:before, .settings button {
-		border-color: #000;
+	.portfolio__circle span:before, 
+	.settings button,
+	.portfolio__header--title h2:before,
+	.clock, .profile__card {
+		border-color: $primary-dark-grey;
 	}
-	& svg g {
-		fill: #000;
+	& .sidebar__list {
+		color: $primary-dark-grey;
 	}
-	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span {
-		background: #000;
+	& .portfolio__header svg g, .settings__select--toggle svg g, .bell path, .plug-and-play path {
+		fill: $primary-dark-grey;
+	}
+	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span, .clock__hours, .clock__minutes, .folder {
+		background: $primary-dark-grey;
+	}
+	& .gears circle, .gears path, .sidebar__list li.active path, .timeline svg {
+		stroke: $primary-dark-grey;
+	}
+	& .profile__card--front img {
+		filter: invert(0);
+	}
+	& .experience__bar, .timeline__line, .timeline__info:before {
+		background: $secondary-light-grey;
+	}
+	& .experience p.overlay {
+		color: $secondary-light-grey;
+	}
+	& .sidebar__list li.active path {
+		fill: $primary-dark-grey;
 	}
 }
 // app kevin theme
+$primary-blue: #154d84;
 .app[data-app-theme="Kevin"] {
 	& .settings__select--toggle {
 		background: #c7a97f;
 	}
 	& .sidebar {
-		background: #154d84;
+		background: $primary-blue;
 		& a {
 			color: #fff;
 		}
@@ -165,24 +188,56 @@ $primary-dark-grey: rgb(42, 49, 53);
 	& .settings button, .portfolio, .portfolio a, .navigation span {
 		color: #000;
 	}
-	& .settings__select--option {
-		&:hover {
-			background: #c7a97f;
-		}
+	& .settings__select--option:hover {
+		background: #c7a97f;
 	}
-	& .app__body, .settings__select--option {
-		// background: rgb(36, 15, 4);
+	& .app__body, .settings__select--option, .folder:after, .old-new, .about__banner, .settings__toggle--slider:after, .folder__container {
 		background: #b69b75;
 	}
 	& .portfolio__circle span,
-	.portfolio__circle span:before, .settings button {
+	.portfolio__circle span:before, 
+	.settings button,
+	.portfolio__header--title h2:before {
 		border-color: #000;
 	}
-	& svg g {
+	& .profile__card--front {
+		box-shadow: 0 0 1rem 3px $primary-dark-grey;
+	}
+	& .portfolio__header svg g, .settings__select--toggle svg g, .navigation svg g {
 		fill: #000;
 	}
-	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span {
+	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span, .settings__toggle--slider {
 		background: #000;
+	}
+	& .profile__card, .clock {
+		border-color: $primary-blue;
+	}
+	& .experience__bar, .timeline__line, .timeline__info:before, .clock__hours, .clock__minutes, .folder {
+		background: $primary-blue;
+	}
+	& .experience p.overlay, .old-new-container {
+		color: $primary-blue;
+	}
+	& .gears circle, .gears path, .timeline svg {
+		stroke: $primary-blue;
+	}
+	& .bell path, .plug-and-play path {
+		fill: $primary-blue;
+	}
+	& .experience__bar p, & .sidebar__list, & .sidebar__header {
+		color: #fff;
+	}
+	& .sidebar__list li.active path {
+		stroke: #fff;
+	}
+	& .sidebar__list li.active path {
+		fill: #fff;
+	}
+	& , .sidebar__sublist li.active path {
+		fill: #fff !important;
+	}
+	& .sidebar__sublist:before, .sidebar__sublist li:before {
+		border-color: #fff;
 	}
 }
 
