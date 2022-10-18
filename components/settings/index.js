@@ -19,6 +19,7 @@ const Settings = (props) => {
 
 	return (
 		<section className="settings">
+			<span className="text-xs">Theme:</span>
 			<div className="settings__select" data-select-toggle={themeToggleState}>
 				<button className="settings__select--toggle" ref={themeSelectRef} onClick={() => toggleSelectHandler(themeToggleState)} onBlur={() => toggleSelectHandler(themeToggleState)}>
 					<span>{props.appTheme}</span>
@@ -31,6 +32,7 @@ const Settings = (props) => {
 					}
 				</ul>
 			</div>
+			<span className="text-xs">Animation:</span>
 			<div className="settings__toggle" onClick={() => props.toggleAnimations()}>
 				<span className={`settings__toggle--slider${props.animationState ? ' clicked' : ''}`}></span>
 			</div>

@@ -20,11 +20,9 @@ const Experience = (props) => {
 									{obj.years} {obj.years === 1 ? 'Year' : 'Years'}
 								</p>
 							</div>
-							{obj.years <= 2 ? 
-								<p className={`text-base bold overlay${isActiveSec ? '' : ' invisible'}`}>
-									{obj.years} {obj.years === 1 ? 'Year' : 'Years'}
-								</p> : ''
-							}
+							<p className={`text-base bold overlay${isActiveSec ? '' : ' invisible'}`}>
+								{obj.years} {obj.years === 1 ? 'Year' : 'Years'}
+							</p>
 						</div>
 					</div>
 				)
