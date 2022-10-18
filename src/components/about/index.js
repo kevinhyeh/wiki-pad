@@ -46,7 +46,7 @@ const About = (props) => {
 					<p className="text-base m0">{obj.location}</p>
 				</div>
 			</div>
-			<p className="about__bio text-base text-center">{obj.info}</p>
+			<p className="about__bio text-base">{obj.info}</p>
 		</section>
 	)
 }

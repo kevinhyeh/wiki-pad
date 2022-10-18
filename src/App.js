@@ -17,7 +17,6 @@ const App = () => {
 	const [portfolio, setPortfolio] = useState([])
 	const [activeSec, setActiveSec] = useState(['Profile', 'About'])
 
-
 	useEffect(() => {
 		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.jso'
 		).then((response) => {
@@ -50,7 +49,17 @@ const App = () => {
 		if (window.location.search) {
 			filterUrlParams()
 		}
+		function handleResize() {
+			if (window.innerWidth <= 1020) {
+				setSidebarState('close')
+			} else {
+				setSidebarState('open')
+			}
+		}
+		window.addEventListener('resize', handleResize)
+		handleResize()
 	}, [])
+	
 
 	const handleNewPortfolio = (arr, isHome) => {
 		let portfolio = arr[0]
