@@ -8,27 +8,104 @@ import './global.scss'
 
 const App = () => {
 	const [fbData, setFbData] = useState([])
-	const [sidebarTitle, setSidebarTitle] = useState('')
 	const [animationState, setAnimationState] = useState(true)
 	const [appTheme, setAppTheme] = useState('Dark')
 	const [sidebarState, setSidebarState] = useState('open')
+	const [breadcrumb, setBreadcrumb] = useState(['Home'])
+	const [appStatus, setAppStatus] = useState('')
+	const [fadeInAnim, setFadeInAnim] = useState(false)
+	const [portfolio, setPortfolio] = useState([])
 	const [activeSec, setActiveSec] = useState(['Profile', 'About'])
+
 
 	useEffect(() => {
 		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.jso'
 		).then((response) => {
 			return response.json()
-		}).then((data) => {
+		}).then(async(data) => {
 			console.log('data', data)
 			setFbData(data)
+			const pathName = window.location.pathname.replace('/', '').replaceAll('-', ' ')
+			if (pathName.length > 0) {
+				let pathPortfolio = await findPortfolioData(data, pathName)
+				if (pathPortfolio) {
+					setPortfolio(pathPortfolio)
+					setActiveSec([pathPortfolio[0].title])
+				} else {
+					setAppStatus({ message: 'Page Not Found', status: 'error'})
+					setPortfolio(data)
+					window.history.pushState({},"", convertTitleToUrl('/') + window.location.search)
+				}
+			} else {
+				setPortfolio(data)
+			}
+			setTimeout(() => {
+				setFadeInAnim(false)
+			}, 5000)
 		}).catch((error) => {
 			console.log('error', error)
 			setFbData(fbDataJson.portfolio)
+			setPortfolio(fbDataJson.portfolio)
 		})
 		if (window.location.search) {
 			filterUrlParams()
 		}
 	}, [])
+
+	const handleNewPortfolio = (arr, isHome) => {
+		let portfolio = arr[0]
+		setPortfolio([])
+		setTimeout(() => {
+			setActiveSec(isHome ? [''] : [portfolio.title])
+			setPortfolio(arr)
+			setFadeInAnim(true)
+			setTimeout(() => {
+				setFadeInAnim(false)
+			}, 5000)
+			handleNewUrl(isHome ? '/' : portfolio.title)
+		}, 10)
+	}
+	
+	const handleNewUrl = (title) => {
+		window.history.pushState({},"", convertTitleToUrl(title) + window.location.search)
+	}
+
+	const convertTitleToUrl = (string) => {
+		string = string.toLowerCase().replaceAll(' ', '-')
+		return string
+	}
+
+
+	const findPortfolioData = async (arr, title) => {
+		let titleLowerCase = title.toLowerCase()
+		let index = 0
+		let filteredObj
+		let titles = ['Home']
+
+		await findObj(arr, 'obj' + index++)
+		setBreadcrumb(titles)
+
+		return filteredObj
+		
+		function findObj(arr, objVar) {
+			for (objVar of arr) {
+				if (objVar.title.toLowerCase() === titleLowerCase) {
+					filteredObj = [objVar]
+					console.log('found me', filteredObj)
+					titles.push(objVar.title)
+					return filteredObj
+				}
+				if (JSON.stringify(objVar).toLowerCase().indexOf('"title":"' + titleLowerCase) > -1) {
+					titles.push(objVar.title)
+				}
+				if ((objVar.data && objVar.data.length > 0) ) {
+					if (objVar.data[0].data || objVar.data[0].tabs) {
+						findObj(objVar.data, 'obj' + index++)
+					}
+				}
+			}
+		}
+	}
 	
 	const filterUrlParams = () => {
 		let currentParams = window.location.search
@@ -47,6 +124,15 @@ const App = () => {
 			setSidebarState('close')
 		} else {
 			setSidebarState('open')
+		}
+	}
+
+	const handleActiveSec = (title) => {
+		if (activeSec.indexOf(title) > -1) {
+			let filteredSec = activeSec.filter((item) => item !== title)
+			setActiveSec(filteredSec)
+		} else {
+			setActiveSec([title, ...activeSec])
 		}
 	}
 
@@ -73,28 +159,46 @@ const App = () => {
 
 	const toggleAnimations = () => {
 		setAnimationState(!animationState)
-		// console.log('animationState', animationState)
 	}
 
-	const handleSidebarClick = (title) => {
-		console.log('title', title)
-		setSidebarTitle([])
-		setSidebarTitle(title)
+	const removeStatus = () => {
+		setAppStatus('')
 	}
 
-	const handleActiveSec = (arr) => {
-		setActiveSec(arr)
-		setSidebarTitle('')
+	const handlePortfolioClick = async (title, location) => {
+		let isHome = title === 'Home'
+		if (location === 'breadcrumb') {
+			formatBreadcrumb(isHome ? 'Home' : portfolio.title)
+		}
+		if (isHome) {
+			handleNewPortfolio(fbData, isHome)
+		} else {
+			let itemPortfolio = await findPortfolioData(fbData, title)
+			handleNewPortfolio(itemPortfolio)
+		}
+	}
+
+
+
+	const formatBreadcrumb = (title) => {
+		let titleIndex = breadcrumb.indexOf(title)
+		if (titleIndex === -1) {
+			breadcrumb.push(title)
+			setBreadcrumb(breadcrumb)
+		} else if (titleIndex + 1 < breadcrumb.length) {
+			breadcrumb.splice(titleIndex + 1, breadcrumb.length - (titleIndex + 1))
+			setBreadcrumb(breadcrumb)
+		}
 	}
 	
   return (
     <main className="app" data-app-theme={appTheme} data-sidebar-toggle={sidebarState}>
 			{fbData && fbData.length > 0 ?
 				<>
-					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} activeSec={activeSec} handleSidebarClick={handleSidebarClick} />
+					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} breadcrumb={breadcrumb} handlePortfolioClick={handlePortfolioClick} />
 					<div className="app__body">
 						<Settings appTheme={appTheme} changeTheme={changeThemeHandler} animationState={animationState} toggleAnimations={(state) => toggleAnimations(state)} />
-						<Portfolio animationState={animationState} data={fbData} activeSec={activeSec} handleActiveSec={handleActiveSec} sidebarTitle={sidebarTitle} />
+						<Portfolio portfolio={portfolio} ogData={fbData} findPortfolioData={findPortfolioData} setBreadcrumb={setBreadcrumb} removeStatus={removeStatus} appStatus={appStatus} fadeInAnim={fadeInAnim} setFadeInAnim={setFadeInAnim} breadcrumb={breadcrumb} handleNewPortfolio={handleNewPortfolio} handleActiveSec={handleActiveSec} activeSec={activeSec} animationState={animationState} handlePortfolioClick={handlePortfolioClick} />
 					</div>
 				</>
 			: ''}

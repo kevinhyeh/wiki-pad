@@ -10,42 +10,19 @@ const Sidebar = (props) => {
 		if (props.data) {
 			setNavList(props.data)
 		}
-	}, [])
-
-	// const storeSublistToggleStateHandler = (data) => {
-	// 	let object = {}
-	// 	for (let i = 0; i < data.length; i++) {
-	// 		object[data[i].title.toLowerCase() + 'Sublinks'] = 'close'
-	// 	}
-	// 	setSubLinksDropdownObj(object)
-	// }
-
-	// const openSubLinksHandler = (title) => {
-	// 	if (subLinksDropdownObj[title.toLowerCase() + 'Sublinks'] === 'open') {
-	// 		setSubLinksDropdownObj(prevState => ({
-	// 			...prevState,
-	// 			[title.toLowerCase() + 'Sublinks']: 'close'
-	// 		}))
-	// 	} else {
-	// 		setSubLinksDropdownObj(prevState => ({
-	// 			...prevState,
-	// 			[title.toLowerCase() + 'Sublinks']: 'open'
-	// 		}))
-	// 	}
-	// }
+	}, [props.data])
 
 	const displaySidebarList = (listArr, parent)=> {
 		return (
 			<>
 				{listArr ? listArr.map((obj, index) => {
 					let active = ''
-					if (props.activeSec.includes(obj.title) || (props.activeSec[0] === '' && parent)) {
+					if (props.breadcrumb.includes(obj.title) || (props.breadcrumb[0] === 'Home' && parent)) {
 						active = ' active'
 					}
 					return (
-						// <li key={index} data-sublist-toggle={subLinksDropdownObj[listArr[i].title.toLowerCase() + 'Sublinks']}>
 						<li key={index} className={`${active}`}>
-							<span onClick={() => props.handleSidebarClick(obj.title)}>
+							<span onClick={() => props.handlePortfolioClick(obj.title)}>
 								<Folder />
 								{obj.title ? obj.title : ''}
 							</span>
