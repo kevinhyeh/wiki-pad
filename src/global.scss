@@ -317,7 +317,7 @@ $primary-blue: #154d84;
 	.contact__form button, .primary-button {
 		border-color: $primary-blue;
 	}
-	& .experience__bar, .timeline__line, .timeline__info:before, .clock__hours, .clock__minutes, .folder, .settings__toggle--slider, .contact__info {
+	& .experience__bar, .timeline__line, .timeline__info:before, .clock__hours, .clock__minutes, .folder, .settings__toggle--slider, .contact__info, .primary-button:hover {
 		background: $primary-blue;
 	}
 	& .experience p.overlay, .old-new-container, h2, .contact__form button, .primary-button, .portfolio__icon polygon {
