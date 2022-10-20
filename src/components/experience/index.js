@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Experience.scss';
 
 const Experience = (props) => {
-	const isActiveSec = props.activeSec.includes('Experience')
+	const [startAnimation, setStartAnimation] = useState(false)
+	useEffect(() => {
+		if (props.activeSec.includes('Experience')) {
+			setTimeout(() => {
+				setStartAnimation(true)
+			}, 10)
+		} else {
+			setStartAnimation(false)
+		}
+	}, [props.activeSec])
 
 	return (
 		<div className="experience">
@@ -12,16 +21,28 @@ const Experience = (props) => {
 				barWidth = barWidth + '%'
 				return (
 					<div className="experience__container" key={index}>
-						<img src={window.location.origin + '/icons/' + obj.info.replace(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={obj.info} className="experience__icon" />
+						<div className="experience__icon">
+							<img src={window.location.origin + '/icons/' + obj.info.replace(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={obj.info} />
+						</div>
 						<div className="w-full">
-							<p className="text-base bold">{obj.info}</p>
-							<div className={`experience__bar${isActiveSec ? '' : ' still'}`} style={{width: barWidth}}>
+							{obj.link ? 
+								<a href={obj.link} target="_blank" rel="noreferrer">
+									<p className="text-base bold">{obj.info}</p>
+								</a> :
+								<p className="text-base bold">{obj.info}</p>
+							}
+							<div className={`experience__bar${startAnimation ? '' : ' still'}`} style={{width: barWidth}}>
 								<p className="text-base bold">
 									{obj.years} {obj.years === 1 ? 'Year' : 'Years'}
 								</p>
 							</div>
-							<p className={`text-base bold overlay${isActiveSec ? '' : ' invisible'}`}>
-								{obj.years} {obj.years === 1 ? 'Year' : 'Years'}
+							<p className={`text-base bold overlay${startAnimation ? '' : ' invisible'}`}>
+								{obj.months ? 
+									`${obj.months} ${obj.months === 1 ? 'Month' : 'Months'}`
+								: ''}
+								{obj.years ? 
+									`${obj.years} ${obj.years === 1 ? 'Year' : 'Years'}`
+								: ''}
 							</p>
 						</div>
 					</div>

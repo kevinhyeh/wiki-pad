@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import { IconArrowLine } from '../elements/Icons';
+import { IconArrowLine, Animation, FullStack, Flow, FastForward, FileStorage, Layout, Transform, Github } from '../elements/Icons';
 import { ClockRotate, FolderExpand, OldNewBanner, GearsRotate, BellWiggle, PlugAndPlay } from '../elements/Animations.js';
 import Experience from '../experience';
 import Timeline from '../timeline';
 import About from '../about';
 import Navigation from '../navigation';
+import ContactForm from '../contact';
 import './Portfolio.scss';
 
 const components = {
@@ -17,12 +18,22 @@ const components = {
 	PlugAndPlay,
 	Experience,
 	Timeline,
-	About
+	About,
+	ContactForm,
+	Animation, 
+	FullStack, 
+	Flow, 
+	FastForward, 
+	FileStorage, 
+	Layout, 
+	Transform
 }
 
 const Portfolio = (props) => {
 	const activeSec = props.activeSec
 	const portfolio = props.portfolio
+	const isMobile = props.isMobile
+	const isTablet = props.isTablet
 
 	const toggleSection = (title) => {
 		props.handleActiveSec(title)
@@ -43,9 +54,10 @@ const Portfolio = (props) => {
 							<div onClick={() => toggleSection(obj.title)} className={`portfolio__header--title ${isActiveSec ? 'active' : ''}`}>
 								<IconArrowLine direction="right" />
 								{isNotFirst ? <h2 className="text-xl">{obj.title}</h2> : <h2 className="text-2xl">{obj.title}</h2>}
-								{/* {obj.duration && isActiveSec  ? <span className={`fade-in${isNotFirst ? " text-lg" : " text-xl"}`}>({obj.duration})</span> : ''} */}
+								{obj.duration && isActiveSec && !isTablet ? <span className={`fade-in${isNotFirst ? " text-lg" : " text-xl"}`}>({obj.duration})</span> : ''}
 							</div>
 						</div>
+						{obj.duration && isActiveSec && isTablet ? <span id="duration" className={`fade-in${isNotFirst ? " text-base" : " text-lg"}`}>({obj.duration})</span> : ''}
 						<div className={`portfolio__submenu ${isActiveSec ? 'active' : ''}`}>
 							{obj.data ? obj.data.map((childObj, index) => (
 								renderSection(childObj, index, true)
@@ -73,17 +85,20 @@ const Portfolio = (props) => {
 		return (
 			<>
 				{obj.component ? 
-					<ModuleComponent data={obj.content} activeSec={activeSec} animate={props.animationState} /> : 
+					<ModuleComponent data={obj.content} activeSec={activeSec} animate={props.animationState} isMobile={props.isMobile} /> : 
 					<div className={`portfolio__content fade-in`} data-tab={obj.title}>
 						{obj.content ? obj.content.map((content, index) => 
 							<div key={index}>
 								{content.title ? <p className="text-base">{content.title}</p> : ''}
+								<div className="flex">
+									{renderButton(content)}
+								</div>
 								{content.icons ?
 									<div className="portfolio__icons">
 										{content.icons.map((icon, index) => (
 											<div className="portfolio__icon" key={index}>
-												<img src={window.location.origin + '/icons/' + icon.replace(' ', '-').toLowerCase() + '.png'} alt={icon} />
-												<p className="text-base text-center">{icon}</p>
+												{renderIcon(icon)}
+												<p className="text-sm text-center">{icon}</p>
 											</div>
 										))}
 									</div>
@@ -95,6 +110,29 @@ const Portfolio = (props) => {
 				}
 			</>
 		)
+	}
+
+	const renderButton = (obj) => {
+		if (obj.buttons) {
+			return obj.buttons.map((button, index) => {
+				return (
+					<>
+						{button.title === 'Github' ?
+							<a href={button.link} target="_blank" key={index} rel="noreferrer">
+								<span className="portfolio__icon--link"><Github /></span>
+							</a> :
+							<a href={button.link} target="_blank" key={index} rel="noreferrer">
+								<button className="text-base primary-button">
+									{button.title}
+								</button>
+							</a>
+						}
+					</>
+				)
+			})
+		} else if (obj.button) {
+			return <a href={obj.link} target="_blank" rel="noreferrer"><button className="text-base primary-button">{obj.button}</button></a>
+		}
 	}
 
 	const renderInfo = (obj) => {
@@ -127,7 +165,13 @@ const Portfolio = (props) => {
 
 	const renderImage = (obj) => {
 		return (
-			 <img className="portfolio__image" src={window.location.origin + '/images/' + obj.image} alt={obj.title} />
+			 <img className="portfolio__image" src={window.location.origin + '/images/' + obj.title.toLowerCase()} alt={obj.title} />
+		)
+	}
+
+	const renderIcon = (title) => {
+		return (
+			<img src={window.location.origin + '/icons/' + title.replaceAll(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={title} />
 		)
 	}
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './Timeline.scss';
 import { HighSchool, College, Bootcamp } from '../elements/Icons'
 
@@ -9,9 +9,18 @@ const educationIcons = {
 }
 
 const Timeline = (props) => {
-	let animate = props.activeSec.includes('Education')
+	const [startAnimation, setStartAnimation] = useState(false)
+	useEffect(() => {
+		if (props.activeSec.includes('Education')) {
+			setTimeout(() => {
+				setStartAnimation(true)
+			}, 50)
+		} else {
+			setStartAnimation(false)
+		}
+	}, [props.activeSec])
 	return (
-		<div className={`timeline${animate ? ' animate' : ''}`}>
+		<div className={`timeline${startAnimation ? ' animate' : ''}`}>
 			{props.data ? props.data.map((obj, index) => {
 				let MyComponent = educationIcons[obj.icon]
 				return (

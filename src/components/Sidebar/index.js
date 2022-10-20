@@ -12,6 +12,11 @@ const Sidebar = (props) => {
 		}
 	}, [props.data])
 
+	const handleSidebarClick = (title) => {
+		props.setSidebarState('close')
+		props.handlePortfolioClick(title)
+	}
+
 	const displaySidebarList = (listArr, parent)=> {
 		return (
 			<>
@@ -22,7 +27,7 @@ const Sidebar = (props) => {
 					}
 					return (
 						<li key={index} className={`${active}`}>
-							<span onClick={() => props.handlePortfolioClick(obj.title)}>
+							<span onClick={() => handleSidebarClick(obj.title)}>
 								<Folder />
 								{obj.title ? obj.title : ''}
 							</span>

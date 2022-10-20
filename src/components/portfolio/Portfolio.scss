@@ -96,7 +96,7 @@
 	}
 	&__info {
 		margin-bottom: 1.5rem;
-		& a {
+		& p a {
 			color: $secondary-grey;
 		}
 		&--link p {
@@ -183,7 +183,7 @@
 	}
 	&__tabs {
 		@include displayFlex(flex-start, center);
-		grid-gap: 1rem;
+		gap: 1rem;
 	}
 	&__tab {
 		font-weight: bold;
@@ -213,28 +213,55 @@
 	}
 	&__content {
 		&[data-tab="Summary"] {
-			margin: 0 0 5rem;
+			margin: 0 0 3rem;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			text-align: center;
-			grid-gap: 4rem 7rem;
+			gap: 4rem 7rem;
 			& p {
 				margin: 0 auto;
+			}
+		}
+		&[data-tab="Details"] {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+			margin: 3rem 0;
+			& p {
+				margin: 0;
+				width: 70%;
+			}
+			& a {
+				margin-right: 3rem;
 			}
 		}
 	}
 	&__icons {
 		@include displayFlex(flex-start, center);
 		width: auto;
-		grid-gap: 4rem;
+		gap: 2rem;
 		margin: 3rem 0;
 	}
 	&__icon {
 		position: relative;
+		&--link {
+			& svg {
+				width: 3rem;
+				& path {
+					fill: $secondary-grey;
+				}
+			}
+		}
+		& svg {
+			width: 6rem;
+		}
+		& path, & rect {
+			fill: $secondary-grey;
+		}
 		& img {
 			display: block;
 			width: 6rem;
-			margin: 0 auto;
+			margin: 1rem;
 		}
 		& p {
 			position: absolute;
@@ -244,6 +271,12 @@
 			left: 0;
 			transition: 0.3s opacity ease-in;
 			margin: 0;
+			@include displayFlex(center, center);
+			width: 100%;
+			height: 100%;
+			color: $primary-dark-grey;
+			background: rgba(255,255,255,0.7);
+			border-radius: 5px;
 		}
 		&:hover p {
 			visibility: visible;
@@ -299,7 +332,20 @@
 	.portfolio {
 		&__content[data-tab="Summary"] {
 			grid-template-columns: repeat(2, 1fr);
-			grid-gap: 2rem 4rem;
+			gap: 2rem 4rem;
+		}
+	}
+}
+@media screen and (max-width: 780px) {
+	.portfolio {
+		&__submenu {
+			padding: 0 3rem;
+		}
+		&__header {
+			margin: 0 0 1rem;
+		}
+		& #duration {
+			margin-left: 3rem;
 		}
 	}
 }
@@ -308,7 +354,15 @@
 		padding: 0 0 1rem 1rem;
 		&__content[data-tab="Summary"] {
 			grid-template-columns: repeat(1, 1fr);
-			grid-gap: 2rem 2rem;
+			gap: 2rem 2rem;
+			text-align: left;
+		}
+		&__content[data-tab="Details"] {
+			gap: 2rem;
+			margin: 2rem 0;
+			& p {
+				width: 100%;
+			}
 		}
 		&__submenu {
 			padding: 0 1rem;
@@ -316,8 +370,8 @@
 		&__icons {
 			flex-wrap: wrap;
 		}
-		&__header {
-			margin: 0 0 1.5rem;
+		& #duration {
+			margin-left: 1rem;
 		}
 	}
 }

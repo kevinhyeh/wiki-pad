@@ -16,3 +16,18 @@
 		min-height: 100vh;
 	}
 }
+@media screen and (max-width: 500px) {
+	.app {
+		background-color: $sidebar-grey;
+		&__body {
+			width: calc(100% - 4rem);
+		}
+		&[data-sidebar-toggle="open"] {
+			& .app__body {
+				margin-left: 4rem;
+				overflow: hidden;
+				pointer-events: none;
+			}
+		}
+	}
+}
