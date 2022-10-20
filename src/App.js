@@ -26,7 +26,7 @@ const App = () => {
 		}).then(async(data) => {
 			console.log('data', data)
 			setFbData(data)
-			const pathName = window.location.pathname.replace('/', '').replaceAll('-', ' ')
+			const pathName = window.location.pathname.split('/wiki-pad/')[1].replace('/', '').replaceAll('-', ' ')
 			if (pathName.length > 0) {
 				let pathPortfolio = await findPortfolioData(data, pathName)
 				if (pathPortfolio) {
@@ -35,7 +35,7 @@ const App = () => {
 				} else {
 					setAppStatus({ message: 'Page Not Found', status: 'error'})
 					setPortfolio(data)
-					window.history.pushState({},"", convertTitleToUrl('/') + window.location.search)
+					window.history.pushState({},"", '/wiki-pad/' + convertTitleToUrl('/') + window.location.search)
 				}
 			} else {
 				setPortfolio(data)
@@ -88,7 +88,7 @@ const App = () => {
 	}
 	
 	const handleNewUrl = (title) => {
-		window.history.pushState({},"", convertTitleToUrl(title) + window.location.search)
+		window.history.pushState({},"", '/wiki-pad/' + convertTitleToUrl(title) + window.location.search)
 	}
 
 	const convertTitleToUrl = (string) => {
@@ -216,7 +216,7 @@ const App = () => {
     <main className="app" data-app-theme={appTheme} data-sidebar-toggle={sidebarState}>
 			{fbData && fbData.length > 0 ?
 				<>
-					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} breadcrumb={breadcrumb} handlePortfolioClick={handlePortfolioClick} setSidebarState={setSidebarState} />
+					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} breadcrumb={breadcrumb} handlePortfolioClick={handlePortfolioClick} setSidebarState={setSidebarState} isMobile={isMobile} />
 					<div className="app__body">
 						<Settings appTheme={appTheme} changeTheme={changeThemeHandler} animationState={animationState} toggleAnimations={(state) => toggleAnimations(state)} />
 						<Portfolio portfolio={portfolio} ogData={fbData} findPortfolioData={findPortfolioData} setBreadcrumb={setBreadcrumb} removeStatus={removeStatus} appStatus={appStatus} fadeInAnim={fadeInAnim} setFadeInAnim={setFadeInAnim} breadcrumb={breadcrumb} handleNewPortfolio={handleNewPortfolio} handleActiveSec={handleActiveSec} activeSec={activeSec} animationState={animationState} handlePortfolioClick={handlePortfolioClick} isMobile={isMobile} isTablet={isTablet} />

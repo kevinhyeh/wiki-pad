@@ -22,7 +22,7 @@ const Experience = (props) => {
 				return (
 					<div className="experience__container" key={index}>
 						<div className="experience__icon">
-							<img src={window.location.origin + '/icons/' + obj.info.replace(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={obj.info} />
+							<img src={props.homeUrl + '/icons/' + obj.info.replace(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={obj.info} />
 						</div>
 						<div className="w-full">
 							{obj.link ? 

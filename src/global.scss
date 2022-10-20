@@ -232,16 +232,16 @@ $primary-family: 'Monsterrat';
 	.portfolio__circle span:before, 
 	.settings button,
 	.portfolio__header--title h2:before,
-	.clock, .profile__card, input, textarea, .contact__form button {
+	.clock, .profile__card, input, textarea, .contact__form button, .primary-button {
 		border-color: $primary-dark-grey;
 	}
-	& .sidebar__list, input::placeholder, textarea::placeholder, .contact__form button {
+	& .sidebar__list, input::placeholder, textarea::placeholder, .contact__form button, .primary-button {
 		color: $primary-dark-grey;
 	}
-	& .portfolio__header svg g, .settings__select--toggle svg g, .bell path, .plug-and-play path {
+	& .portfolio__header svg g, .settings__select--toggle svg g, .bell path, .plug-and-play path, .navigation svg g, .sidebar__collapse svg g {
 		fill: $primary-dark-grey;
 	}
-	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span, .clock__hours, .clock__minutes, .folder, .settings__toggle--slider, .contact__info, .contact__form button:hover {
+	& h3:before, & .portfolio__circle.active span, .portfolio__circle:hover span, .clock__hours, .clock__minutes, .folder, .settings__toggle--slider, .contact__info, .contact__form button:hover, .primary-button:hover {
 		background: $primary-dark-grey;
 	}
 	& .gears circle, .gears path, .sidebar__list li.active path, .timeline svg {
@@ -256,14 +256,20 @@ $primary-family: 'Monsterrat';
 	& .experience p.overlay {
 		color: $secondary-light-grey;
 	}
-	& .sidebar__list li.active path {
+	& .sidebar__list li.active path, .portfolio__icon path, .portfolio__icon rect, .portfolio__icon--link svg path {
 		fill: $primary-dark-grey;
+	}
+	& .sidebar__sublist li.active path {
+		fill: $primary-dark-grey !important;
 	}
 	& .contact__info#phone .contact__icon path, .contact__info#linkedin g#linkedin-color, #email-color, .contact__copy svg path {
 		fill: #fff;
 	}
-	& .contact__open a, .contact__open p, .contact__form button:hover {
+	& .contact__open a, .contact__open p, .contact__form button:hover, .primary-button:hover {
 		color: #fff;
+	}
+	& .gears svg path {
+		fill: transparent;
 	}
 }
 // app kevin theme

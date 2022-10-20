@@ -36,10 +36,10 @@ const About = (props) => {
 			<div className="about__container">
 				<div className="profile">
 					<div className="profile__card profile__card--front">
-						<img src={window.location.origin + '/images/profile-pic.png'} alt="Profile Front" />
+						<img src={props.homeUrl + '/images/profile-pic.png'} alt="Profile Front" />
 					</div>
 					<div className="profile__card profile__card--back">
-						<img src={window.location.origin + '/images/profile-image.png'} alt="Profile Back" />
+						<img src={props.homeUrl + '/images/profile-image.png'} alt="Profile Back" />
 					</div>
 				</div>
 				<div className="about__info">

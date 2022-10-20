@@ -35,6 +35,8 @@ const Portfolio = (props) => {
 	// const isMobile = props.isMobile
 	const isTablet = props.isTablet
 
+	const homeUrl = "https://kevinhyeh.github.io/wiki-pad/"
+
 	const toggleSection = (title) => {
 		props.handleActiveSec(title)
 	}
@@ -85,7 +87,7 @@ const Portfolio = (props) => {
 		return (
 			<>
 				{obj.component ? 
-					<ModuleComponent data={obj.content} activeSec={activeSec} animate={props.animationState} isMobile={props.isMobile} /> : 
+					<ModuleComponent data={obj.content} activeSec={activeSec} animate={props.animationState} isMobile={props.isMobile} homeUrl={homeUrl} /> : 
 					<div className={`portfolio__content fade-in`} data-tab={obj.title}>
 						{obj.content ? obj.content.map((content, index) => 
 							<div key={index}>
@@ -165,13 +167,13 @@ const Portfolio = (props) => {
 
 	const renderImage = (obj) => {
 		return (
-			 <img className="portfolio__image" src={window.location.origin + '/images/' + obj.title.toLowerCase()} alt={obj.title} />
+			 <img className="portfolio__image" src={homeUrl + '/images/' + obj.title.toLowerCase()} alt={obj.title} />
 		)
 	}
 
 	const renderIcon = (title) => {
 		return (
-			<img src={window.location.origin + '/icons/' + title.replaceAll(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={title} />
+			<img src={homeUrl + '/icons/' + title.replaceAll(' / ', '-').replace(' ', '-').toLowerCase() + '.png'} alt={title} />
 		)
 	}
 

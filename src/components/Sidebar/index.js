@@ -13,7 +13,9 @@ const Sidebar = (props) => {
 	}, [props.data])
 
 	const handleSidebarClick = (title) => {
-		props.setSidebarState('close')
+		if (props.isMobile) {
+			props.setSidebarState('close')
+		}
 		props.handlePortfolioClick(title)
 	}
 
