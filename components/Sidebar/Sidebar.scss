@@ -66,9 +66,9 @@ $sidebarWidth: 30rem;
 		font-size: 1.6rem;
 		line-height: 2;
 		margin: 0;
-		cursor: pointer;
 		padding: 0 4rem;
 		& li {
+			cursor: pointer;
 			position: relative;
 			width: 100%;
 			& span:hover {
@@ -133,6 +133,7 @@ $sidebarWidth: 30rem;
 			@include verticalLine(top, 0, left, 10px, 1px, calc(100% - 25px), $primary-grey);
 		}
 		& li {
+			cursor: pointer;
 			padding-left: 3rem;
 			position: relative;
 			line-height: 2;
@@ -155,6 +156,14 @@ $sidebarWidth: 30rem;
 				height: 2rem;
 				// @include horizontalLine(top, 45%, left, 1rem, 1rem, 1px, $primary-grey);
 			}
+		}
+	}
+}
+@media screen and (max-width: 500px) {
+	.sidebar {
+    z-index: 10;
+		&[data-sidebar-toggle="open"] {
+			width: 80%;
 		}
 	}
 }

@@ -204,6 +204,9 @@
 			width: 80%;
 			transform: translate(-30%, -30%) rotate(45deg);
 		}
+		& path {
+			fill: transparent;
+		}
 	}
 	& circle, & path {
 		stroke: $secondary-grey;

@@ -7,6 +7,8 @@ import './App.scss'
 import './global.scss'
 
 const App = () => {
+	const [isMobile, setIsMobile] = useState()
+	const [isTablet, setIsTablet] = useState()
 	const [fbData, setFbData] = useState([])
 	const [animationState, setAnimationState] = useState(true)
 	const [appTheme, setAppTheme] = useState('Dark')
@@ -18,7 +20,7 @@ const App = () => {
 	const [activeSec, setActiveSec] = useState(['Profile', 'About'])
 
 	useEffect(() => {
-		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.jso'
+		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.json'
 		).then((response) => {
 			return response.json()
 		}).then(async(data) => {
@@ -54,6 +56,16 @@ const App = () => {
 				setSidebarState('close')
 			} else {
 				setSidebarState('open')
+			}
+			if (window.innerWidth <= 780) {
+				setIsTablet(true)
+			} else {
+				setIsTablet(false)
+			}
+			if (window.innerWidth <= 500) {
+				setIsMobile(true)
+			} else {
+				setIsMobile(false)
 			}
 		}
 		window.addEventListener('resize', handleResize)
@@ -204,10 +216,10 @@ const App = () => {
     <main className="app" data-app-theme={appTheme} data-sidebar-toggle={sidebarState}>
 			{fbData && fbData.length > 0 ?
 				<>
-					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} breadcrumb={breadcrumb} handlePortfolioClick={handlePortfolioClick} />
+					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} breadcrumb={breadcrumb} handlePortfolioClick={handlePortfolioClick} setSidebarState={setSidebarState} />
 					<div className="app__body">
 						<Settings appTheme={appTheme} changeTheme={changeThemeHandler} animationState={animationState} toggleAnimations={(state) => toggleAnimations(state)} />
-						<Portfolio portfolio={portfolio} ogData={fbData} findPortfolioData={findPortfolioData} setBreadcrumb={setBreadcrumb} removeStatus={removeStatus} appStatus={appStatus} fadeInAnim={fadeInAnim} setFadeInAnim={setFadeInAnim} breadcrumb={breadcrumb} handleNewPortfolio={handleNewPortfolio} handleActiveSec={handleActiveSec} activeSec={activeSec} animationState={animationState} handlePortfolioClick={handlePortfolioClick} />
+						<Portfolio portfolio={portfolio} ogData={fbData} findPortfolioData={findPortfolioData} setBreadcrumb={setBreadcrumb} removeStatus={removeStatus} appStatus={appStatus} fadeInAnim={fadeInAnim} setFadeInAnim={setFadeInAnim} breadcrumb={breadcrumb} handleNewPortfolio={handleNewPortfolio} handleActiveSec={handleActiveSec} activeSec={activeSec} animationState={animationState} handlePortfolioClick={handlePortfolioClick} isMobile={isMobile} isTablet={isTablet} />
 					</div>
 				</>
 			: ''}

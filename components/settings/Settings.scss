@@ -3,7 +3,7 @@
 .settings {
 	@include displayFlex(flex-start, center);
 	padding: 2rem 1.8rem;
-	grid-gap: 1rem;
+	gap: 1rem;
 
 	&__select {
 		position: relative;

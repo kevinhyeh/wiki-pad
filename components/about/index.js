@@ -20,6 +20,17 @@ const About = (props) => {
     return <p className="text-base m0"><span className="bold">{years} years</span> {months} months {days} {days === 1 ? 'day' : 'days'} <span className="bold">old</span></p>;
 	}
 
+	const handleYearsDiff = (dateString) => {
+		let today = new Date();
+    let date = new Date(dateString);
+		let timeBetween = today.getTime() - date.getTime()
+		let numberOfDays = (timeBetween / (1000 * 3600 * 24) - 10)
+		let years = Math.floor(numberOfDays / 365)
+		return years
+	}
+
+	const aboutInfoArr = obj.info.split('<b />')
+
 	return (
 		<section className="about">
 			<div className="about__container">
@@ -46,7 +57,9 @@ const About = (props) => {
 					<p className="text-base m0">{obj.location}</p>
 				</div>
 			</div>
-			<p className="about__bio text-base">{obj.info}</p>
+			{aboutInfoArr ? aboutInfoArr.map((string, index) => (
+				<p className="about__bio text-base" key={index}>{string.replace('<career />', handleYearsDiff('May 20, 2018'))}</p>
+			)) : ''}
 		</section>
 	)
 }

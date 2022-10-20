@@ -3,14 +3,28 @@
 .experience {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 3rem 1rem;
+	gap: 3rem 1rem;
 	margin: 3rem 0;
+	& a {
+		color: $secondary-grey;
+		text-decoration: none;
+		transition: 0.3s all;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 	&__container {
 		@include displayFlex(flex-start, flex-start);
-		grid-gap: 3rem;
+		gap: 3rem;
 	}
 	&__icon {
 		width: 6rem;
+		& img {
+			width: 100%;
+			&[alt="Firebase"] {
+				width: 80%;
+			}
+		}
 	}
 	& p {
 		margin: 0;
@@ -42,6 +56,7 @@
 		transition-delay: 0.2s;
 		position: relative;
 		overflow: hidden;
+		width: 0;
 		border-radius: 2px;
 		& p {
 			white-space: nowrap;

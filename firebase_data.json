@@ -11,7 +11,7 @@
 									"name": "Kevin Yeh",
 									"title": "Front End / Full Stack Developer",
 									"location": "San Mateo, CA",
-									"info": "Hello! I am a Front End / Full Stack Developer with a background in Graphic Design. Able to grasp new skills quickly and efficiently. Even more so, passionate about learning the process. Having the patience and interests in puzzles, developing applications can be tackled on with the same mindset.",
+									"info": "Hello! I am a Front End / Full Stack Developer with a background in Graphic Design. My story began when I was a photo retoucher, hating life, and impulsively took a UC Berkeley Extension Coding Bootcamp <career /> years ago. Since then, I utilize the best of both halves of my brain, bringing logic and creativity into my projects. From the small details to the large pictures, I make sure all aspects are thought of. My hope is to further that skill set and learn from as many people as I can. In this portfolio, I demonstrate the basic fundamentals of my current skill set.<b />Thank you for your time.",
 									"banner": ["Detailed", "Logical", "Creative", "Quirky", "Innovative"]
 								}
 							],
@@ -59,6 +59,10 @@
 								{
 									"info": "MongoDB",
 									"years": 2
+								},
+								{
+									"info": "GraphQL",
+									"months": 3
 								}
 							],
 							"component": "Experience",
@@ -67,23 +71,38 @@
 						{
 							"content": [
 								{
+									"info": "Github",
+									"link": "https://reactjs.org/",
+									"years": 5
+								},
+								{
 									"info": "Shopify",
+									"link": "https://reactjs.org/",
 									"years": 3
 								},
 								{
 									"info": "Strapi",
+									"link": "https://reactjs.org/",
 									"years": 2
 								},
 								{
 									"info": "Google Optimize",
+									"link": "https://reactjs.org/",
 									"years": 2
 								},
 								{
 									"info": "Google Cloud",
+									"link": "https://reactjs.org/",
 									"years": 2
 								},
 								{
 									"info": "NextJs",
+									"link": "https://reactjs.org/",
+									"years": 2
+								},
+								{
+									"info": "Firebase",
+									"link": "https://reactjs.org/",
 									"years": 2
 								}
 							],
@@ -181,7 +200,13 @@
 									"info": "Shop clothing, accessories, protective wear and home decor designed by independent artists and manufactured responsibly. Every purchase helps communities in need."
 								},
 								{
-									"title": "Visit Site",
+									"info": "VIDA is an online e-commerce platform that focuses on health and safety products to battle the ongoing rise of COVID-19. Such products include KN95 masks, N95 masks, KF94 masks, etc. I started as a web developer and quickly became one of the go to people for any front end project. Once COVID-19 hit, they kept only me for the front end position. Since then, I've managed the front end team for about 2 years."
+								},
+								{
+									"info": "With that in mind, I have learned a lot being on my own but feel that I needed more exposure in working with other developers and learning from senior developers."
+								},
+								{
+									"button": "Visit Site",
 									"link": "https://shopvida.com/"
 								}
 							]
@@ -190,138 +215,231 @@
 					"title": "VIDA"
 				},
 				{
+					"duration": "April 2021 - November 2021",
 					"data": [
 						{
 							"title": "Summary",
-							"info": "VIDA Health is the new and improved version of <wiki data-link='vida'>VIDA</wiki>. VIDA Health includes products post COVID-19 which which range from masks to hand sanitizers. They utilize Shopify just like it's ancestor but simpler, keeping all data needed on the platform instead of multiple databases."
-						},
-						{
-							"title": "Duration",
-							"info": "July 2022 - September 2022"
-						},
-						{
-							"title": "Stack",
-							"info": "Languages: HTML, CSS / SCSS, JS/Typescript, GraphQL"
-						},
-						{
-							"info": "Services: <a href='https://www.shopify.com/'>Shopify</a>, <a href='https://hydrogen.shopify.dev/'>Hydrogen</a>, <a href='https://tailwindcss.com/'>Tailwind</a>"
-						},
-						{
-							"title": "Responsibilities",
-							"info": "- Develop navigation and PLP (products list page)."
-						},
-						{
-							"title": "Responsibilities",
-							"info": "- Refactor legacy code and recreate elements into modern versions for the new site."
-						}
-					],
-					"title": "VIDA Health"
-				},
-				{
-					"data": [
-						{
-							"image": "one-league.png",
-							"link": "https://one-league.org/"
-						},
-						{
-							"title": "Links",
-							"info": "Website",
-							"link": "https://one-league.org/"
-						},
-						{
-							"title": "Summary",
-							"info": "VIDA, when I started, was an artist based product startup that allowed artists to created unique and creative products through their <wiki data-link='vida-studio'>VIDA Studio</wiki> App. In March 2020, VIDA quickly switched to support the rise of COVID 19 and started incorporating masks into their line of products. Since then, VIDA has brought in more and diverse products to help battle the global epidemic; and thus <wiki data-link='vida-health'>VIDA Health</wiki> was born."
-						},
-						{
-							"title": "Duration",
-							"info": "April 2021 - November 2021"
+							"content": [
+								{
+									"info": "Established core file structure fundamentals allowing for specific components to be reused as needed and scalability to not have a cap.",
+									"icon": "FileStorage"
+								},
+								{
+									"info": "Included dynamic movement throughout the web page ranging from small animations to large whole page scrolls.",
+									"icon": "Animation"
+								},
+								{
+									"info": "Calmly dealt with indecisive employer with constant changes and multiple iterations of design, where some were not even proper UI/UX.",
+									"icon": "Flow"
+								}
+							]
 						},
 						{
 							"title": "Stack",
-							"info": "Languages: NextJS, SCSS, JS"
+							"content": [
+								{
+									"icons": ["NextJS", "SCSS / SASS", "Javascript"]
+								}
+							]
 						},
 						{
-							"info": "Services: <a href='https://strapi.io/'>Strapi</a>, <a href='https://optimize.google.com/'>Google Optimize</a>"
+							"title": "Services",
+							"content": [
+								{
+									"icons": ["Strapi", "Google Optimize"]
+								}
+							]
 						},
 						{
-							"title": "Responsibilities",
-							"info": "- Implemented React like dynamic web views using Shopify's ES5 stack to create modern day style pages."
-						},
-						{
-							"info": "- Utilized CMS services, such as Strapi, with RESTful API's to create full stack features and architected JSON's for both site users and team members."
-						},
-						{
-							"info": "- Created Node.js scripts to automate time-consuming tasks which allowed for faster and more reliable projects."
+							"title": "Details",
+							"content": [
+								{
+									"info": "One League is a global education institution connecting the world's highest potential change-makers to world-class education and opportunities to realize global impact."
+								},
+								{
+									"info": "One League was also started by the same owner as <wiki data-link='vida'>VIDA</wiki>, where I was tasked to work on One League  projects as well. Working on One League gave me a lot of perspective on what I wanted to focus my career on. And it was that I hate web development..."
+								},
+								{
+									"button": "View Site",
+									"link": "https://one-league.org/"
+								}
+							]
 						}
 					],
 					"title": "One League"
 				},
 				{
+					"duration": "July 2022 - September 2022",
 					"data": [
 						{
-							"image": "tgj_pic.png",
-							"link": "https://kevinhyeh.github.io/tgj_website/"
+							"title": "Summary",
+							"content": [
+								{
+									"info": "Developed features and templates with a quick turnaround time of less than a week while utilizing new process', such as Tailwind and GraphQL.",
+									"icon": "FastForward"
+								},
+								{
+									"info": "Refactored legacy code to ensure that it can handle the new process as well as scale and sustain the many years to come.",
+									"icon": "Transform"
+								}
+							]
 						},
 						{
-							"title": "Duration",
-							"info": "May 2019 - June 2022"
+							"title": "Stack",
+							"content": [
+								{
+									"icons": ["React", "SCSS / SASS", "Javascript", "Typescript", "GraphQL"]
+								}
+							]
 						},
 						{
-							"title": "Links",
-							"info": "Website",
-							"link": "https://kevinhyeh.github.io/tgj_website/"
+							"title": "Services",
+							"content": [
+								{
+									"icons": ["Shopify", "Strapi", "Google Optimize", "Google Cloud"]
+								}
+							]
 						},
 						{
-							"info": "Project Builder App",
-							"link": "https://tgj-project-builder-q98mnwxq6.now.sh/"
-						},
-						{
-							"info": "Github",
-							"link": "https://github.com/kevinhyeh/tgj_website"
-						},
+							"title": "Details",
+							"content": [
+								{
+									"info": "VIDA Health is the new and improved version of <wiki data-link='vida'>VIDA</wiki>. VIDA Health includes products post COVID-19 which which range from masks to hand sanitizers. They utilize Shopify just like it's ancestor but simpler, keeping all data needed on the platform instead of multiple databases."
+								},
+								{
+									"info": "This was a small contracting project after ending my employment with VIDA to help develop certain aspects of the new site. There is no current link for this webpage as it is still being developed."
+								}
+							]
+						}
+					],
+					"title": "VIDA Health"
+				},
+				{
+					"duration": "May 2019 - June 2022",
+					"data": [
 						{
 							"title": "Summary",
-							"info": "The Graphic Jar is a graphic design freelance that a college friend, Christina Sayegh, and I started in January 2017. We specialize in designs that involve branding a business, such as logos, business cards, and websites. Christina would handle all of the illustration aspects of the freelance where I would take care of any development needed."
+							"content": [
+								{
+									"info": "Set up, albeit simple, full stack dynamic React App allowing users to pick/build a design package that would be stored in a database and sent to an email.",
+									"icon": "FullStack"
+								},
+								{
+									"info": "Designed and developed static webpage illustrating and guiding users through the process of the app and The Graphic Jar's guidelines.",
+									"icon": "Layout"
+								}
+							]
 						},
 						{
-							"info": "Technologies used for the website includes HTML, CSS / SASS, Javascript and a bit of Bootstrap. The website is mobile friendly where the use of media queries and javascript were needed to change the layout of the website and navigation bar."
+							"title": "Stack",
+							"content": [
+								{
+									"icons": ["React", "SCSS / SASS", "Javascript", "Bootstrap"]
+								}
+							]
 						},
 						{
-							"info": "Another aspect of the website includes a project builder application that I have developed using ReactJS, NodeJs, and Express; also Now for deployment (link above). This application allows users to create a simple starting point for their desired project with a bit of customization. Their project is then sent to us via email where we can start the project from there."
+							"title": "Services",
+							"content": [
+								{
+									"icons": ["Firebase"]
+								}
+							]
+						},
+						{
+							"title": "Details",
+							"content": [
+								{
+									"info": "The Graphic Jar is a graphic design freelance that a college friend, Christina Sayegh, and I started in January 2017. We specialize in designs that involve branding a business, such as logos, business cards, and websites. Christina would handle all of the illustration aspects of the freelance where I would take care of any web design and development needed."
+								},
+								{
+									"buttons": [
+										{
+											"title": "View Site",
+											"link": "https://kevinhyeh.github.io/tgj_website/"
+										},
+										{
+											"title": "View App",
+											"link": "https://tgj-project-builder-q98mnwxq6.now.sh/"
+										},
+										{
+											"title": "Github",
+											"link": "https://github.com/kevinhyeh/tgj_project-builder"
+										}
+									]
+								}
+							]
 						}
 					],
 					"title": "The Graphic Jar"
 				},
 				{
+					"duration": "May 2019 - June 2022",
 					"data": [
 						{
-							"title": "Links",
-							"info": "Portfolio V2 (You're already on it! :D)"
+							"title": "Details",
+							"content": [
+								{
+									"info": "This portfolio is a full stack application where the JSON for data is stored in Firebase. It is called 'Wiki Pad' because it is styled in the form of a notepad with the capabilities of a wiki. A wiki is having internal links within the page that goes to another page of information. With the power of React, I was able to achieve this feature. This is the second iteration of my portfolio, the first one being 4 years prior, link below."
+								},
+								{
+									"info": "I had a lot of fun making this portfolio, as it as quite a bit of small features and animations that make this look simple yet full of little surprises. Hope you enjoy this as much as I had making it."
+								},
+								{
+									"buttons": [
+										{
+											"title": "View Version 1",
+											"link": "https://kevinhyeh.github.io/portfolio/"
+										},
+										{
+											"title": "Github",
+											"link": "https://github.com/kevinhyeh/portfolio_v2"
+										}
+									] 
+								}
+							]
 						},
 						{
-							"info": "Portfolio V2 Github",
-							"link": "https://github.com/kevinhyeh/portfolio_v2"
+							"title": "Stack",
+							"content": [
+								{
+									"icons": ["React", "SCSS / SASS", "Javascript"]
+								}
+							]
 						},
 						{
-							"info": "Portfolio V1",
-							"link": "https://kevinhyeh.github.io/portfolio/"
-						},
-						{
-							"info": "Portfolio V1 Github",
-							"link": "https://github.com/kevinhyeh/portfolio"
-						},
-						{
-							"title": "Summary",
-							"info": "The Deck Challenge is a mobile application that was developed for the final project during my bootcamp. It is a workout base application using a deck of playing cards as your instructor. Shown in the demo video, the workouts that you select to incorporate in your workout is randomly assigned to either red or black cards (if 2 workouts are chosen) or each of the different suits (if 4 workouts are chosen)."
-						},
-						{
-							"info": "Technologies used are React Native, NodeJS, and MYSQL."
-						},
-						{
-							"info": "AThis was my first time using React Native and I absolutely enjoyed it. There are parts where I can improve, which I plan on doing as time goes by. Also plan on deploying the app onto Apple's App Store in the near future. It is quite a simple app but there are features that can be incorporated to make it excel."
+							"title": "Services",
+							"content": [
+								{
+									"icons": ["Firebase"]
+								}
+							]
 						}
 					],
 					"title": "Portfolio"
+				}
+			]
+		},
+		{
+			"title": "Contact",
+			"data": [
+				{
+					"content": [
+						{
+							"info": "650-888-0390",
+							"icon": "Phone"
+						},
+						{
+							"info": "kyeh5934@gmail",
+							"icon": "Email"
+						},
+						{
+							"info": "View LinkedIn",
+							"icon": "LinkedIn",
+							"link": "https://www.linkedin.com/in/kevin-yeh-477b6133/"
+						}
+					],
+					"component": "ContactForm"
 				}
 			]
 		}
