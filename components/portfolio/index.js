@@ -32,7 +32,7 @@ const components = {
 const Portfolio = (props) => {
 	const activeSec = props.activeSec
 	const portfolio = props.portfolio
-	const isMobile = props.isMobile
+	// const isMobile = props.isMobile
 	const isTablet = props.isTablet
 
 	const toggleSection = (title) => {
