@@ -110,7 +110,7 @@ export const Copy = () => {
 
 export const Layout = () => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g id="Layer_41" dataName="Layer 41"><path d="M54.83,5.67H9.17a3.5,3.5,0,0,0-3.5,3.5V54.83a3.5,3.5,0,0,0,3.5,3.5H54.83a3.5,3.5,0,0,0,3.5-3.5V9.17A3.5,3.5,0,0,0,54.83,5.67Zm.5,3.5V30.5h-36V8.67H54.83A.5.5,0,0,1,55.33,9.17ZM8.67,54.83V9.17a.5.5,0,0,1,.5-.5h7.18V55.33H9.17A.5.5,0,0,1,8.67,54.83Zm10.68.5V33.5H41.18V55.33Zm35.48,0H44.18V33.5H55.33V54.83A.5.5,0,0,1,54.83,55.33Z"/></g></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g id="Layer_41"><path d="M54.83,5.67H9.17a3.5,3.5,0,0,0-3.5,3.5V54.83a3.5,3.5,0,0,0,3.5,3.5H54.83a3.5,3.5,0,0,0,3.5-3.5V9.17A3.5,3.5,0,0,0,54.83,5.67Zm.5,3.5V30.5h-36V8.67H54.83A.5.5,0,0,1,55.33,9.17ZM8.67,54.83V9.17a.5.5,0,0,1,.5-.5h7.18V55.33H9.17A.5.5,0,0,1,8.67,54.83Zm10.68.5V33.5H41.18V55.33Zm35.48,0H44.18V33.5H55.33V54.83A.5.5,0,0,1,54.83,55.33Z"/></g></svg>
 	)
 }
 
@@ -150,7 +150,7 @@ export const FileStorage = () => {
 
 export const FastForward = () => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="feather feather-fast-forward"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
+		<svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-fast-forward"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
 	)
 }
 

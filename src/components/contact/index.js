@@ -20,22 +20,21 @@ const ContactForm = (props) => {
 		e.preventDefault()
 		let name = e.target.name.value
 		setFirstName(name.split(' ')[0])
-		setFormSuccess(true)
-		// let data = new FormData(e.target);
-		// fetch(e.target.action, {
-		// 	method: "POST",
-		// 	body: data,
-		// 	headers: {
-		// 		'Accept': 'application/json'
-		// 	}
-		// }).then(response => {
-		// 	if (response.ok) {
-				
-		// 	} else {
-		// 	}
-		// }).catch(error => {
-
-		// });
+		let data = new FormData(e.target);
+		fetch(e.target.action, {
+			method: "POST",
+			body: data,
+			headers: {
+				'Accept': 'application/json'
+			}
+		}).then(response => {
+			if (response.ok) {
+				setFormSuccess(true)
+			} else {
+			}
+		}).catch(error => {
+			console.log('error', error)
+		});
 	}
 
 	const handleTextUpdate = (e) => {

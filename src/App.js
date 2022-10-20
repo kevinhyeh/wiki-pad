@@ -26,16 +26,17 @@ const App = () => {
 		}).then(async(data) => {
 			console.log('data', data)
 			setFbData(data)
-			const pathName = window.location.pathname.split('/wiki-pad/')[1].replace('/', '').replaceAll('-', ' ')
+			const pathName = window.location.search.split('&')[0].replace('?', '').replace('/', '').replaceAll('-', ' ')
 			if (pathName.length > 0) {
-				let pathPortfolio = await findPortfolioData(data, pathName)
+				let idName = pathName.replace('id=', '').replaceAll('%20', ' ')
+				let pathPortfolio = await findPortfolioData(data, idName)
 				if (pathPortfolio) {
 					setPortfolio(pathPortfolio)
 					setActiveSec([pathPortfolio[0].title])
 				} else {
 					setAppStatus({ message: 'Page Not Found', status: 'error'})
 					setPortfolio(data)
-					window.history.pushState({},"", '/wiki-pad/' + convertTitleToUrl('/') + window.location.search)
+					window.history.pushState({},"", '/wiki-pad')
 				}
 			} else {
 				setPortfolio(data)
@@ -83,19 +84,12 @@ const App = () => {
 			setTimeout(() => {
 				setFadeInAnim(false)
 			}, 5000)
-			handleNewUrl(isHome ? '/' : portfolio.title)
 		}, 10)
 	}
 	
 	const handleNewUrl = (title) => {
-		window.history.pushState({},"", '/wiki-pad/' + convertTitleToUrl(title) + window.location.search)
+		window.history.pushState({},"", window.location.pathname + handleParams('id', title))
 	}
-
-	const convertTitleToUrl = (string) => {
-		string = string.toLowerCase().replaceAll(' ', '-')
-		return string
-	}
-
 
 	const findPortfolioData = async (arr, title) => {
 		let titleLowerCase = title.toLowerCase()
@@ -157,25 +151,31 @@ const App = () => {
 		}
 	}
 
-	const changeThemeHandler = theme => {
-		let currentParams = window.location.search
+	const handleParams = (param, value) => {
+		let currentParams = window.location.search.replace('?', '')
+		let currentParamsArr = currentParams.length > 0 ? currentParams.split('&') : undefined
 		let paramsArr = []
 		let newParams = ''
-		let themeParam = 'theme=' + theme.toLowerCase()
-		if (currentParams.includes('theme=')) {
-			paramsArr = currentParams.slice(1, currentParams.length).split('&')
-			for (let i = 0; i < paramsArr.length; i++) {
-				let param = paramsArr[i]
-				if (param.includes('theme')) {
+		let themeParam = param + '=' + value.toLowerCase()
+		if (currentParams.includes(param + '=')) {
+			for (let i = 0; i < currentParamsArr.length; i++) {
+				let currentParam = currentParamsArr[i]
+				if (currentParam.includes(param)) {
 					paramsArr[i] = themeParam
+				} else {
+					paramsArr[i] = currentParam
 				}
 			}
 		} else {
-			paramsArr.push(themeParam)
+			paramsArr = currentParamsArr ? [...currentParamsArr, themeParam] : [themeParam]
 		}
-		newParams = '?' + paramsArr.join('')
+		newParams = '?' + paramsArr.join('&')
+		return newParams
+	}
+
+	const changeThemeHandler = theme => {
 		setAppTheme(theme)
-		window.history.pushState({},"", window.location.pathname + newParams)
+		window.history.pushState({},"", window.location.pathname + handleParams('theme', theme))
 	}
 
 	const toggleAnimations = () => {
@@ -192,9 +192,12 @@ const App = () => {
 			formatBreadcrumb(isHome ? 'Home' : portfolio.title)
 		}
 		if (isHome) {
+			handleNewUrl('Home')
 			handleNewPortfolio(fbData, isHome)
 		} else {
 			let itemPortfolio = await findPortfolioData(fbData, title)
+			console.log('itemPortfolio', itemPortfolio)
+			handleNewUrl(itemPortfolio[0].title)
 			handleNewPortfolio(itemPortfolio)
 		}
 	}

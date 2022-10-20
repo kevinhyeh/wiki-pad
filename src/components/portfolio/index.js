@@ -118,7 +118,7 @@ const Portfolio = (props) => {
 		if (obj.buttons) {
 			return obj.buttons.map((button, index) => {
 				return (
-					<>
+					<React.Fragment key={index}>
 						{button.title === 'Github' ?
 							<a href={button.link} target="_blank" key={index} rel="noreferrer">
 								<span className="portfolio__icon--link"><Github /></span>
@@ -129,7 +129,7 @@ const Portfolio = (props) => {
 								</button>
 							</a>
 						}
-					</>
+					</React.Fragment>
 				)
 			})
 		} else if (obj.button) {
