@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wiki-pad/static/css/main.fe676ef5.chunk.css",
-    "main.js": "/wiki-pad/static/js/main.bee0af6f.chunk.js",
-    "main.js.map": "/wiki-pad/static/js/main.bee0af6f.chunk.js.map",
+    "main.js": "/wiki-pad/static/js/main.0b7b7780.chunk.js",
+    "main.js.map": "/wiki-pad/static/js/main.0b7b7780.chunk.js.map",
     "runtime-main.js": "/wiki-pad/static/js/runtime-main.f47f4762.js",
     "runtime-main.js.map": "/wiki-pad/static/js/runtime-main.f47f4762.js.map",
     "static/js/2.437e9b0c.chunk.js": "/wiki-pad/static/js/2.437e9b0c.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.f47f4762.js",
     "static/js/2.437e9b0c.chunk.js",
     "static/css/main.fe676ef5.chunk.css",
-    "static/js/main.bee0af6f.chunk.js"
+    "static/js/main.0b7b7780.chunk.js"
   ]
 }
