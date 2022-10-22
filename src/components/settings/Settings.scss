@@ -4,6 +4,9 @@
 	@include displayFlex(flex-start, center);
 	padding: 2rem 1.8rem;
 	gap: 1rem;
+	position: absolute;
+	right: 0;
+	top: 0;
 
 	&__select {
 		position: relative;
@@ -100,5 +103,6 @@
 @media screen and (max-width: 500px) {
 	.settings {
 		padding: 1rem;
+		position: relative;
 	}
 }

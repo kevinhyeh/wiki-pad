@@ -1,22 +1,22 @@
 @import './global.scss';
 
 .app {
-	width: 100vw;
 	@include displayFlex(flex-start, center);
-
+	
 	&[data-sidebar-toggle="open"] .app__body {
-		margin-left: 30rem;
+		width: calc(100vw - 30rem);
 	}
 	&[data-sidebar-toggle="close"] .app__body {
-		margin-left: 4rem;
+		width: calc(100vw - 4rem);
 	}
 	&__body {
+		margin-left: auto;
 		transition: 0.3s all;
 		width: 100%;
 		min-height: 100vh;
 	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 780px) {
 	.app {
 		background-color: $sidebar-grey;
 		&__body {

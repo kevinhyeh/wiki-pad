@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { Phone, Email, LinkedIn, Copy } from '../elements/Icons'
+import { Phone, Email, LinkedIn, Copy, Github } from '../elements/Icons'
 
 import './Contact.scss'
 
 const contactComponents = {
 	Phone,
 	Email,
-	LinkedIn
+	LinkedIn,
+	Github
 }
 
 const ContactForm = (props) => {
@@ -28,9 +29,10 @@ const ContactForm = (props) => {
 				'Accept': 'application/json'
 			}
 		}).then(response => {
-			if (response.ok) {
+			if (response) {
 				setFormSuccess(true)
 			} else {
+				alert('response bad')
 			}
 		}).catch(error => {
 			console.log('error', error)

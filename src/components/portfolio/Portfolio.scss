@@ -1,7 +1,7 @@
 @import '../../global.scss';
 
 .portfolio {
-	padding: 0 2rem 2rem;
+	padding: 2rem;
 	&__submenu {
 		max-height: 0;
 		overflow: hidden;
@@ -231,7 +231,7 @@
 				margin: 0;
 				width: 70%;
 			}
-			& a {
+			& .flex a {
 				margin-right: 3rem;
 			}
 		}
@@ -338,8 +338,9 @@
 }
 @media screen and (max-width: 780px) {
 	.portfolio {
+		padding: 2rem 1rem;
 		&__submenu {
-			padding: 0 3rem;
+			padding: 0 1rem;
 		}
 		&__header {
 			margin: 0 0 1rem;
@@ -351,7 +352,7 @@
 }
 @media screen and (max-width: 500px) {
 	.portfolio {
-		padding: 0 0 1rem 1rem;
+		padding: 0 1rem;
 		&__content[data-tab="Summary"] {
 			grid-template-columns: repeat(1, 1fr);
 			gap: 2rem 2rem;

@@ -20,7 +20,7 @@ const App = () => {
 	const [activeSec, setActiveSec] = useState(['Profile', 'About'])
 
 	useEffect(() => {
-		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.json'
+		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.jso'
 		).then((response) => {
 			return response.json()
 		}).then(async(data) => {

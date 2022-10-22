@@ -120,6 +120,12 @@
 				fill: $primary-dark-grey;
 			}
 		}
+		&#github {
+			background: transparent;
+			& path {
+				fill: $secondary-grey;
+			}
+		}
 		&:hover {
 			width: auto;
 			display: inline-block;
@@ -139,6 +145,12 @@
 				width: auto;
 				margin: 0 3.8rem 0 2rem;
 				// transform: translate(-50%, -50%);
+			}
+			&:hover {
+				background: transparent;
+				& path {
+					fill: $secondary-grey;
+				}
 			}
 		}
 	}

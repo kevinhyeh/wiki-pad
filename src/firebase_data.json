@@ -437,6 +437,11 @@
 							"info": "View LinkedIn",
 							"icon": "LinkedIn",
 							"link": "https://www.linkedin.com/in/kevin-yeh-477b6133/"
+						},
+						{
+							"info": "View Github",
+							"icon": "Github",
+							"link": "https://github.com/kevinhyeh"
 						}
 					],
 					"component": "ContactForm"

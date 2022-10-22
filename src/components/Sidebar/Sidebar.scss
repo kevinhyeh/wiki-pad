@@ -96,7 +96,7 @@ $sidebarWidth: 30rem;
 				text-decoration: none;
 				&:hover {
 					color: $secondary-grey;
-					text-decoration: underline;
+					// text-decoration: underline;
 				}
 			}
 			&[data-sublist-toggle="open"] {
@@ -123,11 +123,7 @@ $sidebarWidth: 30rem;
 	}
 	&__sublist {
 		list-style: none;
-		// max-height: 0;
-		// overflow: hidden;
 		padding: 0;
-		transition: 0.3s all;
-		// border-left: 1px solid;
 		position: relative;
 		&:before {
 			@include verticalLine(top, 0, left, 10px, 1px, calc(100% - 25px), $primary-grey);
@@ -137,7 +133,6 @@ $sidebarWidth: 30rem;
 			padding-left: 3rem;
 			position: relative;
 			line-height: 2;
-			transition: 0.3s all;
 			&.active path {
 				fill: $primary-grey !important;
 			}
@@ -154,12 +149,11 @@ $sidebarWidth: 30rem;
 				border-radius: 5px;
 				width: 2.5rem;
 				height: 2rem;
-				// @include horizontalLine(top, 45%, left, 1rem, 1rem, 1px, $primary-grey);
 			}
 		}
 	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 780px) {
 	.sidebar {
     z-index: 10;
 		&[data-sidebar-toggle="open"] {

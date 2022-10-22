@@ -127,7 +127,18 @@
 	80% { opacity: 0; }
 	100% { opacity: 0; }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1280px) {
+	.about {
+		&__bio {
+			width: 100%;
+		}
+	}
+	.profile {
+		width: 15rem;
+		height: 15rem;
+	}
+}
+@media screen and (max-width: 780px) {
 	.about {
 		padding: 1rem 0;
 		&__container {
@@ -139,9 +150,5 @@
 			margin: 0;
 			width: 100%;
 		}
-	}
-	.profile {
-		width: 15rem;
-		height: 15rem;
 	}
 }

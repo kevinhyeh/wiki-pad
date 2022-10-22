@@ -189,6 +189,7 @@ $primary-family: 'Monsterrat';
 
 // app dark theme
 .app[data-app-theme="Dark"] {
+	background: $sidebar-grey;
 	& .sidebar, .settings__select--toggle {
 		background: $sidebar-grey;
 	}
@@ -210,6 +211,7 @@ $primary-family: 'Monsterrat';
 }
 // app light theme
 .app[data-app-theme="Light"] {
+	background: rgb(255, 255, 255);
 	& .sidebar, .settings__select--toggle {
 		background: rgb(242, 244, 245);
 	}
@@ -275,6 +277,7 @@ $primary-family: 'Monsterrat';
 // app kevin theme
 $primary-blue: #154d84;
 .app[data-app-theme="Kevin"] {
+	background: #b69b75;
 	& .settings__select--toggle {
 		background: #c7a97f;
 	}
