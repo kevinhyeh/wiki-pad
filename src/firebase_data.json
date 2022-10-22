@@ -57,6 +57,10 @@
 									"years": 5
 								},
 								{
+									"info": "RESTful API",
+									"years": 3
+								},
+								{
 									"info": "MongoDB",
 									"years": 2
 								},
@@ -72,37 +76,37 @@
 							"content": [
 								{
 									"info": "Github",
-									"link": "https://reactjs.org/",
+									"link": "https://github.com/",
 									"years": 5
 								},
 								{
 									"info": "Shopify",
-									"link": "https://reactjs.org/",
+									"link": "https://www.shopify.com/",
 									"years": 3
 								},
 								{
 									"info": "Strapi",
-									"link": "https://reactjs.org/",
+									"link": "https://strapi.io/",
 									"years": 2
 								},
 								{
 									"info": "Google Optimize",
-									"link": "https://reactjs.org/",
+									"link": "https://optimize.google.com/",
 									"years": 2
 								},
 								{
 									"info": "Google Cloud",
-									"link": "https://reactjs.org/",
+									"link": "https://cloud.google.com/",
+									"years": 2
+								},
+								{
+									"info": "Google Firebase",
+									"link": "https://firebase.google.com/",
 									"years": 2
 								},
 								{
 									"info": "NextJs",
-									"link": "https://reactjs.org/",
-									"years": 2
-								},
-								{
-									"info": "Firebase",
-									"link": "https://reactjs.org/",
+									"link": "https://nextjs.org/",
 									"years": 2
 								}
 							],
