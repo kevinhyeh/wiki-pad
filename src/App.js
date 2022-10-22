@@ -19,6 +19,9 @@ const App = () => {
 	const [portfolio, setPortfolio] = useState([])
 	const [activeSec, setActiveSec] = useState(['Profile', 'About'])
 
+	const windowPathName = window.location.pathname
+	const newWindowPathName = windowPathName[windowPathName.length - 1] === '/' ? windowPathName.slice(0, -1) : windowPathName
+
 	useEffect(() => {
 		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.jso'
 		).then((response) => {
@@ -88,7 +91,7 @@ const App = () => {
 	}
 	
 	const handleNewUrl = (title) => {
-		window.history.pushState({},"", window.location.pathname + handleParams('id', title))
+		window.history.pushState({},"", newWindowPathName + handleParams('id', title))
 	}
 
 	const findPortfolioData = async (arr, title) => {
@@ -175,7 +178,7 @@ const App = () => {
 
 	const changeThemeHandler = theme => {
 		setAppTheme(theme)
-		window.history.pushState({},"", window.location.pathname + handleParams('theme', theme))
+		window.history.pushState({},"", newWindowPathName + handleParams('theme', theme))
 	}
 
 	const toggleAnimations = () => {

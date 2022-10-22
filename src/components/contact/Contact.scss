@@ -276,18 +276,16 @@
 @media screen and (max-width: 780px) {
 	.contact {
 		flex-direction: column;
-		&__form, & .envelope__top, & .contact__message {
+		&__form, & .envelope__top, & .contact__message, & input, & textarea {
 			width: 100%;
 		}
 		& .slide-up {
 			padding-top: 2rem;
 			gap: 2rem;
+			width: 93%;
 		}
 		& .envelope__top {
 			height: 12.6rem;
-		}
-		& input, & textarea {
-			width: 93.5%;
 		}
 		& .contact__socials {
 			width: 100%;
