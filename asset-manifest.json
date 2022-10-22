@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wiki-pad/static/css/main.1be19974.chunk.css",
+    "main.css": "/wiki-pad/static/css/main.4b1e8004.chunk.css",
     "main.js": "/wiki-pad/static/js/main.3b77b735.chunk.js",
     "main.js.map": "/wiki-pad/static/js/main.3b77b735.chunk.js.map",
     "runtime-main.js": "/wiki-pad/static/js/runtime-main.f47f4762.js",
@@ -10,14 +10,14 @@
     "static/js/3.a464581d.chunk.js": "/wiki-pad/static/js/3.a464581d.chunk.js",
     "static/js/3.a464581d.chunk.js.map": "/wiki-pad/static/js/3.a464581d.chunk.js.map",
     "index.html": "/wiki-pad/index.html",
-    "static/css/main.1be19974.chunk.css.map": "/wiki-pad/static/css/main.1be19974.chunk.css.map",
+    "static/css/main.4b1e8004.chunk.css.map": "/wiki-pad/static/css/main.4b1e8004.chunk.css.map",
     "static/js/2.570e4993.chunk.js.LICENSE.txt": "/wiki-pad/static/js/2.570e4993.chunk.js.LICENSE.txt",
     "static/media/index.css": "/wiki-pad/static/media/type-machine.6326e0da.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.f47f4762.js",
     "static/js/2.570e4993.chunk.js",
-    "static/css/main.1be19974.chunk.css",
+    "static/css/main.4b1e8004.chunk.css",
     "static/js/main.3b77b735.chunk.js"
   ]
 }
