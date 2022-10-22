@@ -2,6 +2,9 @@ body, html {
 	font-size: 10px;
 	// font-family: 'Lucida Console, Regular';
 }
+body {
+	overflow-x: hidden;
+}
 
 // variables
 $primary-grey: rgb(140, 140, 140);

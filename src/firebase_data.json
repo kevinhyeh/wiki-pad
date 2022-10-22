@@ -176,7 +176,7 @@
 									"icon": "BellWiggle"
 								},
 								{
-									"info": "Within one weekend, created a custom parallax scroll page template making it easy to <bold>plug and play</bold> which is still used to this day.",
+									"info": "Within one weekend, created a custom parallax scroll page template, using HTML, CSS, and Javascript, making it easy to <bold>plug and play</bold> which is still used to this day.",
 									"icon": "PlugAndPlay"
 								}
 							]
@@ -196,6 +196,10 @@
 									"icons": ["Shopify", "Strapi", "Google Optimize", "Google Cloud"]
 								}
 							]
+						},
+						{
+							"title": "Title",
+							"info": "Senior Front End Engineer"
 						},
 						{
 							"title": "Details",
@@ -255,6 +259,10 @@
 							]
 						},
 						{
+							"title": "Title",
+							"info": "Front End Engineer"
+						},
+						{
 							"title": "Details",
 							"content": [
 								{
@@ -305,6 +313,10 @@
 							]
 						},
 						{
+							"title": "Title",
+							"info": "Front End Engineer"
+						},
+						{
 							"title": "Details",
 							"content": [
 								{
@@ -324,7 +336,7 @@
 			"title": "Projects",
 			"data": [
 				{
-					"duration": "May 2019 - June 2022",
+					"duration": "June 2017 - August 2020",
 					"data": [
 						{
 							"title": "Summary",
@@ -351,7 +363,7 @@
 							"title": "Services",
 							"content": [
 								{
-									"icons": ["Firebase"]
+									"icons": ["Google Firebase"]
 								}
 							]
 						},
@@ -383,7 +395,7 @@
 					"title": "The Graphic Jar"
 				},
 				{
-					"duration": "May 2019 - June 2022",
+					"duration": "October 2022 - October 2022",
 					"data": [
 						{
 							"title": "Details",
@@ -420,7 +432,7 @@
 							"title": "Services",
 							"content": [
 								{
-									"icons": ["Firebase"]
+									"icons": ["Google Firebase"]
 								}
 							]
 						}
