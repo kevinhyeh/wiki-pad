@@ -17,7 +17,14 @@ const Experience = (props) => {
 		<div className="experience">
 			{props.data ? props.data.map((obj, index) => {
 				let barWidth = obj.years * 10
-				// let barWidth = obj.years >= 3 ? obj.years * 10 : 30
+				// let barWidth
+				// if (obj.years >= 3) {
+				// 	barWidth = obj.years * 10
+				// } else if (obj.months) {
+				// 	barWidth = 0
+				// } else if (props.isMobile) {
+				// 	barWidth = 30
+				// }
 				barWidth = barWidth + '%'
 				return (
 					<div className="experience__container" key={index}>

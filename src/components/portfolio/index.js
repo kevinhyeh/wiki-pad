@@ -32,7 +32,7 @@ const components = {
 const Portfolio = (props) => {
 	const activeSec = props.activeSec
 	const portfolio = props.portfolio
-	// const isMobile = props.isMobile
+	const isMobile = props.isMobile
 	const isTablet = props.isTablet
 
 	const homeUrl = "https://kevinhyeh.github.io/wiki-pad/"
@@ -87,7 +87,7 @@ const Portfolio = (props) => {
 		return (
 			<>
 				{obj.component ? 
-					<ModuleComponent data={obj.content} activeSec={activeSec} animate={props.animationState} isMobile={props.isMobile} homeUrl={homeUrl} /> : 
+					<ModuleComponent data={obj.content} activeSec={activeSec} animate={props.animationState} isMobile={isMobile} homeUrl={homeUrl} /> : 
 					<div className={`portfolio__content fade-in`} data-tab={obj.title}>
 						{obj.content ? obj.content.map((content, index) => 
 							<div key={index}>

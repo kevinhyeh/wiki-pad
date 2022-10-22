@@ -22,18 +22,20 @@
 		visibility: hidden;
 		margin: 0 auto;
 		grid-row: 3 / 4;
-		position: relative;
 		width: 80%;
-		&:before {
-			content: '';
-			position: absolute;
-			left: 5px;
-			top: -4rem;
-			transform: translateX(-50%);
-			width: 1.5rem;
-			height: 1.5rem;
-			background: $secondary-grey;
-			border-radius: 50%;
+		& p:first-child {
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				left: 5px;
+				top: -4rem;
+				transform: translateX(-50%);
+				width: 1.5rem;
+				height: 1.5rem;
+				background: $secondary-grey;
+				border-radius: 50%;
+			}
 		}
 		& p {
 			margin: 0 auto 2rem;
@@ -90,7 +92,7 @@
 		grid-template-rows: repeat(6, auto);
 		gap: 1rem 0;
 		&__icon, &__info {
-			width: 90%;
+			width: 100%;
 		}
 		&__icon {
 			grid-column: 2/3;
@@ -99,8 +101,8 @@
 		&__info {
 			grid-column: 2/3;
 			grid-row: auto;
-			&:before {
-				left: -28px;
+			& p:first-child:before {
+				left: -3.3rem;
 				top: 0;
 			}
 		}
@@ -109,7 +111,7 @@
 			grid-row: 1/7;
 			height: 100%;
 			width: 0.6rem;
-			margin: 0 1rem;
+			margin: 0 3rem 0 1rem;
 			max-width: auto;
 			max-height: 0;
 			&:before, &:after {
