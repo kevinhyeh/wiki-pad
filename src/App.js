@@ -23,7 +23,7 @@ const App = () => {
 	const newWindowPathName = windowPathName[windowPathName.length - 1] === '/' ? windowPathName.slice(0, -1) : windowPathName
 
 	useEffect(() => {
-		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.jso'
+		fetch('https://portfolio-v2-2237f-default-rtdb.firebaseio.com/portfolio.json'
 		).then((response) => {
 			return response.json()
 		}).then(async(data) => {
