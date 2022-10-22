@@ -157,8 +157,7 @@ const Portfolio = (props) => {
 				info.lastIndexOf('</wiki>'),
 			).replace('<wiki>', '').toLowerCase()
 			let newParams = props.handleParams('id', wikiId)
-			info = info.replaceAll("<wiki data-link='", "<a href='wiki" + newParams)
-			info = info.replaceAll("'>", window.location.search + "'>")
+			info = info.replaceAll("<wiki>", "<a href='wiki" + newParams + "'>")
 			info = info.replaceAll("</wiki>", '</a>')
 		}
 		if (info.indexOf('<bold>') > -1) {
