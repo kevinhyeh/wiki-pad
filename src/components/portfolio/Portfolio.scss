@@ -181,36 +181,6 @@
 			}
 		}
 	}
-	&__tabs {
-		@include displayFlex(flex-start, center);
-		gap: 1rem;
-	}
-	&__tab {
-		font-weight: bold;
-		position: relative;
-		&:after {
-			@include horizontalLine(bottom, 0, left, 0, 0%, 2px, $secondary-grey);
-		}
-		cursor: pointer;
-		transition: 0.3s all;
-		padding: 1rem;
-		// &:first-child {
-		// 	padding-left: 0;
-		// }
-		// &:last-child {
-		// 	padding-right: 0;
-		// }
-		&.active {
-			&:after {
-				width: 100%;
-			}
-		}
-		&:hover {
-			&:after {
-				width: 100%;
-			}
-		}
-	}
 	&__content {
 		&[data-tab="Summary"] {
 			margin: 0 0 3rem;
@@ -223,8 +193,7 @@
 			}
 		}
 		&[data-tab="Details"] {
-			display: flex;
-			flex-direction: column;
+			display: grid;
 			gap: 3rem;
 			margin: 3rem 0;
 			& p {
@@ -239,11 +208,14 @@
 	&__icons {
 		@include displayFlex(flex-start, center);
 		width: auto;
-		gap: 2rem;
 		margin: 3rem 0;
 	}
 	&__icon {
 		position: relative;
+		margin-right: 2rem;
+		&:last-child {
+			margin-right: 0;
+		}
 		&--link {
 			& svg {
 				width: 3.5rem;

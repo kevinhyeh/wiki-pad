@@ -3,13 +3,12 @@
 .settings {
 	@include displayFlex(flex-start, center);
 	padding: 2rem 1.8rem;
-	gap: 1rem;
 	position: absolute;
 	right: 0;
 	top: 0;
-
 	&__select {
 		position: relative;
+		margin: 0 1rem;
 		&[data-select-toggle="open"] 
 		.settings__select--list {
 			max-height: 100rem;
@@ -73,6 +72,7 @@
 
 	&__toggle {
 		@include displayFlex(center, center);
+		margin-left: 1rem;
 		cursor: pointer;
 		&--slider {
 			width: 3.5rem;
