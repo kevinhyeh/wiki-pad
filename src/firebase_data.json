@@ -117,10 +117,10 @@
 						{
 							"content": [
 								{
-									"info": "Full stack course that was an extension of UC Berkeley. Presented with certificate for completion at the end of course.",
-									"title": "UC Berkeley Bootcamp",
-									"icon": "Bootcamp",
-									"duration": "May 2018 - Nov 2018"
+									"info": "Started my interest in the art world by taking photography and digital media outside of school. I did not like high school.",
+									"title": "San Mateo High School",
+									"icon": "HighSchool",
+									"duration": "Aug 2008 - May 2012"
 								},
 								{
 									"info": "Took Adobe Dreamweaver classes and self taught. Graduated with bachelors in Graphic Design and received Cum Laude honors.",
@@ -129,10 +129,10 @@
 									"duration": "Aug 2012 - May 2016"
 								},
 								{
-									"info": "I did not like high school.",
-									"title": "San Mateo High School",
-									"icon": "HighSchool",
-									"duration": "Aug 2008 - May 2012"
+									"info": "Full stack course that was an extension of UC Berkeley. Presented with certificate for completion at the end of course.",
+									"title": "UC Berkeley Bootcamp",
+									"icon": "Bootcamp",
+									"duration": "May 2018 - Nov 2018"
 								}
 							],
 							"component": "Timeline"

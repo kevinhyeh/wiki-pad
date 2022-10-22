@@ -24,6 +24,7 @@
 	&__form {
 		margin-right: 5rem;
 		& .slide-up {
+			position: relative;
 			padding-top: 3rem;
 			@include displayFlex(flex-start, flex-start, column);
 		}

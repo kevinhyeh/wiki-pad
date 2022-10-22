@@ -152,7 +152,13 @@ const Portfolio = (props) => {
 	const renderText = (info) => {
 		info = info.replaceAll("<a", '<a target="_blank"')
 		if (info.indexOf('<wiki') > -1) {
-			info = info.replaceAll("<wiki data-link='", "<a href='")
+			let wikiId = info.slice(
+				info.indexOf('<wiki>'),
+				info.lastIndexOf('</wiki>'),
+			).replace('<wiki>', '').toLowerCase()
+			console.log('wikiId', wikiId)
+			let newParams = props.handleParams('id', wikiId)
+			info = info.replaceAll("<wiki data-link='", "<a href='wiki" + newParams)
 			info = info.replaceAll("'>", window.location.search + "'>")
 			info = info.replaceAll("</wiki>", '</a>')
 		}
