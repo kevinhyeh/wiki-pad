@@ -156,7 +156,6 @@ const Portfolio = (props) => {
 				info.indexOf('<wiki>'),
 				info.lastIndexOf('</wiki>'),
 			).replace('<wiki>', '').toLowerCase()
-			console.log('wikiId', wikiId)
 			let newParams = props.handleParams('id', wikiId)
 			info = info.replaceAll("<wiki data-link='", "<a href='wiki" + newParams)
 			info = info.replaceAll("'>", window.location.search + "'>")
