@@ -2,7 +2,7 @@
 
 .app {
 	@include displayFlex(flex-start, center);
-	
+	position: relative;
 	&[data-sidebar-toggle="open"] .app__body {
 		width: calc(100vw - 30rem);
 	}
@@ -28,6 +28,9 @@
 				overflow: hidden;
 				pointer-events: none;
 			}
+		}
+		&[data-sidebar-toggle="open"] .app__body {
+			width: calc(100vw - 4rem);
 		}
 	}
 }

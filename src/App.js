@@ -226,6 +226,7 @@ const App = () => {
 			{fbData && fbData.length > 0 ?
 				<>
 					<Sidebar sidebarState={sidebarState} toggleSidebar={(state) => toggleSidebarHandler(state)} data={fbData} breadcrumb={breadcrumb} handlePortfolioClick={handlePortfolioClick} setSidebarState={setSidebarState} isMobile={isMobile} />
+					<div className={`sidebar__overlay${sidebarState === 'open' ? ' active' : ''}`} onClick={() => setSidebarState('close')}></div>
 					<div className="app__body">
 						<Settings appTheme={appTheme} changeTheme={changeThemeHandler} animationState={animationState} toggleAnimations={(state) => toggleAnimations(state)} />
 						<Portfolio portfolio={portfolio} ogData={fbData} findPortfolioData={findPortfolioData} setBreadcrumb={setBreadcrumb} removeStatus={removeStatus} appStatus={appStatus} fadeInAnim={fadeInAnim} setFadeInAnim={setFadeInAnim} breadcrumb={breadcrumb} handleNewPortfolio={handleNewPortfolio} handleActiveSec={handleActiveSec} activeSec={activeSec} animationState={animationState} handlePortfolioClick={handlePortfolioClick} isMobile={isMobile} isTablet={isTablet} handleParams={handleParams} newWindowPathName={newWindowPathName} />
