@@ -11,7 +11,7 @@
 									"name": "Kevin Yeh",
 									"title": "Front End / Full Stack Developer",
 									"location": "San Mateo, CA",
-									"info": "Hello! I am a Front End / Full Stack Developer with a background in Graphic Design. My story began when I was a photo retoucher, hating life, and impulsively took a UC Berkeley Extension Coding Bootcamp <career /> years ago. Since then, I utilize the best of both halves of my brain, bringing logic and creativity into my projects. From the small details to the large pictures, I make sure all aspects are thought of. My hope is to further that skill set and learn from as many people as I can. In this portfolio, I demonstrate the basic fundamentals of my current skill set.<b />Thank you for your time.",
+									"info": "Hello! I am a Front End / Full Stack Developer with a background in Graphic Design. My story began when I was a photo retoucher <career /> years ago and impulsively took a UC Berkeley Extension Coding Bootcamp. Since then, I utilize the best of both halves of my brain, bringing logic and creativity into my projects. From the small details to the large pictures, I make sure all aspects are thought of. My hope is to further that skill set and learn from as many people as I can. In this portfolio, I demonstrate the basic fundamentals of my current skill set.<b />Thank you for your time.",
 									"banner": ["Detailed", "Logical", "Creative", "Quirky", "Innovative"]
 								}
 							],
@@ -121,7 +121,7 @@
 						{
 							"content": [
 								{
-									"info": "Started my interest in the art world by taking photography and digital media outside of school. I did not like high school.",
+									"info": "Started my interest in the art world by taking photography and digital media outside of school. I was not a fan high school.",
 									"title": "San Mateo High School",
 									"icon": "HighSchool",
 									"duration": "Aug 2008 - May 2012"
@@ -269,7 +269,7 @@
 									"info": "One League is a global education institution connecting the world's highest potential change-makers to world-class education and opportunities to realize global impact."
 								},
 								{
-									"info": "One League was also started by the same owner as <wiki>VIDA</wiki>, where I was tasked to work on One League  projects as well. Working on One League gave me a lot of perspective on what I wanted to focus my career on. And it was that I hate web development..."
+									"info": "One League was also started by the same owner as <wiki>VIDA</wiki>, where I was tasked to work on One League  projects as well. Working on One League led me to focus my area of expertise in more logic based Front End."
 								},
 								{
 									"button": "View Site",

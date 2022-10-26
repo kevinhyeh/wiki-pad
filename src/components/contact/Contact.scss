@@ -322,6 +322,12 @@
 				transform: translateY(55%);
 				text-align: center;
 			}
+			&#github {
+				background: $secondary-grey;
+				& path {
+					fill: $primary-dark-grey;
+				}
+			}
 		}
 	}
 }

@@ -53,7 +53,7 @@ const ContactForm = (props) => {
 
 	const copyToClipboard = (string) => {
 		navigator.clipboard.writeText(string)
-		setCopied(true)
+		setCopied(string)
 	}
 
 	const animate = formSuccess ? ' animate' : ''
@@ -95,7 +95,7 @@ const ContactForm = (props) => {
 									<a className="m0 contact__text text-base bold" target="_blank" rel="noreferrer" href={obj.icon === 'Phone' ? `tel:${obj.info.replaceAll('-', '')}` : obj.link}>{obj.info}</a> : 
 									<p className="m0 text-base contact__text bold">{obj.info}</p>
 								}
-								<span className={`contact__copy${copied ? ' copied' : ''}`} onClick={() => copyToClipboard(obj.info)}>
+								<span className={`contact__copy${copied === obj.info ? ' copied' : ''}`} onClick={() => copyToClipboard(obj.info)}>
 									<Copy />
 								</span>
 							</div>
