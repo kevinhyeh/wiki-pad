@@ -108,6 +108,11 @@
 									"info": "NextJs",
 									"link": "https://nextjs.org/",
 									"years": 2
+								},
+								{
+									"info": "Figma",
+									"link": "https://www.figma.com/",
+									"years": 2
 								}
 							],
 							"component": "Experience",
@@ -160,7 +165,7 @@
 									"icon": "ClockRotate"
 								},
 								{
-									"info": "Architected new structures that allowed for quick and complex feature/product launches resulting in <bold>3-4 per month</bold>.",
+									"info": "Architected JSON and full stack structures that allowed for quick and complex feature/product launches resulting in <bold>3-4 per month</bold>.",
 									"icon": "FolderExpand"
 								},
 								{
@@ -172,7 +177,7 @@
 									"icon": "GearsRotate"
 								},
 								{
-									"info": "Integrating with services such as <bold>Google Optimize</bold> and <bold>Google Analytics</bold>, where key data was gathered help decide on specific needs.",
+									"info": "Integrated with data services such as <bold>Google Optimize</bold> and <bold>Google Analytics</bold>, where key data was gathered to help decide on specific needs; as well as other API documentations.",
 									"icon": "BellWiggle"
 								},
 								{
