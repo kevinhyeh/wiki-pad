@@ -1,8 +1,12 @@
 import React, { useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+import { update } from '../../features/theme/themeSlice'
 import { IconArrowLine } from '../elements/Icons';
 import './Settings.scss';
 
 const Settings = (props) => {
+	const theme = useSelector(state => state.theme.value)
+	const dispatch = useDispatch()
 	const [themeToggleState, setThemeToggleState] = useState('close')
 	const themeSelectRef = useRef()
 
@@ -17,6 +21,8 @@ const Settings = (props) => {
 		}
 	}
 
+	console.log('theme', theme)
+
 	return (
 		<section className="settings">
 			<span className="text-xs">Theme:</span>
@@ -27,7 +33,7 @@ const Settings = (props) => {
 				</button>
 				<ul className="settings__select--list">
 					{themeOptions ? themeOptions.map((item, index) => (
-						<button className="settings__select--option" key={index} onClick={() => props.changeTheme(item)}>{item}</button>
+						<button className="settings__select--option" key={index} onClick={() => dispatch(update(item))}>{item}</button>
 					)) : <></>
 					}
 				</ul>
